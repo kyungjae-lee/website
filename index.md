@@ -6,7 +6,8 @@ Home [Notes](./notes) [Projects](./projects)
 
 <img src="img\headshot_circle.jpg" width="230">
 
-<h6 style="text-align: center;">Embedded Software Engineer</h6>
+<p style="text-align: center;"><b>Embedded Software Engineer</b><br>Austin, TX, United States</p>
+
 
 <p style="text-align: center;"><a href="https://www.linkedin.com/in/kyungjaelee/"><img src="img/linkedin.svg" width="30"></a> <a href="https://www.github.com/kyungjae-lee/"><img src="img/github.png" width="30"></a> <a href="mailto:kjxlee@gmail.com"><img src="img/email.png" width="30"></a></p>
 
@@ -20,4 +21,3 @@ As an embedded software enthusiast, I am driven by the challenge of demystifying
 
 * [Notes](./notes)
 * [Projects](./projects)
-
