@@ -1,4 +1,4 @@
-Home [Notes](./notes) [Projects](./projects)
+Home | [Notes](./notes) | [Projects](./projects)
 
 # Kyungjae Lee
 
@@ -15,7 +15,7 @@ Home [Notes](./notes) [Projects](./projects)
 
 ### Welcome
 
-As an embedded software enthusiast, I am driven by the challenge of demystifying complex electronic systems and applying the knowledge I’ve gained to make the world a better place. This space is dedicated to documenting my learning journey, and I hope it serves as a valuable resource for others who share the same curiosity and passion.
+As an embedded software enthusiast, I am driven by the challenge of solving complex problems in the embedded systems domain. This space is dedicated to documenting my learning journey, and I hope it proves useful to others with similar curiosity and passion for making the world a better place.
 
 ### Contents
 
