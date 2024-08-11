@@ -20,3 +20,4 @@ As an embedded software enthusiast, I am driven by the challenge of demystifying
 
 * [Notes](./notes)
 * [Projects](./projects)
+
