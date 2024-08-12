@@ -13,11 +13,8 @@ Home | [Notes](./notes) | [Projects](./projects)
 
 
 
-### Welcome
+### Welcome!
 
-As an embedded software enthusiast, I am driven by the challenge of solving complex problems in the embedded systems domain. This space is dedicated to documenting my learning journey, and I hope it proves useful to others with similar curiosity and passion for making the world a better place.
+I’m an embedded software enthusiast driven by the challenge of solving complex problems in the embedded systems domain. This space is dedicated to documenting my learning journey, and I hope it becomes a valuable resource for others who share the same curiosity and passion.
 
-### Contents
-
-* [Notes](./notes)
-* [Projects](./projects)
+Feel free to explore my [notes](./notes) and [projects](./projects)!
