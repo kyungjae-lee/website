@@ -4,7 +4,7 @@
 
 
 
-#### Computer Engineering Basics
+### Computer Engineering Basics
 
 - **[Operating Systems](operating-systems)**
 - **[Computer Architecture & Organization]()**
@@ -15,7 +15,7 @@
 - **[Computer Networks]()**
 - **[Problem Solving]()**
 
-#### Embedded Systems
+### Embedded Systems
 
 - **[ARM Cortex-M3/M4 Processor]()**
 - **[Bootloader]()**
@@ -24,7 +24,7 @@
 - **[Real-Time Operating Systems (RTOS)]()**
 - **[Embedded Systems Design using UML State Machines]()**
 
-#### Linux
+### Linux
 
 - **[Unix/Linux]()**
 - **[Embedded Linux]()**

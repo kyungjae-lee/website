@@ -4,7 +4,7 @@
 
 
 
-#### Side Projects
+### Side Projects
 
 * **[STM32 MCU Custom Bootloader](stm32-mcu-custom-bootloader)**
 
@@ -32,9 +32,9 @@
 
 * **[Website](https://github.com/kyungjae-lee/engineers-notebook/blob/main/portfolio/engineers-notebook)**
 
-  A documentation website for publishing reusable technical information gained from personal studies and projects
+  A documentation website for publishing츠 reusable technical information gained from personal studies and projects
 
-#### School Projects
+### School Projects
 
 * **[ARM-Assembly Vending Machine](https://github.com/kyungjae-lee/engineers-notebook/blob/main/portfolio/arm-assembly-vending-machine)**
 
