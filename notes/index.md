@@ -4,7 +4,7 @@
 
 
 
-### Computer Engineering Basics
+### Computer Engineering
 
 - **[Operating Systems](operating-systems)**
 - **[Computer Architecture & Organization](computer-architecture-and-organization)**
