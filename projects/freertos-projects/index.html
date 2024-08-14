@@ -3,6 +3,7 @@
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 <title>Kyungjae's Website</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.png">
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
@@ -612,8 +613,8 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../notes'><span>Notes</span></a><span> | </span><a href='../'><span>Projects</span></a><span> &gt; FreeRTOS Projects</span></p><h1 id='freertos-projects'><span>FreeRTOS Projects </span></h1></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../notes'><span>Notes</span></a><span> | </span><a href='../'><span>Projects</span></a><span> &gt; FreeRTOS Projects</span></p><h1 id='freertos-projects'><span>FreeRTOS Projects </span></h1><p><span>Source code: </span><a href='https://github.com/kyungjae-lee/freertos-projects'><span>https://github.com/kyungjae-lee/freertos-projects</span></a><span>.</span></p><p><span>FreeRTOS details: </span><a href='https://kyungjae.com/notes/real-time-operating-systems/'><span>https://kyungjae.com/notes/real-time-operating-systems/</span></a><span>.</span></p><p>&nbsp;</p><h2 id='introduction'><span>Introduction</span></h2><ul><li><p><span>A collection of projects designed to practice the FreeRTOS kernel integration, porting, and application development for STM32 target board</span></p></li><li><p><span>Used STM32CubeIDE for software development, SEGGER SystemView software for realtime recording and program analysis</span></p></li></ul><p>&nbsp;</p><h2 id='freertos-project-layers'><span>FreeRTOS Project Layers</span></h2><ul><li><p><span>The FreeRTOs kernel does NOT contain any code related to the hardware. You have to integrate the Device Driver (BSP) Layer to access the peripherals of the hardware. Device driver can be developed either by yourself or a third party. (</span><a href='https://www.freertos.org/FreeRTOS-Plus/BSP_Solutions/FreeRTOS_BSP.html'><span>FreeRTOS Third Party Board Support Package (BSP)</span></a><span>)</span></p></li><li><p><span>Application (user) tasks are usually implemented by using the APIs provided by the FreeRTOS kernel.</span></p></li></ul><p>&nbsp;</p><p><img src="img/freertos-project-layers-2.png" alt="freertos-project-layers-2" width="650"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='segger-systemview-realtime-recording'><span>SEGGER SystemView Realtime Recording</span></h2><ul><li><p><span>SEGGER SystemView is used for realtime recording and program analysis. The following example shows the &quot;context switching&quot; moment captured from a FreeRTOS application.</span></p></li></ul><p>&nbsp;</p><p><img src="img/context-switching-segger-system-view.png" alt="context-switching-segger-system-view" width="900"></p></div></div>
 <footer>
-<p style="text-align: center;"><i>- Original works by Kyungjae Lee. -</i></p>
+<p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
 </html>
