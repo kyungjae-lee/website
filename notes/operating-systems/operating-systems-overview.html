@@ -1,0 +1,768 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Kyungjae's Website</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.png">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Operating Systems</span></a><span> &gt; Operating Systems Overview</span></p><h1 id='operating-systems-overview'><span>Operating Systems Overview</span></h1><p>&nbsp;</p><h2 id='purpose-of-an-operating-system'><span>Purpose of an Operating System</span></h2><p>&nbsp;</p><p><img src="./img/operating-system-in-a-computer-system.png" alt="operating-system-in-a-computer-system" width="600"></p><p>&nbsp;</p><p><span>The operating system controls the execution of application programs and acts as an interface between applications and the system hardware.</span></p><ol start='' ><li><p><span>An OS makes a computer system more </span><strong><span>convenient</span></strong><span> to use.</span></p></li><li><p><span>An OS allows the computer&#39;s resources to be used </span><strong><span>efficiently</span></strong><span>.</span></p><ul><li><p><span>When there many application running that need access to resources you want to make sure that they are used correctly and efficiently.</span></p></li><li><p><span>Efficiency is important in shared systems such as mainframes and super computers where multiple users or applications are sharing the system.</span></p></li></ul></li><li><p><span>An OS should be constructed in order to permit the OS to </span><strong><span>evolve</span></strong><span> without interfering with current services.</span></p><ul><li><p><span>We need to make sure that we are able to continually improve that operating system. It&#39;s important for the life-critical or system-critical software to not have to be stopped and rebooted in order to update/upgrade OS when you need to make changes to it.</span></p></li></ul></li></ol><h3 id='1-convenience'><span>1. Convenience</span></h3><p><span>The OS typically provides services in the following areas:</span></p><ul><li><p><strong><span>Program development</span></strong></p><p><span>Provide utilities that program developers can use to access the hardware and other portions of the computer via the OS</span></p><p><span>e.g., Library functions we can use to interface with the system</span></p></li><li><p><strong><span>Program execution</span></strong></p><p><span>Load instructions, manipulate data, prepare resources, and run the program</span></p><p><span>e.g., We just run the program and all the work necessary to run a program such as loading, memory translation will be done by the OS.</span></p></li><li><p><strong><span>Access to I/O devices</span></strong></p><p><span>Because devices are specialized and differ, the OS provides a uniform interface for applications to use</span></p><p><span>e.g., The way Unix/Linux made it easier is to treat everything as a </span><em><span>file</span></em><span>.</span></p></li><li><p><strong><span>Controlled Access to Files</span></strong></p><p><span>The OS not only manages the file system, but it can also control access through the security such as user management</span></p></li><li><p><strong><span>System access</span></strong></p><p><span>Similar to file access, the OS must control applications access to different parts of the system</span></p></li><li><p><strong><span>Error detection and response</span></strong></p><p><span>Errors can always occur in the course of computing, and an operating system must be constantly aware of the possible errors. (e.g., Errors occur in the CPU, memory, I/O devices, network, etc.)</span></p><p><span>An operating system must also be able to manage those errors so that your computing is consistent and it is still carried on even if some error are encountered.</span></p></li><li><p><strong><span>Accounting</span></strong></p><p><span>An operating system keeps track of the statistics such as which user use how much and what kind of computer resources. This information is for accounting or accumulating usage statistics which can help researchers that wish to reconfigure the system or to improve the computing services.</span></p></li><li><p><strong><span>Various APIs</span></strong></p><p><span>API provides the standard binary system call interface, designed for portability of programs across machines using the same OS. Application programming interface is a high-level language standardization of the interfaces to OS facilities.</span></p><p><span>e.g., I don&#39;t need to program directly using the Instruction Set Architecture. OS will translate my program written in a high-level language into the instructions that are supported by the hardware.</span></p></li><li><p><strong><span>Protection &amp; Security</span></strong></p><p><span>Our data should be secure and everything we do on a computer system must be protected.</span></p><p><span>In terms or processes, the protection means that access to the system resources must be controlled. It should not be possible for one process to interfere with the others or with the operating system when several different processes are executing simultaneously.</span></p><p><span>In terms of outside access, the protection means the system is not accessible to outsiders who are not allowed to access the system.</span></p></li><li><p><strong><span>User Interface</span></strong></p><p><span>Almost all operating systems support user interface and the user interface allows a user to interact with an operating system or a computer itself. (e.g., Command Line Interface (CLI), Graphical User Interface (GUI))</span></p><p>&nbsp;</p></li></ul><h3 id='2-resource-management--efficiency'><span>2. Resource Management / Efficiency</span></h3><ul><li><p><span>The OS controls all of the system resources, including:</span></p><ul><li><p><span>I/O devices</span></p></li><li><p><span>Files</span></p></li><li><p><span>Main and secondary memory</span></p></li><li><p><span>Processor execution time (CPU scheduling)</span></p></li></ul></li><li><p><span>The OS is itself software that needs to run on the CPU and use the same resources as the applications it manages.</span></p></li><li><p><span>The OS frequently relinquishes control and must depend on the processor to allow it to regain control.</span></p></li><li><p><span>The most critical portion of the OS resides in main memory (i.e., the </span><strong><span>kernel</span></strong><span>). The rest of the main memory is made available for applications to use.</span></p></li></ul><h3 id='3-ease-of-evolution'><span>3. Ease of Evolution</span></h3><ul><li><p><span>Hardware upgrades and new types of hardware</span></p></li><li><p><span>New services</span></p></li><li><p><span>Fixes and patches</span></p><p><span>For a user-grade system, the upgraded software has to be installed and the computer system has to be rebooted for that to take effect.</span></p><p><span>For a specialized OS such as a life-support system on an international space station, OS must have the availability to upgrade itself without shutting down the system. (e.g., Live patch)</span></p><p><span>General rule of thumb, less disruption to the system, the better.</span></p></li><li><p><span>It is desirable to be able to update these features without shutting down the system, especially critical computing systems.  Therefore, today&#39;s operating systems are designed to allow updates and installations to a running system, when possible.</span></p></li></ul><p>&nbsp;</p><h2 id='computer-system-structure'><span>Computer System Structure</span></h2><p>&nbsp;</p><p><img src="./img/computer-system-structure.png" alt="computer-system-structure" width="700"></p><p>&nbsp;</p><ul><li><p><span>The OS sits right on top of the hardware and directly interacts with the underlying hardware.</span></p></li><li><p><span>The OS generally supports a set of libraries and utilities that applications can use to communicate with the OS.</span></p><p><span>e.g., The library call </span><code>fopen()</code><span> which invokes the system call </span><code>open()</code><span> inside it.</span></p></li><li><p><span>Depending on the computer system structure there may or may not be other software layers other than OS that directly interact with the hardware.</span></p></li><li><p><span>Main memory and external devices are connected via bus.</span></p></li><li><p><span>Memory translation layer includes Translation Look-aside Buffer (TLB), Page Tables, etc.</span></p></li><li><p><span>Execution hardware includes ALU, Control Unit, etc.</span></p></li></ul><p>&nbsp;</p><h2 id='history-of-os-design'><span>History of OS Design</span></h2><p><span>How have operating systems evolved over the years?</span></p><h3 id='1-serial-processing-1950s'><span>1. Serial Processing (1950s)</span></h3><ul><li><p><span>No operating system - Programmers (or operators) interacted directly with the computer hardware feeding them serious of punch cards.</span></p></li><li><p><span>Computers ran from a console with display lights, toggle switches, some form of input device, and a printer.</span></p></li><li><p><span>Users have access to the computer in &quot;series&quot;.</span></p></li><li><p><span>Scheduling - Most installations used a hard copy sign-up sheet to reserve computer time.</span></p><ul><li><p><span>Time allocations could run short or long, resulting in wasted computer time.</span></p></li><li><p><span>A considerable amount of time was spent just on setting up the program to run.</span></p></li><li><p><span>Computer sat idle when it didn&#39;t have to.</span></p></li></ul></li><li><p><span>Long story short, very very inefficient!</span></p></li></ul><h3 id='2-simple-batch--job-monitor'><span>2. Simple Batch &amp; Job Monitor</span></h3><ul><li><p><span>Early computers were very expensive.</span></p><ul><li><p><span>Important to maximize processor utilization</span></p></li></ul></li><li><p><span>Monitor</span></p><ul><li><p><span>User no longer has direct access to processor</span></p></li><li><p><span>Job is submitted to computer operator who batches them together and places them on an input device, the </span><strong><span>monitor</span></strong><span> which loads the program and lets it run</span></p><p><span>Program A runs, monitor reads program B (Only one program running at a time)</span></p></li><li><p><span>Program branches back to the monitor when finished</span></p></li></ul></li><li><p><span>Job monitor software lead to the creation of memory protection, privileged instructions and interrupts which, in turn,  helped create improvements in utilization in the next type of OS.</span></p></li><li><p><span>Monitor controls the sequence of events</span></p></li><li><p><span>Resident Monitor is software always in memory</span></p></li><li><p><span>Monitor reads in job and gives control</span></p></li><li><p><span>Job returns control to monitor</span></p></li><li><p><span>Processor time alternates between execution of user programs and execution of the monitor</span></p></li><li><p><span>Sacrifices:</span></p><ul><li><p><span>Some main memory is now given over to the monitor</span></p></li><li><p><span>Some processor time is consumed by the monitor</span></p></li></ul></li><li><p><span>Despite overhead, the simple batch system improves utilization of the computer.</span></p></li><li><p><strong><span>Uniprogramming</span></strong></p><ul><li><p><span>Only one program is running from beginning to completion (While the program is performing an I/O operation, the processor just sits there idle wasting time)</span></p></li><li><p><span>I/O is slow compared to CPU-involved instructions (arithmetic)</span></p></li><li><p><span>The processor spends a certain amount of time executing, until it reaches an I/O instruction; it must then wait until that I/O instruction concludes before proceeding.</span></p></li></ul></li></ul><p>&nbsp;</p><p><img src="./img/uniprogramming.png" alt="uniprogramming" width="750"></p><p>&nbsp;</p><h3 id='3-multiprogramming'><span>3. Multiprogramming</span></h3><ul><li><p><span>Multiprogramming refers to the management of multiple processes within a uniprocessor system. Also called as concurrency; multiple threads taking turns to execute on a CPU. (Multiprocessing  </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-320-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-320-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> Multi-processor system)</span></p></li><li><p><span>Multiprogramming is the method of allowing more than one program to be interleaving their execution.</span></p></li><li><p><span>Multiprogramming increases CPU utilization by organization jobs (code and data) so that the CPU always has one to execute. Programs to be run are loaded onto the main memory in the form of processes and they are assigned CPU taking turns as necessary.</span></p><p><span>Without multiprogramming, a single user cannot, in general, keep either the CPU or the I/O devices busy at all times. For example, even when a process occupying the CPU carries out an I/O operation, the CPU is held by that process in idle state. All other processes waiting to be executed cannot utilize the CPU until the process completes its job and releases the CPU.</span></p></li><li><p><span>When the I/O task is complete, an interrupt is sent to the CPU. The monitor can then interpret the interrupt and return the first program to execution status.</span></p></li><li><p><span>Original multiprogramming systems required all of the executing programs to reside in memory. Small memory limited the number of running programs.</span></p></li><li><p><span>Multiprogramming is a common feature of modern operating systems.</span></p></li><li><p><span>Multiprogrammed systems provide an environment in which the various system resources (e.g., CPU, memory, peripheral devices) are utilized effectively, but they </span><strong><span>do not provide for user interaction with the computer system</span></strong><span>.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/multiprogramming-with-three-programs.png" alt="multiprogramming-with-three-programs" width="750"></p><p>&nbsp;</p><h3 id='4-time-sharing-systems-multitasking-systems'><span>4. Time Sharing Systems (Multitasking Systems)</span></h3><p><span>Because batch systems were designed to handle the execution of mainly non-interactive systems, they are not suitable for user-oriented systems.</span></p><ul><li><p><span>Time-sharing systems were developed to enable quick user response time at the sacrifice of compute time.</span></p><p><span>CPU executes multiple processes by switching among them. Switches between multiple processes occur so fast and frequently that the </span><strong><span>users can interact with each program</span></strong><span> while it is running. (This wasn&#39;t possible in the multiprogramming systems.)</span></p></li><li><p><span>This enables many people to share the system and perceive it as dedicated to themselves. It required the ability to load more applications into memory at the same time.</span></p></li><li><p><span>A time-shared operating system uses CPU scheduling and multiprogramming to provide each user with a small portion of a time-shared computer. (Each user has at least one separate process in main memory.)</span></p></li><li><p><span>Academic institutions used these systems to provide programming courses. Students used terminals to interact with the operating systems and write and test programs (BASIC).</span></p></li></ul><p>&nbsp;</p><h2 id='modern-os-features'><span>Modern OS Features</span></h2><p><span>Critical areas of development that support modern operating systems.</span></p><ol start='' ><li><p><span>Process</span></p></li><li><p><span>Memory management</span></p></li><li><p><span>Information protection &amp; security</span></p></li><li><p><span>Scheduling and resource management</span></p></li><li><p><span>Fault tolerance</span></p></li></ol><h3 id='1-process'><span>1. Process</span></h3><ul><li><p><span>The concept of a process is central to the design of operating systems.</span></p></li><li><p><span>A process is a </span><strong><span>program in execution</span></strong><span>.</span></p></li><li><p><span>A process contains three components:</span></p><ul><li><p><span>An executable program</span></p></li><li><p><span>The associated data needed by the program (variables, work space (e.g., stack), buffers, etc.)</span></p></li><li><p><span>The execution context (or &quot;process state&quot;) of the program - this is essential</span></p><ul><li><p><span>Part of a data structure that operating system keeps about every process</span></p></li><li><p><span>It is the internal data by which the OS is able to supervise and control the process.</span></p></li><li><p><span>Includes the contents of the various process registers</span></p></li><li><p><span>Includes information such as the priority of the process and whether the process is waiting for the completion of a particular I/O event.</span></p></li></ul></li></ul></li></ul><h3 id='2-memory-management'><span>2. Memory Management</span></h3><ul><li><p><span>The OS has 5 principal storage management responsibilities:</span></p><ul><li><p><span>Process isolation</span></p></li><li><p><span>Automatic allocation and management</span></p></li><li><p><span>Support of modular programming</span></p></li><li><p><span>Protection and access control</span></p></li><li><p><span>Long-term storage</span></p></li></ul></li></ul><h3 id='3-information-protection--security'><span>3. Information Protection &amp; Security</span></h3><ul><li><p><span>The nature of the thread that concerns an organization will vary greatly depending on the circumstances.</span></p></li><li><p><span>The problem involves controlling access to computer systems and the information stored in them.</span></p></li></ul><h3 id='4-scheduling-and-resource-management'><span>4. Scheduling and Resource Management</span></h3><ul><li><p><span>The KEY responsibility of an OS is managing resources.</span></p></li><li><p><span>Resource allocation policies must consider:</span></p><ul><li><p><span>Efficiency</span></p></li><li><p><span>Fairness - No starvation!</span></p></li><li><p><span>Responsiveness</span></p></li></ul></li></ul><h3 id='5-fault-tolerance'><span>5. Fault Tolerance</span></h3><ul><li><p><span>Another feature of modern systems</span></p></li><li><p><span>Fault tolerance can be supplied both by:</span></p><ul><li><p><span>Hardware (e.g., redundant disk arrays)</span></p></li><li><p><span>Software (e.g., verification, sanity checks)</span></p></li></ul></li><li><p><span>The more reliable a system is, the more costly.</span></p></li><li><p><span>The extent to which adoption of fault tolerant measures is determined by how critical the system or resource is.</span></p><figure class='table-figure'><table><thead><tr><th><span>Class</span></th><th><span>Availability</span></th><th><span>Annual Downtime</span></th></tr></thead><tbody><tr><td><span>Continuous</span></td><td><span>1.0</span></td><td><span>0</span></td></tr><tr><td><span>Fault Tolerant</span></td><td><span>0.99999</span></td><td><span>5 mins</span></td></tr><tr><td><span>Fault Resilient</span></td><td><span>0.9999</span></td><td><span>53 mins</span></td></tr><tr><td><span>High Availability</span></td><td><span>0.999</span></td><td><span>8.3 hrs</span></td></tr><tr><td><span>Normal Availability</span></td><td><span>0.99 - 0.995</span></td><td><span>44 - 87 hrs</span></td></tr></tbody></table></figure><p><span>Continuous system - Very expensive. If one component fails, another in the system must be able to take over its place in such a way that the system goes on as if nothing has every happened.</span></p><p><span>Fault resilient system - e.g., Weapon monitoring system, etc.</span></p><p><span>High availability system - e.g., Time sheet program, airline reservation system, etc. It can be down for a short period of time  here and there for system updates, issue resolution, etc.</span></p></li></ul><p>&nbsp;</p><h2 id='os-advancements'><span>OS Advancements</span></h2><p><span>Architectural developments leading to modern operating systems:</span></p><h3 id='operating-system-software-design'><span>Operating System Software Design</span></h3><ul><li><p><span>Microkernel design (allows for flexible enhancements to OS without impacting the core)</span></p></li><li><p><span>Multithreading</span></p></li><li><p><span>Distributed design</span></p></li><li><p><span>Object Oriented design</span></p></li></ul><h3 id='architectural-design'><span>Architectural Design</span></h3><ul><li><p><span>Hardware advances impact operating systems. The more hardware support you have for some features the less work the OS has to do.</span></p><p><span>e.g., Translation Look-aside Buffer (TLB), Page Table </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-320-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-320-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> Hardware constructs that help memory translation to be performed at the hardware level very fast</span></p></li><li><p><span>Specialized operating systems for specialized architectures </span></p><ul><li><p><span>Parallel computing - SMP, vector machines</span></p></li><li><p><span>Distributed computing - Mesh, butterfly</span></p></li><li><p><span>Cloud computing</span></p></li></ul></li></ul><h3 id='microkernel-architectures'><span>Microkernel Architectures</span></h3><ul><li><p><span>Older operating systems required the entire operating system code (or most of it) to be resident in memory (a.k.a. </span><strong><span>monolithic kernel</span></strong><span>).</span></p></li><li><p><span>As OS responsibilities grew, so did the size of the OS.</span></p></li><li><p><span>Today, OS are designed in a more object-oriented or distributed fashion.</span></p></li><li><p><span>A </span><strong><span>microkernel</span></strong><span> design only keeps a few essential functions (or modules) resident in memory (the kernel). It pulls in other functionality as needed.</span></p></li><li><p><span>Example:</span></p></li></ul><p>&nbsp;</p><p><img src="./img/general-unix-architecture.png" alt="general-unix-architecture" width="550"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='types-of-computer-systems'><span>Types of Computer Systems</span></h2><p><span>Types of computer systems </span><strong><span>based on the number of general purpose processors</span></strong><span>:</span></p><ul><li><p><strong><span>Single Processor Systems</span></strong></p><p><span>Contains only one processor which is capable of executing a general purpose instruction set including instructions from the user processes. Other special purpose processors are also present which perform device specific tasks.</span></p></li><li><p><strong><span>Multiprocessor Systems (a.k.a. Parallel Systems or Tightly Coupled Systems)</span></strong></p><p><span>Contains multiple processors in close communication and synchronization, sharing the computer bus and sometimes the clock, memory, and peripheral devices. Those processors may be carrying out the same task together or the different tasks independently.</span></p><ul><li><p><span>Advantage</span></p><ul><li><p><span>Increased throughput (performance), </span></p></li><li><p><span>Economy of scale (since shared resources)</span></p></li><li><p><span>Increased reliability (even if one fails others can keep the system running)</span></p></li></ul></li><li><p><span>Types of Multiprocessor Systems</span></p><ul><li><p><span>Symmetric multiprocessing (SMP)</span></p><p><span>All processors are </span><strong><span>equal</span></strong><span>. They can execute any type of processes as required.</span></p></li><li><p><span>Asymmetric multiprocessing (AMP, ASMP)</span></p><p><span>The processors are inherently </span><strong><span>unequal</span></strong><span>. There may be a master slave  relationship where the master processor may assign processes to other  processors.</span></p></li></ul></li></ul></li><li><p><strong><span>Clustered Systems</span></strong></p><p><span>Like multiprocessor systesms, clustered systems gather together multiple CPUs to accomplish computation work. They are composed of two or more individual (complete) systems coupled together.</span></p><ul><li><p><span>Advantage</span></p><ul><li><p><span>High availability (even if one fails other can keep the system running)</span></p></li></ul></li><li><p><span>Types of Clustered Systems</span></p><ul><li><p><span>Symmetric</span></p><p><span>One machine is in the hot-standby mode while others are running applications. If one system fails, the one in the hot-standby mode will take its place.</span></p></li><li><p><span>Asymmetric</span></p><p><span>Two or more hosts run applications and they monitor each other.</span></p></li></ul></li></ul></li></ul><p>&nbsp;</p><h2 id='some-important-terms'><span>Some Important Terms</span></h2><ul><li><p><strong><span>Bootstrap program</span></strong></p><ul><li><p><span>The initial program that runs when a computer is powered up or rebooted.</span></p></li><li><p><span>It is stored in the ROM.</span></p></li><li><p><span>It must know how to load the OS and start executing that system.</span></p></li><li><p><span>It must locate and load into memory the OS kernel.</span></p></li></ul></li><li><p><strong><span>Interrupt</span></strong></p><ul><li><p><span>The occurrence of an event is usually signaled by an interrupt from hardware or software.</span></p></li><li><p><span>Hardware may trigger an interrupt at any time by sending a </span><strong><span>signal</span></strong><span> to the CPU, usually through the system bus.</span></p></li><li><p><span>When the CPU is interrupted, it stops what it is doing and immediately jumps to a designated location. The designated location usually contains the starting address where the service routine (i.e., interrupt handler) of the interrupt is located.</span></p><p><span>The interrupt service routine is executed.</span></p><p><span>Upon completion, the CPU resumes the interrupted computation.</span></p></li></ul></li><li><p><strong><span>System call (monitor call)</span></strong></p><ul><li><p><span>Software may trigger an interrupt by executing a special operation called the system call.</span></p></li><li><p><span>A programming running in user mode may need an access to some of the resources managed by the kernel. In such cases, the user mode program </span><strong><span>signals (makes a system call to)</span></strong><span> the operating system, (context) switch to kernel mode temporarily so that it can use the resources and (context) switch back to user mode when done.</span></p></li><li><p><span>System calls provide an interface to the services made available by an operating system. System call is the programmatic way in which a computer program requests a service from the kernel of the operating system.</span></p></li><li><p><span>System calls are generally available as routines written in C and C++.</span></p></li><li><p><span>Even a simple task may involve a lot of system calls. There are thousands of system calls that are executed per second during the execution of certain program in your system.</span></p></li></ul></li><li><p><strong><span>I/O bound process vs. CPU bound process</span></strong></p><ul><li><p><strong><span>I/O bound</span></strong><span> refers to a condition in which the time it takes to complete a computation is determined principally by the period spent waiting for input/output operations to be completed. This is the opposite of a task being CPU bound. </span></p></li><li><p><strong><span>CPU-bound</span></strong><span> (or </span><strong><span>compute-bound</span></strong><span>) refers to when the time for a computer to complete a task is determined principally by the speed of the central processor.</span></p></li></ul></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Stallings, W. (2018). </span><em><span>Operating Systems: Internals and Design Principles</span></em><span> (9th ed.). Pearson Education, Inc.</span></p></div></div>
+<footer>
+<p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
+</footer> </body>
+</html>
