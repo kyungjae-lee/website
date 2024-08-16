@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Computer Networks</span></p><h1 id='computer-networks'><span>Computer Networks</span></h1><p>&nbsp;</p><ul><li><p><strong><a href='introduction-to-computer-networks'><span>Introduction to Computer Networks</span></a></strong></p></li><li><p><strong><a href='osi-reference-model'><span>OSI Reference Model</span></a></strong></p></li><li><p><strong><a href='tcpip-model'><span>TCP/IP Model</span></a></strong></p></li><li><p><strong><a href='network-performance'><span>Network Performance</span></a></strong></p></li><li><p><strong><a href='network-devices'><span>Network Devices</span></a></strong></p></li><li><p><strong><a href='data-link-layer-address-resolution-protocol'><span>Data Link Layer - Address Resolution Protocol (ARP)</span></a></strong></p></li><li><p><strong><a href='network-layer-ipv4-address'><span>Network Layer - IPv4 Address</span></a></strong></p></li><li><p><strong><a href='network-layer-ipv4-address-public-vs-private-ip-addresses'><span>Network Layer - IPv4 Address - Public vs. Private IP Addresses</span></a></strong></p></li><li><p><strong><a href='network-layer-ipv4-address-subnetting'><span>Network Layer - IPv4 Address - Subnetting</span></a></strong></p></li><li><p><strong><a href='network-layer-dynamic-host-configuration-protocol'><span>Network Layer - Dynamic Host Configuration Protocol (DHCP)</span></a></strong></p></li><li><p><strong><a href='application-layer-domain-name-system'><span>Application Layer - Domain Name System (DNS)</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Computer Networks</span></a><span> &gt; Data Link Layer - Address Resolution Protocol (ARP)</span></p><h1 id='data-link-layer---address-resolution-protocol-arp'><span>Data Link Layer - Address Resolution Protocol (ARP)</span></h1><p>&nbsp;</p><h2 id='introduction-to-arp'><span>Introduction to ARP</span></h2><ul><li><p><span>ARP is a protocol used to find out the hardware (MAC) address of a  device from an IP address. It is used when a device wants to communicate with some other device on a local network (for example on an Ethernet  network that requires physical addresses to be known before sending  packets). </span></p><p>&nbsp;</p></li></ul><h2 id='two-basic-functions-of-arp'><span>Two Basic Functions of ARP</span></h2><ul><li><p><strong><span>Mapping IPv4 addresses to MAC addresses</span></strong></p><p><span>Note that this is NOT a logical conversion! There is no logical relationship between an IP address and a MAC address. IP address is something that is manually given by the network administrator or dynamically assigned by the DHCP server whereas the MAC address is given by the Network Interface Card manufacturer at its birth.</span></p></li><li><p><strong><span>Maintaining a table of mappings</span></strong></p><p><span>All operating systems maintain ARP caches that are checked before  sending an ARP request message. Each time a host needs to send a packet  to another host on the LAN, it first checks its ARP cache for the  correct IP address and matching MAC address. The addresses will stay in  the cache for a couple of minutes. You can display ARP entries in  Windows by using the </span><code>arp -a</code><span> command:</span></p></li></ul><p>&nbsp;</p><p><img src="./img/ip-address-mac-address-mapping.png" alt="ip-address-mac-address-mapping" width="540"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='address-resolution-process'><span>Address Resolution Process    </span></h2><p><span>Let&#39;s say Host A wants to communicate with Host B.</span></p><ol start='' ><li><p><span>Host A looks up its ARP table to find the MAC address of Host B.</span></p></li><li><p><span>If not found, Host A broadcasts an </span><strong><span>ARP Request</span></strong><span> with the destination IP address set to Host B&#39;s IP, and the destination MAC address set to FF:FF:FF:FF:FF:FF (Ethernet </span><strong><span>broadcast</span></strong><span>).</span></p></li><li><p><span>Switch will forward the frame out to all interfaces except the incoming interface. (Flooding)</span></p></li><li><p><span>All hosts on the LAN will receive the broadcast but, only Host B will </span><strong><span>ARP Reply</span></strong><span> with its MAC address (Ethernet </span><strong><span>unicast</span></strong><span>).</span></p></li><li><p><span>Host A will store the Host B&#39;s IP-MAC address pair in its ARP table and communication will take place.</span></p></li></ol><p><span>When a device in a LAN boots up the first ARP it sends out will most likely to be to obtain the MAC address of the default gateway. This is because most of the cases the device will try to send out or receive things to or from the Internet.</span></p><p>&nbsp;</p><h2 id='arp-example'><span>ARP Example</span></h2><p>&nbsp;</p><p><img src="./img/arp-example.png" alt="arp-example" width="500"></p><p>&nbsp;</p><ul><li><p><strong><span>Problem:</span></strong></p><p><span>Given all devices have just powered on. Describe how two-way communication between host C and host D is established. Assume using IP address (No DNS) and host C is initiating the communication. Make sure to describe all the protocols and techniques that host, bridge and routers will use.</span></p><p><span>Hosts: A, C, D, E</span></p><p><span>Bridges: B2, B3, B4</span></p><p><span>Routers: R1</span></p><p>&nbsp;</p><p><strong><span>Solution:</span></strong></p><ol start='' ><li><p><span>C - ARP Request D (Broadcast)</span></p><p><span>C - [ DA_D | SA_C | DAIP_D | SAIP_C ]</span></p><p><span>B3 Flood B2</span></p><p><span>B2 Flood R1, E, B4</span></p><p><span>B4 Flood D</span></p><p><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.251ex" role="img" focusable="false" viewBox="0 -471 667 553" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-775-TEX-N-2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2234" xlink:href="#MJX-775-TEX-N-2234"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∴</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\therefore</script><span> B3, B2, B4 learn location of C</span></p></li><li><p><span>D - ARP Response C (Unicast)</span></p><p><span>D - [ DA_C | SA_D | DAIP_C | SAIP_D ]</span></p><p><span>B4 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-774-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-774-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> B2</span></p><p><span>B2 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-774-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-774-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> B3</span></p><p><span>B2 </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-774-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-774-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> C</span></p><p><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.251ex" role="img" focusable="false" viewBox="0 -471 667 553" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-775-TEX-N-2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2234" xlink:href="#MJX-775-TEX-N-2234"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∴</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\therefore</script><span> B4, B2, B3 learn location of D</span></p></li></ol><p><span>Now, we have the bidirectional communication.</span></p></li></ul></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
