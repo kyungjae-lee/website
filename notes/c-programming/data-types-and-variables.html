@@ -220,6 +220,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -613,7 +694,7 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; C Programming</span></p><h1 id='c-programming'><span>C Programming</span></h1><p>&nbsp;</p><ul><li><p><strong><a href='history-of-c-standards'><span>History of C Standards</span></a></strong></p></li><li><p><strong><a href='virtual-memory-layout-of-c-program'><span>Virtual Memory Layout of C Program</span></a></strong></p></li><li><p><strong><a href='variables'><span>Variables</span></a></strong></p></li><li><p><strong><a href='data-types-and-variables'><span>Data Types &amp; Variables</span></a></strong></p></li><li><p><strong><a href='pointers'><span>Pointers</span></a></strong></p></li><li><p><strong><a href='optimization'><span>Optimization</span></a></strong></p></li><li><p><strong><a href='importance-of-stdint-h'><span>Importance of </span><code>&lt;stdint.h&gt;</code></a></strong></p></li><li><p><strong><a href='representation-of-decimal-numbers'><span>Representation of Decimal Numbers</span></a></strong></p></li><li><p><strong><a href='sizeof-operator'><code>sizeof</code><span> Operator</span></a></strong></p></li><li><p><strong><a href='bitwise-operators'><span>Bitwise Operators</span></a></strong></p></li><li><p><strong><a href='structures'><span>Structures</span></a></strong></p></li><li><p><strong><a href='unions'><span>Unions</span></a></strong></p></li><li><p><strong><a href='storage-classes'><span>Storage Classes</span></a></strong></p></li><li><p><strong><a href='preprocessor-directives'><span>Preprocessor Directives</span></a></strong></p></li><li><p><strong><a href='const-type-qualifier'><code>const</code><span> Type Qualifier</span></a></strong></p></li><li><p><strong><a href='volatile-type-qualifier'><code>volatile</code><span> Type Qualifier</span></a></strong></p></li><li><p><strong><a href='using-const-and-volatile-type-qualifiers-together'><span>Using </span><code>const</code><span> &amp; </span><code>volatile</code><span> Type Qualifiers Together</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>C Programming</span></a><span> &gt; Data Types &amp; Variables</span></p><h1 id='data-types--variables'><span>Data Types &amp; Variables</span></h1><p>&nbsp;</p><h2 id='data-types'><span>Data Types</span></h2><ul><li><p><span>Data type is used for declaring the type of a variable.</span></p></li><li><p><span>In C programming language, data types determine the </span><strong><span>type</span></strong><span> and </span><strong><span>size</span></strong><span> of data associated with the variables.</span></p></li><li><p><span>Before a variable can store any value, its type must first be defined.</span></p></li><li><p><span>Representing real-world data:</span></p><ul><li><p><span>Data as numbers (e.g., integers, real numbers)</span></p></li><li><p><span>Data as characters</span></p></li><li><p><span>Data as strings (i.e., collection of characters)</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='some-important-c-data-types'><span>Some Important C Data Types</span></h2><h3 id='integer-data-types'><span>Integer Data types</span></h3><ul><li><p><span>Used to represent whole numbers (i.e., integers)</span></p><p><span>e.g., 10, 20, 30, etc.</span></p></li><li><p><span>Integer data types (signed):</span></p><ul><li><p><code>char</code></p></li><li><p><code>short int</code><span> - also used as </span><code>short</code><span> (</span><code>int</code><span> is implied)</span></p></li><li><p><code>int</code></p></li><li><p><code>long int</code><span> - also used as </span><code>long</code><span> (</span><code>int</code><span> is implied)</span></p></li><li><p><code>long long int</code><span> - also used as </span><code>long long</code><span> (</span><code>int</code><span> is implied)</span></p></li></ul><p><span>Integer data types (unsigned)</span></p><ul><li><p><code>unsigned char</code></p></li><li><p><code>unsigned short int</code></p></li><li><p><code>unsigned int</code></p></li><li><p><code>unsigned long int</code></p></li><li><p><code>unsigned long long int</code></p></li></ul></li></ul><h3 id='float-data-types'><span>Float Data Types</span></h3><ul><li><p><span>Used to represent real numbers</span></p><p><span>e.g., 10, 24.5, 60.00001, etc.</span></p></li></ul><p>&nbsp;</p><h2 id='storage-size-of-data-types'><span>Storage Size of Data Types</span></h2><ul><li><p><span>The C standard does NOT decide the storage sizes of data types. It&#39;s the </span><strong><span>compiler</span></strong><span> (or compiler designer) who decides it!</span></p><p><span>The compiler (e.g., GCC) will generate the code to allocate certain size of memory for each variable of certain data type.</span></p><p><span>Do not assume the size of data types! Make sure to check the documentation when in doubt!</span></p></li><li><p><span>What the C standard specifies are the minimum and maximum values.</span></p><p><span>e.g., The C standard specifies the storage size of a </span><code>long</code><span> type variable as 32-bit, and the maximum as 64-bit. So, the exact size of the </span><code>long</code><span> type can be decided by the compiler within this range.</span></p><p><span>Some compilers fix 32-bit storage size for </span><code>long</code><span> type variables, while others may do 64-bit. </span></p><p><span>Some compilers fix 16-bit storage size for </span><code>long</code><span> type variables, while others may do 16-bit. </span></p></li><li><p><span>The following data types will always be of FIXED-SIZE irrespective of compilers.</span></p><ul><li><p><code>short</code><span> (signed or unsigned) - 2 bytes</span></p></li><li><p><code>char</code><span> (signed or unsigned) - 1 byte</span></p></li><li><p><code>long long</code><span> (signed or unsigned) - 8 bytes</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='integer-data-type'><span>Integer Data Type</span></h2><h3 id='char-unsigned-char'><code>char</code><span>, </span><code>unsigned char</code></h3><ul><li><p><code>char</code></p><ul><li><p><span>This is an integer data type to store a single character (ASCII code) value or 1 byte of signed integer value (positive or negative).</span></p></li><li><p><span>A </span><code>char</code><span> data type variable consumes 1 byte of memory.</span></p></li><li><p><code>char</code><span> happens to be the smallest integer data type of 1 byte.</span></p></li><li><p><span>There is no other special meaning for the </span><code>char</code><span> data type, and it is just one of many integer data types.</span></p></li><li><p><span>Range: [-128, 127] </span></p><ul><li><p><span>Negative (sign bit = 1) - 2&#39;s complement representation</span></p><ul><li><p><span>Minimum value: 1|0000000 (= -128)</span></p></li><li><p><span>Maximum value: 1|1111111 (= -1)</span></p></li><li><p><span>Positive (sign bit = 0)</span></p><ul><li><p><span>Minimum value: 0|0000000 (= 0)</span></p></li><li><p><span>Maximum value: 0|1111111 (= 127)</span></p></li></ul></li></ul></li></ul></li></ul></li></ul><ul><li><p><code>unsigned char</code></p><ul><li><p><span>The </span><code>unsigned char</code><span> data type is used to store 1 byte of unsigned data.</span></p></li><li><p><span>&quot;Sign bit&quot; is not necessary.</span></p></li><li><p><span>Range: [0, 255]</span></p></li></ul></li></ul><h3 id='short-int-unsigned-short-int'><code>short int</code><span>, </span><code>unsigned short int</code></h3><ul><li><p><code>short int</code><span> (</span><code>short</code><span>)</span></p><ul><li><p><span>Stores 2 bytes of </span><strong><span>signed</span></strong><span> data. (Always, not compiler dependent!)</span></p></li><li><p><span>Range: [-32768, 32767]</span></p></li></ul></li><li><p><code>unsigned short int</code><span> (</span><code>unsigned short</code><span>)</span></p><ul><li><p><span>Stores 2 bytes of </span><strong><span>unsigned</span></strong><span> data. (Always, not compiler dependent!)</span></p></li><li><p><span>&quot;Sign bit&quot; is not necessary.</span></p></li><li><p><span>Range: [-0, 65535]</span></p></li></ul></li></ul><h3 id='int-unsigned-int'><code>int</code><span>, </span><code>unsigned int</code></h3><ul><li><p><code>int</code><span>, </span><code>unsigned int</code><span> store signed/unsigned integer data.</span></p></li><li><p><span>Consumes 2 or 4 bytes of memory depending on the compiler. (Check the compiler manual.)</span></p></li></ul><h3 id='long-int-unsigned-long-int'><code>long int</code><span>, </span><code>unsigned long int</code></h3><ul><li><p><code>long int</code><span> (or </span><code>long</code><span>), </span><code>unsigned long int</code><span> or (</span><code>unsigned long</code><span>) store signed/unsigned integer data.</span></p></li><li><p><span>Consumes 4 or 8 bytes of memory depending on the compiler. (Check the compiler manual.)</span></p></li></ul><p>&nbsp;</p><h2 id='variable-definition'><span>Variable Definition</span></h2><ul><li><p><span>Variable definition always includes </span><strong><span>data type</span></strong><span> followed by </span><strong><span>variable name</span></strong><span>.</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="c"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">unsigned</span> <span class="cm-variable-3">char</span> <span class="cm-variable">dicyXTemperature</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="height: 23px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre></li><li><p><span>Variable definition must proceed the variable usage.</span></p></li><li><p><span>Programmers are to select appropriate data types according to the needs of the project.</span></p></li></ul><p>&nbsp;</p><h2 id='representing-negative-values-2s-complements'><span>Representing Negative Values (2&#39;s Complements)</span></h2><ul><li><p><span>Represent the data -25 in 1 byte signed data representation</span></p><p><span>2&#39;s complement = 1&#39;s complement (flip all bits) + 1</span></p></li></ul><p>&nbsp;</p><p><img src="./img/2s-complement.png" alt="2s-complement" width="800"></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
