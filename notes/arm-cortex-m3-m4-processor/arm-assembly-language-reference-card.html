@@ -220,6 +220,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -613,7 +694,7 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; ARM Cortex-M3/M4 Processor</span></p><h1 id='arm-cortex-m3m4-processor'><span>ARM Cortex-M3/M4 Processor</span></h1><p>&nbsp;</p><h3 id='introduction'><span>Introduction</span></h3><ul><li><p><strong><a href='embedded-systems-basics'><span>Embedded Systems Basics</span></a></strong></p></li><li><p><strong><a href='cubeide-tips'><span>CubeIDE Tips</span></a></strong></p></li><li><p><strong><a href='arm-assembly-language-reference-card'><span>ARM Assembly Language Reference Card</span></a></strong></p></li></ul><h3 id='arm-cortex-m3m4-processor-2'><span>ARM Cortex-M3/M4 Processor</span></h3><ul><li><p><strong><a href='memory-map'><span>Memory Map</span></a></strong></p></li><li><p><strong><a href='bus-interfaces'><span>Bus Interfaces</span></a></strong></p></li><li><p><strong><a href='access-levels-and-operation-modes-of-the-processor'><span>Access Levels &amp; Operation Modes</span></a></strong></p></li><li><p><strong><a href='processor-core-register-set'><span>Processor Core Register Set</span></a></strong></p></li><li><p><strong><a href='memory-mapped-vs-non-memory-mapped-registers'><span>Memory Mapped vs Non-Memory Mapped Registers</span></a></strong></p></li><li><p><strong><a href='arm-gcc-inline-assembly'><span>ARM GCC Inline Assembly</span></a></strong></p></li><li><p><strong><a href='reset-sequence'><span>Reset Sequence</span></a></strong></p></li><li><p><strong><a href='thumb-state-and-t-bit-of-epsr'><span>Thumb State &amp; T Bit of EPSR</span></a></strong></p></li><li><p><strong><a href='bit-banding'><span>Bit Banding</span></a></strong></p></li><li><p><strong><a href='stack-memory'><span>Stack Memory</span></a></strong></p></li><li><p><strong><a href='arm-architecture-procedure-call-standard'><span>ARM Architecture Procedure Call Standard (AAPCS)</span></a></strong></p></li><li><p><strong><a href='exception-model'><span>Exception Model (System Exceptions, Interrupts)</span></a></strong></p></li><li><p><strong><a href='interrupt-priority-and-priority-configuration'><span>Interrupt Priority &amp; Priority Configuration</span></a></strong></p></li><li><p><strong><a href='exception-entry-and-exit-sequence'><span>Exception Entry/Exit Sequence</span></a></strong></p></li><li><p><strong><a href='fault-handling'><span>Fault Handling</span></a></strong></p></li><li><p><strong><a href='stack-frame-analysis-using-naked-function'><span>Stack Fame Analysis Using </span><code>__attribute__((naked))</code><span> Function</span></a></strong></p></li><li><p><strong><a href='exceptions-for-system-level-services'><span>Exceptions for System-Level Services</span></a></strong></p></li><li><p><strong><a href='scheduling-and-context-switching'><span>Scheduling &amp; Context Switching</span></a></strong></p></li><li><p><strong><a href='implementing-a-scheduler'><span>Implementing a Scheduler</span></a></strong></p></li></ul><h3 id='bare-metal-programming'><span>Bare-Metal Programming</span></h3><ul><li><p><strong><a href='bare-metal-programming-overview'><span>Bare-Metal Programming Overview</span></a></strong></p></li><li><p><strong><a href='cross-compilation-and-toolchains'><span>Cross Compilation &amp; Tool Chains</span></a></strong></p></li><li><p><strong><a href='build-process-and-makefile'><span>Build Process &amp; Makefile</span></a></strong></p></li><li><p><strong><a href='analyzing-relocatable-object-files'><span>Analyzing Relocatable Object Files (.o)</span></a></strong></p></li><li><p><strong><a href='different-sections-of-a-program'><span>Different Sections of a Program</span></a></strong></p></li><li><p><strong><a href='startup-file'><span>Startup File</span></a></strong></p></li><li><p><strong><a href='linker-script'><span>Linker Script</span></a></strong></p></li><li><p><strong><a href='elf-file-analysis'><span>ELF File Analysis</span></a></strong></p></li><li><p><strong><a href='open-on-chip-debugger'><span>Open On-Chip Debugger (OpenOCD)</span></a></strong></p></li><li><p><strong><a href='semihosting'><span>Semihosting</span></a></strong></p></li></ul><h3 id='good-to-know'><span>Good to Know</span></h3><ul><li><p><strong><a href='implementing-delay'><span>Implementing </span><code>delay()</code></a></strong></p></li><li><p><strong><a href='using-printf-with-serial-wire-viewer'><span>Using </span><code>printf()</code><span> with Serial Wire Viewer (SWV)</span></a></strong></p></li><li><p><strong><a href='general-purpose-input-output'><span>General Purpose Input/Output (GPIO)</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>ARM Cortex-M3/M4 Processor</span></a><span> &gt; ARM Assembly Language Reference Card</span></p><h1 id='arm-assembly-language-reference-card'><span>ARM Assembly Language Reference Card</span></h1><p>&nbsp;</p><p><img src="./img/arm-assembly-reference-card.png" alt="arm-assembly-reference-card" width="900"></p><p>&nbsp;</p><ul><li><p><span>Notes about the ARM assembly language reference card:</span></p><ul><li><p><code>cd</code><span> is used for </span><code>B</code><span> and other instructions</span></p></li><li><p><code>S</code><span> forces the </span><code>CCR</code><span> to be set based on the instruction being executed.</span></p></li><li><p><code>um</code><span> (Skip because we will be using </span><code>PUSH</code><span> and </span><code>POP</code><span> instructions.)</span></p></li><li><p><code>reg</code><span> refers to registers </span><code>r0</code><span> to </span><code>r15</code><span> or </span><code>SP</code><span>, </span><code>LR</code><span>, or </span><code>PC</code><span>.</span></p></li><li><p><code>arg</code><span> refers to </span><code>#imm``8</code><span> or </span><code>reg</code><span> or </span><code>reg, shift</code><span>.</span></p></li><li><p><code>mem</code><span> (Will get to this when we get to the addressing modes.)</span></p></li><li><p><code>shift</code><span> referes to </span><code>method: logical, arithmetic, rotate</code><span> and </span><code>direction: right, left</code><span>.</span></p></li></ul><p><span>Do NOT use </span><code>STM</code><span> and </span><code>LDM</code><span> since these might not work properly (?). Instead, use </span><code>push</code><span> and </span><code>pop</code><span>  respectively.</span></p></li><li><p><span>Byte addressing, half-word addressing, word addressing    </span></p><ul><li><p><code>LDRB</code><span>, </span><code>LDRH</code><span>, </span><code>LDR</code><span>, respectively</span></p></li><li><p><span>You cannot directly read half-byte.        </span></p><ul><li><p><span>To do that, first read the full byte and mask off the other half-bytes.</span></p></li></ul></li></ul></li><li><p><span>Bit banding    </span></p><ul><li><p><span>ARM supports special way to directly access a </span><strong><span>bit</span></strong><span>.</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="plain"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="plain"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">LDRB R0, [AD]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;  --</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;  bit band alias address (each bit in a byte has its own alias)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="height: 69px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre></li><li><p><span>This bit banding feature is only available for SRAM(only the first 1 MB) and Peripheral(only the first 1 MB) region of the (virtual) memory.</span></p></li><li><p><span>Bit banding provides atomic operations to bit data.        </span></p><ul><li><p><span>Those operations will not be interrupted by the system exceptions or interrupts of the processor.</span></p></li></ul></li></ul></li></ul></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; ARM Cortex-M3/M4 Processor</span></p><h1 id='arm-cortex-m3m4-processor'><span>ARM Cortex-M3/M4 Processor</span></h1><p>&nbsp;</p><h3 id='introduction'><span>Introduction</span></h3><ul><li><p><strong><a href='embedded-systems-basics'><span>Embedded Systems Basics</span></a></strong></p></li><li><p><strong><a href='cubeide-tips'><span>CubeIDE Tips</span></a></strong></p></li><li><p><strong><a href='arm-assembly-language-reference-card'><span>ARM Assembly Language Reference Card</span></a></strong></p></li></ul><h3 id='arm-cortex-m3m4-processor-2'><span>ARM Cortex-M3/M4 Processor</span></h3><ul><li><p><strong><a href='memory-map'><span>Memory Map</span></a></strong></p></li><li><p><strong><a href='bus-interfaces'><span>Bus Interfaces</span></a></strong></p></li><li><p><strong><a href='access-levels-and-operation-modes-of-the-processor'><span>Access Levels &amp; Operation Modes</span></a></strong></p></li><li><p><strong><a href='processor-core-register-set'><span>Processor Core Register Set</span></a></strong></p></li><li><p><strong><a href='memory-mapped-vs-non-memory-mapped-registers'><span>Memory Mapped vs Non-Memory Mapped Registers</span></a></strong></p></li><li><p><strong><a href='arm-gcc-inline-assembly'><span>ARM GCC Inline Assembly</span></a></strong></p></li><li><p><strong><a href='reset-sequence'><span>Reset Sequence</span></a></strong></p></li><li><p><strong><a href='thumb-state-and-t-bit-of-epsr'><span>Thumb State &amp; T Bit of EPSR</span></a></strong></p></li><li><p><strong><a href='bit-banding'><span>Bit Banding</span></a></strong></p></li><li><p><strong><a href='stack-memory'><span>Stack Memory</span></a></strong></p></li><li><p><strong><a href='arm-architecture-procedure-call-standard'><span>ARM Architecture Procedure Call Standard (AAPCS)</span></a></strong></p></li><li><p><strong><a href='exception-model'><span>Exception Model (System Exceptions, Interrupts)</span></a></strong></p></li><li><p><strong><a href='interrupt-priority-and-priority-configuration'><span>Interrupt Priority &amp; Priority Configuration</span></a></strong></p></li><li><p><strong><a href='exception-entry-and-exit-sequence'><span>Exception Entry/Exit Sequence</span></a></strong></p></li><li><p><strong><a href='fault-handling'><span>Fault Handling</span></a></strong></p></li><li><p><strong><a href='stack-frame-analysis-using-naked-function'><span>Stack Fame Analysis Using </span><code>__attribute__((naked))</code><span> Function</span></a></strong></p></li><li><p><strong><a href='exceptions-for-system-level-services'><span>Exceptions for System-Level Services</span></a></strong></p></li><li><p><strong><a href='scheduling-and-context-switching'><span>Scheduling &amp; Context Switching</span></a></strong></p></li><li><p><strong><a href='implementing-a-scheduler'><span>Implementing a Scheduler</span></a></strong></p></li></ul><h3 id='bare-metal-programming'><span>Bare-Metal Programming</span></h3><ul><li><p><strong><a href='bare-metal-programming-overview'><span>Bare-Metal Programming Overview</span></a></strong></p></li><li><p><strong><a href='cross-compilation-and-toolchains'><span>Cross Compilation &amp; Tool Chains</span></a></strong></p></li><li><p><strong><a href='build-process-and-makefile'><span>Build Process &amp; Makefile</span></a></strong></p></li><li><p><strong><a href='analyzing-relocatable-object-files'><span>Analyzing Relocatable Object Files (.o)</span></a></strong></p></li><li><p><strong><a href='different-sections-of-a-program'><span>Different Sections of a Program</span></a></strong></p></li><li><p><strong><a href='startup-file'><span>Startup File</span></a></strong></p></li><li><p><strong><a href='linker-script'><span>Linker Script</span></a></strong></p></li><li><p><strong><a href='elf-file-analysis'><span>ELF File Analysis</span></a></strong></p></li><li><p><strong><a href='open-on-chip-debugger'><span>Open On-Chip Debugger (OpenOCD)</span></a></strong></p></li><li><p><strong><a href='semihosting'><span>Semihosting</span></a></strong></p></li></ul><h3 id='good-to-know'><span>Good to Know</span></h3><ul><li><p><strong><a href='implementing-delay'><span>Implementing </span><code>delay()</code></a></strong></p></li><li><p><strong><a href='using-printf-with-serial-wire-viewer'><span>Using </span><code>printf()</code><span> with Serial Wire Viewer (SWV)</span></a></strong></p></li><li><p><strong><a href='general-purpose-input-output'><span>General Purpose Input/Output (GPIO)</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>ARM Cortex-M3/M4 Processor</span></a><span> &gt; Fault Handling</span></p><h1 id='fault-handling'><span>Fault Handling</span></h1><p>&nbsp;</p><h2 id='fault'><span>Fault</span></h2><ul><li><p><span>A fault is an exception generated by the processor to indicate an error. Faults are nothing but </span><strong><span>system exceptions</span></strong><span>.</span></p></li><li><p><span>Faults happen because of programmers handling processor by violating the design rules or may be due to interfaces with which the processor deals</span></p></li><li><p><span>Whenever a fault happens, internal processor registers will be updated to record the type of fault, the address of instruction at which the fault happened, and if an associated exception is enabled, the exception handler will be called by the processor</span></p></li><li><p><span>In the exception handler programmers may implement the code to report, resolve, or recover them from the fault.</span></p><p><span>e.g., if your code tries to divide a number by zero, then divide by 0 fault will be raised from the hardware, which will invoke UsageFault exception handler (if enabled). In the exception handler, you may make certain decisions to get rid of the problem, like closing the task, etc.</span></p></li><li><p><span>Most of the time, fault happens by programmer&#39;s code not adhering to the processor programming guidelines.</span></p></li><li><p><span>The followings are the system exceptions that are responsible for reporting faults.</span></p><ul><li><p><span>HardFault exception - enabled by default, non-configurable priority (-1)</span></p></li><li><p><span>UsageFault exception - disabled by default, configurable priority (0 by default)</span></p></li><li><p><span>MemManage fault exception - disabled by default, configurable priority (0 by default)</span></p></li><li><p><span>BusFault exception - disabled by default, configurable priority (0 by default)</span></p></li></ul></li></ul><p>&nbsp;</p><p><img src="./img/faults.png" alt="faults" width="800"></p><p>&nbsp;</p><ul><li><p><strong><span>Causes of Faults:</span></strong></p></li><li><p><span>Divide by zero (if enabled)</span></p></li><li><p><span>Execution of an undefined instruction</span></p></li><li><p><span>Attempt to execute code from memory region which is marked as eXecute Never (XN) to prevent code injection</span></p></li><li><p><span>MPU guarded memory region access violation by the code</span></p></li><li><p><span>Unaligned data access (if enabled)</span></p></li><li><p><span>Returning to thread mode keeping active interrupt alive (When an interrupt is active, it must be finished before the code can come back to the thread mode code.)</span></p></li><li><p><span>Bus error (e.g., no response from memory device (e.g., SDRAM) due to the device not being configured correctly, etc.)</span></p></li><li><p><span>Executing SVC instruction inside SVC handler or calling a function in SVC handler which eventually execute hidden SVC instruction</span></p></li><li><p><span>Debug monitor settings and related exceptions</span></p></li></ul><p>&nbsp;</p><h2 id='hardfault-exception'><span>HardFault Exception</span></h2><ul><li><p><span>A HardFault is an exception that occurs because of an error during exception processing, or because an exception cannot be managed by any other exception mechanism. It has 3</span><sup><span>rd</span></sup><span> highest fixed priority (-1) after Reset and NMI meaning it has higher priority than any exception with configurable priority.</span></p></li><li><p><span>Causes:</span></p><ul><li><p><span>Escalation of a fault with configurable priority (MemManage, BusFault, UsageFault) that cannot be handled</span></p></li><li><p><span>Bus error returned during a vector fetch from the vector table</span></p></li><li><p><span>Execution of break point instruction when both halt mode and debug mode is disabled</span></p></li><li><p><span>Executing SVC instruction inside SVC handler</span></p></li></ul></li><li><p><span>HardFault Status Register (</span><em><span>Generic User Guide</span></em><span>)</span></p></li></ul><p>&nbsp;</p><p><img src="./img/hard-fault-status-register.png" alt="hard-fault-status-register" width="800"></p><p>&nbsp;</p><h2 id='memmanage-exception'><span>MemManage Exception</span></h2><ul><li><p><span>MemManage is a configurable fault exception. (Disabled by default). </span></p></li><li><p><span>MemManage can be enabled by configuring the processor register </span><strong><span>System Handler Control and State Register (SHCSR)</span></strong><span> - bit[16]. This register is part of System Control Block (SCB).</span></p></li><li><p><span>When MemManage fault happens MemManage fault exception handler will be executed by the processor.</span></p></li><li><p><span>Priority of this fault exception is configurable.</span></p></li><li><p><span>Causes:</span></p><ul><li><p><span>As its name indicates this fault exception is triggered when memory access violation is detected during read/write operations (access permission by the processor or MPU)</span></p></li><li><p><span>Unprivileged thread mode code (such as user application or RTOS task) tries to access a memory region which is marked as &quot;privileged access only&quot; by the MPU</span></p></li><li><p><span>Writing to memory region which are marked as read-only by the MPU</span></p></li><li><p><span>This fault can also be triggered when trying to execute program code from &quot;peripheral&quot; memory regions. Peripheral memory regions are marked as eXecute Never (XN) regions by the processor design to avoid code injection attacks through peripherals.</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='busfault-exception'><span>BusFault Exception</span></h2><ul><li><p><span>BusFault is a configurable fault exception. (Disabled by default). </span></p></li><li><p><span>BusFault can be enabled by configuring the processor register </span><strong><span>System Handler Control and State Register (SHCSR)</span></strong><span> - bit[17].</span></p></li><li><p><span>When BusFault happens, the processor executes BusFault exception handler</span></p></li><li><p><span>The priority of this fault exception is configurable</span></p></li><li><p><span>Causes:</span></p><ul><li><p><span>Due to error response returned by the processor bus interfaces during access to memory devices</span></p><ul><li><p><span>During instruction fetch</span></p></li><li><p><span>During data read/write to memory devices</span></p></li></ul></li><li><p><span>If bus error happens during vector fetch, it will be escalated to a HardFault even if BusFault is enabled</span></p></li><li><p><span>Memory device sends error response when the processor bus interface tries to access invalid or restricted memory locations which could generate a BusFault</span></p></li><li><p><span>When the device is not ready to accept memory transfer</span></p></li><li><p><span>You may encounter such issues when you play with external memories such as SDRAM connected via DRAM controllers</span></p></li><li><p><span>Unprivileged access to the private peripheral bus (registers)</span></p><p><span>e.g., A Thread mode code running with Unprivileged access level trying to configure an NVIC register </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-49-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-49-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> BusFault will be triggered.</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='usagefault-exception'><span>UsageFault Exception</span></h2><ul><li><p><span>UsageFault is a configurable fault exception. (Disabled by default). </span></p></li><li><p><span>UsageFault can be enabled by configuring the processor register </span><strong><span>System Handler Control and State Register (SHCSR)</span></strong><span> - bit[18].</span></p></li><li><p><span>When UsageFault happens, the processor executes UsageFault exception handler</span></p></li><li><p><span>The priority of this fault exception is configurable</span></p></li><li><p><span>Causes:</span></p><ul><li><p><span>Execution of undefined instruction (e.g., Cortex M4 supports only Thumb ISA, so executing any instruction outside this ISA (e.g.,  ARM ISA) would result in a fault)</span></p></li><li><p><span>Executing floating-point instruction keeping floating-point unit disabled</span></p></li><li><p><span>Trying to switch to ARM state to execute ARM ISA instructions. The T bit of the processor decides ARM state or Thumb state. For Cortex M it should be maintained to 1. Making T bit 0 (may happen during function call using function pointers whose 0</span><sup><span>th</span></sup><span> bit is not maintained as 1) would result in a fault</span></p></li><li><p><span>Trying to return to thread mode when an exception/interrupt is still active</span></p></li><li><p><span>Unaligned memory access with multiple load or multiple store instructions</span></p></li><li><p><span>Attempt to divide by zero (if enabled, divide by zero results in zero by default)</span></p></li><li><p><span>For all unaligned data access from memory (only if enabled, otherwise Cortex M supports unaligned data access)</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='fault-status-and-address-information'><span>Fault Status and Address Information</span></h2><ul><li><p><span>When a fault happens, inside the fault handler, you can check a couple of fault status and address information registers to get more details about the fault and the instruction address at which the fault happened. This will be helpful during debugging.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/fault-status-resigers-and-fault-address-registers.png" alt="fault-status-resigers-and-fault-address-registers" width="800"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='error-reporting-when-fault-happens'><span>Error Reporting when Fault Happens</span></h2><ul><li><p><span>Implement the handler which takes some remedial actions</span></p></li><li><p><span>Implement a user callback to report errors</span></p></li><li><p><span>Reset the microcontroller/processor</span></p></li><li><p><span>For an OS environment, the task that triggered the fault can be terminated and restarted</span></p></li><li><p><span>Report the fault status register and fault address register values</span></p></li><li><p><span>Report additional information of stack frame through debug interface such as </span><code>printf()</code></p><p><span>See </span><a href='./stack-frame-analysis-using-naked-function'><span>Stack Frame Analysis Using </span><code>__attribute__((naked))</code><span> Function</span></a><span> for more information.</span></p></li></ul><p>&nbsp;</p><h2 id='exercise'><span>Exercise</span></h2><ul><li><p><span>Write a program to enable all configurable fault exceptions, implement the fault exception handlers and cause the fault by the following method:</span></p><ol start='' ><li><p><span>Execute an undefined instruction</span></p></li><li><p><span>Divide by zero</span></p></li><li><p><span>Try executing instruction from peripheral region</span></p></li><li><p><span>Executing SVC inside the SVC handler</span></p></li><li><p><span>Executing SVC instruction inside the interrupt handler whose priority is same or lesser than SVC handler</span></p></li></ol></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Nayak, K. (2022). </span><em><span>Embedded Systems Programming on ARM Cortex-M3/M4 Processor</span></em><span> [Video file]. Retrieved from  </span><a href='https://www.udemy.com/course/embedded-system-programming-on-arm-cortex-m3m4/' target='_blank' class='url'>https://www.udemy.com/course/embedded-system-programming-on-arm-cortex-m3m4/</a></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
