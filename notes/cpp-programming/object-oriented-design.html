@@ -610,10 +610,160 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; C++ Programming</span></p><h1 id='c++-programming'><span>C++ Programming</span></h1><p>&nbsp;</p><h3 id='c++-programming-language'><span>C++ Programming Language</span></h3><ul><li><p><strong><a href='characters-and-strings'><span>Characters &amp; Strings</span></a></strong></p></li><li><p><strong><a href='string-manipulation'><span>String Manipulation</span></a></strong></p></li><li><p><strong><a href='pointers'><span>Pointers</span></a></strong></p></li><li><p><strong><a href='references'><span>References</span></a></strong></p></li><li><p><strong><a href='lambda-expressions'><span>Lambda Expressions</span></a></strong></p></li><li><p><strong><a href='enumerations'><span>Enumerations</span></a></strong></p></li></ul><h3 id='object-oriented-programming-oop'><span>Object-Oriented Programming (OOP)</span></h3><ul><li><p><strong><a href='introduction-to-object-oriented-programming'><span>Introduction to Object-Oriented Programming</span></a></strong></p></li><li><p><strong><a href='classes-and-objects'><span>Classes &amp; Objects</span></a></strong></p></li><li><p><strong><a href='constructors-and-destructors'><span>Constructors &amp; Destructors</span></a></strong></p></li><li><p><strong><a href='shallow-copy-vs-deep-copy'><span>Shallow Copy vs. Deep Copy</span></a></strong></p></li><li><p><strong><a href='this-pointer'><code>this</code><span> Pointer</span></a></strong></p></li><li><p><strong><a href='using-const-and-static-with-classes'><span>Using </span><code>const</code><span> &amp; </span><code>static</code><span> with  Classes</span></a></strong></p></li><li><p><strong><a href='structs-vs-classes'><span>Structs vs. Classes</span></a></strong></p></li><li><p><strong><a href='friends-of-a-class'><span>Friends of a Class</span></a></strong></p></li><li><p><strong><a href='inheritance'><span>Inheritance</span></a></strong></p></li><li><p><strong><a href='polymorphism'><span>Polymorphism</span></a></strong></p></li><li><p><strong><a href='operator-overloading'><span>Operator Overloading</span></a></strong></p></li><li><p><strong><a href='smart-pointers'><span>Smart Pointers</span></a></strong></p></li><li><p><strong><a href='io-and-streams'><span>I/O &amp; Streams</span></a></strong></p></li><li><p><strong><a href='object-oriented-design'><span>Object-Oriented Design</span></a></strong></p></li></ul><h3 id='standard-template-library-stl'><span>Standard Template Library (STL)</span></h3><ul><li><p><strong><a href='introduction-to-standard-template-library'><span>Introduction to Standard Template Library</span></a></strong></p></li><li><p><strong><a href='generic-programming-and-templates'><span>Generic Programming &amp; Templates</span></a></strong></p></li><li><p><strong><a href='vectors'><span>Vectors</span></a></strong></p></li><li><p><strong><a href='stacks'><span>Stacks</span></a></strong></p></li><li><p><strong><a href='queues'><span>Queues</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>C++ Programming</span></a><span> &gt; Object-Oriented Design</span></p><h1 id='object-oriented-design'><span>Object-Oriented Design</span></h1><p>&nbsp;</p><h2 id='object-oriented-design-concept'><span>Object-Oriented Design Concept</span></h2><p><span>Object-Oriented Design provides a way to </span><strong><span>elicit</span></strong><span> and </span><strong><span>format</span></strong><span> human &quot;KNOWLEDGE&quot; in a way that a computer can process.</span></p><p><span>Accurate, complete, and a surprisingly high level of complexity in knowledge can be represented by using only </span><strong><span>2 components</span></strong><span>:</span></p><ol start='' ><li><p><span>Attributes</span></p></li><li><p><span>Behavior</span></p></li></ol><p><span>In addition, there are </span><strong><span>3 basic relationships</span></strong><span> in the design process:</span></p><ol start='' ><li><p><span>Has-A (Composition relationship)</span></p></li><li><p><span>Is-A (Inheritance relationship)</span></p></li><li><p><span>Uses (Interaction relationship)</span></p></li></ol><p><span>As you develop an OOD remember:</span></p><ul><li><p><span>OOD&#39;s are effective as a knowledge engineering and acquisition method in a situation where you have little or no understanding of the problem or environment you are working with.</span></p></li><li><p><span>OOD&#39;s help in manifesting elements which contribute to the solution to the problem. They suppress elements which either confuse the understanding or contribute nothing to attaining a solution to the problem</span></p></li><li><p><span>OOD&#39;s help in communicating understanding of a problem to others in a graphical and easy to understand format.</span></p></li><li><p><span>OOD&#39;s are structured so a computer can use the knowledge.</span></p></li></ul><p>&nbsp;</p><h2 id='object-oriented-design-process-4-basic-steps'><span>Object-Oriented Design Process (4 Basic Steps)</span></h2><p><span>At the conclusion of this procedure you will have an OOD which is a </span><strong><span>correct</span></strong><span> and </span><strong><span>complete</span></strong><span> representation of the knowledge required to solve the problem. Furthermore, when defined in Object-Oriented Programming (OOP) class definitions the OOD will be in a format which a computer can use.</span></p><h3 id='1-generate'><span>1. Generate</span></h3><p><span>This step is a brainstorming session in which </span><strong><span>concepts</span></strong><span> are developed. Anything and everything is considered or used without constraint.</span></p><p>&nbsp;</p><p><img src="./img/ood-generate.png" alt="ood-generate" width="800"></p><h3 id='2-relate'><span>2. Relate</span></h3><p><span>Now develop the relationships between concepts. The set of concepts are only limited by what you can think of. You may use relations beyond the OOD three to clarify a design.</span></p><p><strong><span>Process 1:</span></strong></p><p><img src="./img/ood-relate1.png" alt="ood-relate1" width="800"></p><p>&nbsp;</p><p><strong><span>Process 2:</span></strong></p><p><img src="./img/ood-relate2.png" alt="ood-relate2" width="800"></p><p>&nbsp;</p><p><strong><span>Process 3:</span></strong></p><p><img src="./img/ood-relate3.png" alt="ood-relate3" width="800"></p><h3 id='3-eliminate'><span>3. Eliminate</span></h3><p><span>Eliminate the following:</span></p><ol start='' ><li><p><span>Concepts which have no relationship to other concepts</span></p></li><li><p><span>Concepts or sub-graphs which contribute nothing to the solution of the problem,</span>
+<span>even though they are a valid part of the knowledge.</span></p></li><li><p><span>Sub-graph islands, which are sub-graphs which you can&#39;t fit into the main</span>
+<span>conceptual graph using a relation.</span></p></li></ol><p><strong><span>Concept:</span></strong></p><p><img src="./img/ood-eliminate1.png" alt="ood-eliminate1" width="800"></p><p>&nbsp;</p><p><strong><span>Process:</span></strong></p><p><img src="./img/ood-eliminate2.png" alt="ood-eliminate2" width="800"></p><p>&nbsp;</p><p><strong><span>Result:</span></strong></p><p><img src="./img/ood-eliminate3.png" alt="ood-eliminate3" width="800"></p><h3 id='4-iterate'><span>4. Iterate</span></h3><p><span>The resulting graph will be incomplete, or incorrect. At this point, go through steps </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="5.028ex" height="1.692ex" role="img" focusable="false" viewBox="0 -666 2222.4 748" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.186ex;"><defs><path id="MJX-19-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-19-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-19-TEX-N-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-19-TEX-N-31"></use></g><g data-mml-node="mo" transform="translate(722.2,0)"><use data-c="2212" xlink:href="#MJX-19-TEX-N-2212"></use></g><g data-mml-node="mn" transform="translate(1722.4,0)"><use data-c="33" xlink:href="#MJX-19-TEX-N-33"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>−</mo><mn>3</mn></math></mjx-assistive-mml></mjx-container><script type="math/tex">1-3</script><span> again and</span></p><ol start='' ><li><p><span>Find missing information</span></p></li><li><p><span>Elaborate on concepts which require sub-graphs to fully represent</span></p></li><li><p><span>Correct misunderstandings of the problem and errors in the knowledge representation</span></p></li></ol><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Rheinfurth, K. (2022, November 8). Object-Oriented Design [Presentation]. University of Alabama in Huntsville, Huntsville, AL, United States.</span></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
