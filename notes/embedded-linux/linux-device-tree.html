@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Embedded Linux</span></p><h1 id='embedded-linux'><span>Embedded Linux</span></h1><p>&nbsp;</p><h3 id='embedded-linux-using-yocto'><span>Embedded Linux using Yocto</span></h3><ul><li><p><strong><a href='introduction-to-embedded-linux-and-yocto-project'><span>Introduction to Embedded Linux &amp; Yocto Project</span></a></strong></p></li><li><p><strong><a href='build-machine-setup'><span>Build Machine Setup</span></a></strong></p></li><li><p><strong><a href='yocto-project-workflow'><span>Yocto Project Workflow</span></a></strong></p></li></ul><h3 id='embedded-linux-using-beagleboneblack-bbb'><span>Embedded Linux using BeagleBoneBlack (BBB)</span></h3><ul><li><p><strong><a href='prerequisites'><span>Prerequisites</span></a></strong></p></li><li><p><strong><a href='beagleboneblack-initial-setup'><span>BeagleBoneBlack(BBB) Initial Setup</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-introduction'><span>BBB Linux Boot Sequence - Introduction</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-1-rbl'><span>BBB Linux Boot Sequence - Step 1: RBL</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-2-mlo-spl'><span>BBB Linux Boot Sequence - Step 2: MLO/SPL</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-3-u-boot'><span>BBB Linux Boot Sequence - Step 3: Uboot</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-4-1-bootstrap-loader'><span>BBB Linux Boot Sequence - Step 4-1: Bootstrap Loader</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-4-2-linux-kernel'><span>BBB Linux Boot Sequence - Step 4-2: Linux Kernel</span></a></strong></p></li><li><p><strong><a href='exercise-booting-rbl-and-mlo-on-bbb'><span>Exercise - Booting RBL &amp; MLO on BBB</span></a></strong></p></li><li><p><strong><a href='exercise-booting-u-boot-image-on-bbb'><span>Exercise - Booting U-boot Image on BBB</span></a></strong></p></li><li><p><strong><a href='bbb-emmc-flashing'><span>BBB eMMC Flashing</span></a></strong></p></li><li><p><strong><a href='enabling-internet-on-bbb-ubuntu-host'><span>Enabling Internet on BBB - Ubuntu Host</span></a></strong></p></li><li><p><strong><a href='linux-device-tree'><span>Linux Device Tree (Flattened Device Tree)</span></a></strong></p></li><li><p><strong><a href='introduction-to-uenv-txt-file'><span>Introduction to uEnv.txt File</span></a></strong></p></li><li><p><strong><a href='writing-uenv-txt-file-from-scratch'><span>Writing uEnv.txt File from Scratch</span></a></strong></p></li><li><p><strong><a href='root-file-system-and-directory-structure'><span>Root File System (RFS) &amp; Directory Structure</span></a></strong></p></li><li><p><strong><a href='generating-initramfs-using-rfs'><span>Generating &quot;initramfs&quot; Using RFS</span></a></strong></p></li><li><p><strong><a href='booting-bbb-over-serial-port'><span>Booting BBB over Serial Port</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Embedded Linux</span></a><span> &gt; Linux Device Tree (Flattened Device Tree)</span></p><h1 id='linux-device-tree-flattened-device-tree'><span>Linux Device Tree (Flattened Device Tree)</span></h1><p>&nbsp;</p><h2 id='why-is-linux-device-tree-introduced'><span>Why is Linux Device Tree Introduced?</span></h2><ul><li><p><span>Let&#39;s say we have our own custom board. The on-board peripherals (a.k.a. </span><strong><span>platform devices</span></strong><span>) which connect to interfaces like SPI, I2C, SDIO, Ethernet, etc. have NO capability to announce their existence on the board by themselves to the OS like Linux. Because, these interfaces do not have that intelligence to support dynamic discoverability.</span></p><p>&nbsp;</p></li></ul><p><img src="./img/device-tree-custom-board.png" alt="device-tree-custom-board" width="600"></p><p>&nbsp;</p><ul><li><p><span>However, USB device has the inbuilt intelligence to announce its presence to the OS using the USB interface. i.e., USB supports dynamic discoverability. Therefore USB is NOT a &quot;platform device&quot;.</span></p></li><li><p><span>Then, how can we make Linux kernel aware of these platform devices?</span></p></li></ul><p>&nbsp;</p><p><img src="./img/platform-device-announcement.png" alt="platform-device-announcement" width="800"></p><p>&nbsp;</p><h3 id='board-file'><span>Board File</span></h3><ul><li><p><span>One possible solution is to write the information about the platform devices statically (i.e., hard coding) in the file called &quot;</span><strong><span>board file</span></strong><span>&quot;.</span></p><p><span>c.f., A &quot;Platform data&quot; is a data structure that describe a certain peripheral.</span></p><p><span>The board file is part of the Linux kernel. So, you have to re-compile every time you modify it to add a new device entry.</span></p><p>&nbsp;</p><p><img src="./img/board-file.png" alt="board-file" width="800"></p><p>&nbsp;</p><p><img src="./img/board-file-2.png" alt="board-file-2" width="800"></p><p>&nbsp;</p><p><span>When a driver for a particular platform peripheral is loaded, the Linux calls the &quot;probe&quot; function of the driver if there is any match in its platform device database. In the &quot;probe&quot; function of the driver, you can do device initializations.</span></p><p>&nbsp;</p><p><img src="./img/probe-function.png" alt="probe-function" width="900"></p><p>&nbsp;</p><p><span>Peripheral deriver name must match the platform device name. e.g., zigbee100.ko</span></p><p><span>If the match found, the Linux kernel will call the corresponding probe function.</span></p><p><span>Different boards will have different on-board peripherals, so each board should have its own board file. This means that each board must have a separate Linux kernel image. In this model, Linux kernel becomes board-dependent.</span></p></li></ul><h3 id='device-tree'><span>Device Tree</span></h3><ul><li><p><span>The Linux community wanted to cut off the dependencies of platform device enumeration from the Linux kernel, that is, hard coding of platform device specific details into the Linux kernel.</span></p></li><li><p><span>A new model was introduced, which is called the </span><strong><span>Flattened Device Tree</span></strong><span>.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/dtb-dts.png" alt="dtb-dts" width="700"></p><p>&nbsp;</p><ul><li><p><strong><span>Device Tree Source File (DTS)</span></strong></p><p><span>Instead of adding hard coded hardware details into the Linux kernel board file, every board vendors has to come up with a file called DTS (Device Tree Source File or Device Tree Structure).</span></p><p><span>This file actually consists of all the details related to the board written using some predefined syntaxes. It consists data structures which describe all the required peripherals of the board.</span></p><p><span>Every board has its own DTS file.</span></p></li><li><p><span>DTS files are compiled using the Device Tree Compiler (DTC).</span></p><p><span>DTS files </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-122-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-122-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> [DTC] </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-122-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-122-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> DTB (i.e., stream of bytes which encodes the details of the hardware)</span></p></li></ul><p>&nbsp;</p><p><img src="./img/device-tree-compiler.png" alt="device-tree-compiler" width="500"></p><p>&nbsp;</p><ul><li><p><span>In this model, even if you edit the DTS file to add a new entry, you don&#39;t have to compile the kernel again. All you need to do is to compile the DTS to obtain the new DTB. (With the help of incremental build system, this is a much quicker process than compiling the whole Linux kernel.)</span></p></li><li><p><span>When the Linux kernel boots, you need to tell the kernel where the DTB is located so that the kernel can load that DTB file and extract all the hardware details of the board.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/dtb-in-ram.png" alt="dtb-in-ram" width="650"></p><p>&nbsp;</p><h2 id='location-of-dts-files'><span>Location of DTS Files</span></h2><ul><li><p><code>linux/arch/arm/boot/dts/</code></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Nayak, K. (2022). </span><em><span>Embedded Linux Step by Step Using Beaglebone Black</span></em><span> [Video file]. Retrieved from </span><a href='https://www.udemy.com/course/embedded-linux-step-by-step-using-beaglebone/' target='_blank' class='url'>https://www.udemy.com/course/embedded-linux-step-by-step-using-beaglebone/</a></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

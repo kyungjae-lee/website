@@ -220,6 +220,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -610,10 +691,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Embedded Linux</span></p><h1 id='embedded-linux'><span>Embedded Linux</span></h1><p>&nbsp;</p><h3 id='embedded-linux-using-yocto'><span>Embedded Linux using Yocto</span></h3><ul><li><p><strong><a href='introduction-to-embedded-linux-and-yocto-project'><span>Introduction to Embedded Linux &amp; Yocto Project</span></a></strong></p></li><li><p><strong><a href='build-machine-setup'><span>Build Machine Setup</span></a></strong></p></li><li><p><strong><a href='yocto-project-workflow'><span>Yocto Project Workflow</span></a></strong></p></li></ul><h3 id='embedded-linux-using-beagleboneblack-bbb'><span>Embedded Linux using BeagleBoneBlack (BBB)</span></h3><ul><li><p><strong><a href='prerequisites'><span>Prerequisites</span></a></strong></p></li><li><p><strong><a href='beagleboneblack-initial-setup'><span>BeagleBoneBlack(BBB) Initial Setup</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-introduction'><span>BBB Linux Boot Sequence - Introduction</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-1-rbl'><span>BBB Linux Boot Sequence - Step 1: RBL</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-2-mlo-spl'><span>BBB Linux Boot Sequence - Step 2: MLO/SPL</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-3-u-boot'><span>BBB Linux Boot Sequence - Step 3: Uboot</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-4-1-bootstrap-loader'><span>BBB Linux Boot Sequence - Step 4-1: Bootstrap Loader</span></a></strong></p></li><li><p><strong><a href='bbb-linux-boot-sequence-step-4-2-linux-kernel'><span>BBB Linux Boot Sequence - Step 4-2: Linux Kernel</span></a></strong></p></li><li><p><strong><a href='exercise-booting-rbl-and-mlo-on-bbb'><span>Exercise - Booting RBL &amp; MLO on BBB</span></a></strong></p></li><li><p><strong><a href='exercise-booting-u-boot-image-on-bbb'><span>Exercise - Booting U-boot Image on BBB</span></a></strong></p></li><li><p><strong><a href='bbb-emmc-flashing'><span>BBB eMMC Flashing</span></a></strong></p></li><li><p><strong><a href='enabling-internet-on-bbb-ubuntu-host'><span>Enabling Internet on BBB - Ubuntu Host</span></a></strong></p></li><li><p><strong><a href='linux-device-tree'><span>Linux Device Tree (Flattened Device Tree)</span></a></strong></p></li><li><p><strong><a href='introduction-to-uenv-txt-file'><span>Introduction to uEnv.txt File</span></a></strong></p></li><li><p><strong><a href='writing-uenv-txt-file-from-scratch'><span>Writing uEnv.txt File from Scratch</span></a></strong></p></li><li><p><strong><a href='root-file-system-and-directory-structure'><span>Root File System (RFS) &amp; Directory Structure</span></a></strong></p></li><li><p><strong><a href='generating-initramfs-using-rfs'><span>Generating &quot;initramfs&quot; Using RFS</span></a></strong></p></li><li><p><strong><a href='booting-bbb-over-serial-port'><span>Booting BBB over Serial Port</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Embedded Linux</span></a><span> &gt; Exercise - Booting RBL &amp; MLO on BBB</span></p><h1 id='exercise---booting-rbl--mlo-on-bbb'><span>Exercise - Booting RBL &amp; MLO on BBB</span></h1><p>&nbsp;</p><h2 id='micro-sd-card-setup'><span>Micro-SD Card Setup</span></h2><ul><li><p><span>Set up your micro-SD card&#39;s partitions as follows:</span></p></li></ul><p>&nbsp;</p><p><img src="./img/micro-sd-card-partitions.png" alt="micro-sd-card-partitions" width="700"></p><p>&nbsp;</p><ul><li><p><span>I&#39;ve used the partitioning application called &quot;GParted&quot;.</span></p><p><span>[!] Note: Select the correct device name that corresponds to your SD card. Selecting a wrong device may destroy your system.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/gparted-select-sd-card.png" alt="gparted-select-sd-card" width="700"></p><p>&nbsp;</p><ul><li><p><span>Delete the previously allocated file system and create two partitions as follows.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/gparted-create-new-partition.png" alt="gparted-create-new-partition" width="700"></p><p><img src="./img/gparted-create-new-partition-2.png" alt="gparted-create-new-partition-2" width="700"></p><p><img src="./img/gparted-partitions-configured.png" alt="gparted-partitions-configured" width="700"></p><p>&nbsp;</p><ul><li><p><span>Set the boot flag</span></p></li></ul><p>&nbsp;</p><p><img src="./img/gparted-set-boot-flag.png" alt="gparted-set-boot-flag" width="700"></p><p>&nbsp;</p><ul><li><p><span>Copy MLO (</span><code>MLO-beablebone-2013.04</code><span>) into the boot partition just created. Change its name to </span><code>MLO</code><span>.</span></p><p><span>If drag-and-drop does not work for permission reason, run the following commands:</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="plain"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="plain"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">cp MLO-beablebone-2013.04 /media/klee/BOOT/MLO</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="height: 23px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre><blockquote><p><span>For the RBL to detect the file, name must be </span><code>MLO</code><span>.</span></p></blockquote></li></ul><p>&nbsp;</p><h2 id='boot-from-sd-card'><span>Boot from SD Card</span></h2><ul><li><p><span>Insert the micro-SD card to the BBB.</span></p></li><li><p><span>Connect the BBB to PC using both the USB-UART cable, and the mini-USB cable.</span></p></li><li><p><code>sudo minicom</code></p><ul><li><p><span>To exit from minicom : </span><code>Ctrl + A</code><span> </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-114-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-114-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> </span><code>x</code><span> </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-114-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-114-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> </span><code>Enter</code></p></li></ul></li><li><p><span>Boot from SD</span></p><ol start='' ><li><p><span>Put the board into power down mode by doing a long press on &quot;Power button (S3)&quot; (Press and hold until all LEDs turn off)</span></p></li><li><p><span>Press and hold the &quot;Boot button (S2)&quot;</span></p></li><li><p><span>Gently press and release the &quot;Power button&quot;</span></p></li><li><p><span>Release the &quot;Boot button&quot;</span></p></li></ol><p><span>Then, you&#39;ll see the following message from the second stage boot loader.</span></p><p>&nbsp;</p></li></ul><p><img src="./img/booting-mlo-from-sd-card.png" alt="gparted-set-boot-flag" width="700"></p><p>&nbsp;</p><ul><li><p><span>MLO/SPL is actually  a part of U-boot, but we&#39;ve separated it because the whole U-boot image cannot be loaded into the internal SRAM. This is the reason why there is an error message &quot;error reading image u-boot.img&quot; at the end. (i.e., SPL couldn&#39;t find U-boot image.)</span></p></li><li><p><span>If you&#39;ve reached this point, you&#39;ve just confirmed that the second stage boot loader successfully booted MLO.</span></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Nayak, K. (2022). </span><em><span>Embedded Linux Step by Step Using Beaglebone Black</span></em><span> [Video file]. Retrieved from </span><a href='https://www.udemy.com/course/embedded-linux-step-by-step-using-beaglebone/' target='_blank' class='url'>https://www.udemy.com/course/embedded-linux-step-by-step-using-beaglebone/</a></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
