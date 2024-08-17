@@ -220,6 +220,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -610,10 +691,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Embedded Systems Design using UML State Machines</span></p><h1 id='embedded-systems-design-using-uml-state-machines'><span>Embedded Systems Design using UML State Machines</span></h1><p>&nbsp;</p><ul><li><p><strong><a href='finite-state-machine'><span>Finite State Machine (FSM)</span></a></strong></p></li><li><p><strong><a href='exercise-1-chainging-intensity-of-an-led'><span>Exercise 1: Changing Intensity of an LED</span></a></strong></p></li><li><p><strong><a href='states'><span>States</span></a></strong></p></li><li><p><strong><a href='transitions'><span>Transitions</span></a></strong></p></li><li><p><strong><a href='events'><span>Events (Triggers)</span></a></strong></p></li><li><p><strong><a href='exercise-2-productivity-timer'><span>Exercise 2: Productivity Timer (ProTimer)</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Embedded Systems Design using UML State Machines</span></a><span> &gt; State</span></p><h1 id='state'><span>State</span></h1><p>&nbsp;</p><h2 id='what-is-a-state'><span>What is a State?</span></h2><ul><li><p><span>A state represents a distinct stage of an object&#39;s life cycle.</span></p><ul><li><p><span>Here, an object refers to an instance of a class or a structure.</span></p></li><li><p><span>An object, in its life cycle, can pass through a number of stages in an application.</span></p></li></ul></li><li><p><span>A state model is a situation in the execution of a State Machine behavior during which some invariant condition holds. In most cases, this condition is not explicitly defined but is implied, usually through the name associated with the State. (OMG UML 2.5.1)</span></p></li></ul><p>&nbsp;</p><h2 id='how-to-identify-states'><span>How to Identify States?</span></h2><ul><li><p><span>Map different scenarios through which an object life cycle passes into number of states.</span></p></li><li><p><span>Example: Different scenarios of Protimer Application (see </span><a href='./exercise-2-productivity-timer'><span>Exercise 2: Productivity Timer (ProTimer)</span></a><span>)</span></p><p><span>The followings are the states that an object goes through during its life cycle in the Protimer application:</span></p><ul><li><p><span>IDLE</span></p></li><li><p><span>TIME-SET</span></p></li><li><p><span>COUNTDOWN</span></p></li><li><p><span>PAUSE</span></p></li><li><p><span>STAT</span></p></li></ul></li><li><p><span>An application may contain several objects, and for each object there could be a corresponding state machine model.</span></p></li></ul><p>&nbsp;</p><h2 id='how-to-create-a-state'><span>How to Create a State?</span></h2><ol start='' ><li><p><span>Draw a round-conrnered rectangle</span></p></li><li><p><span>Create a horizontal name compartment</span></p></li><li><p><span>Give a name that is unique within the state machine diagram</span></p></li></ol><p>&nbsp;</p><h2 id='types-of-states-in-uml'><span>Types of States in UML</span></h2><h3 id='simple-state'><span>Simple State</span></h3><ul><li><p><span>A state that doesn&#39;t have any substates, transitions, regions, submachines</span></p></li><li><p><span>NO two states in the state machine diagram can be the same. (Each name must be UNIQUE within the diagram.)</span></p></li><li><p><span>The following diagram shows a simple state with name compartments.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/simple-state-with-name-compartment.png" alt="simple-state-with-name-compartment" width="800"></p><p>&nbsp;</p><h3 id='composite-state'><span>Composite State</span></h3><ul><li><p><span>A state which has substates, and contains at least one region</span></p></li><li><p><span>Helps making your state machine diagram much simpler by reducing the clutter in the diagram</span></p></li><li><p><span>Types of composite state:</span></p><ul><li><p><span>Simple composite state - Has exactly one region</span></p></li><li><p><span>Orthogonal state</span></p></li></ul></li><li><p><span>By using composite states, you can express state hierarchies.</span></p></li><li><p><span>It makes statecharts more comprehensible by reducing the number of transistions between states.</span></p></li><li><p><span>Simple states vs composite states:</span></p><ul><li><p><span>Substates form a region (e.g., S1 has one region identified as r1)</span></p></li><li><p><span>Understand the term &quot;direct substate&quot; and &quot;indirect substate&quot; in the following example.</span></p></li></ul></li></ul><p>&nbsp;</p><p><img src="./img/composite-state-1.png" alt="composite-state-1" width="800"></p><p>&nbsp;</p><p>&nbsp;</p><p><img src="./img/composite-state-simple.png" alt="composite-state-simple" width="800"></p><p>&nbsp;</p><h3 id='submachine-state'><span>Submachine State</span></h3><ul><li><p><span>A submachine state specifies the insertion of the specification of a submachine state machine.</span></p></li><li><p><span>The state machine that contains the submachine state is called the containing state machine.</span></p></li></ul><p>&nbsp;</p><h2 id='pseudo-states'><span>Pseudo States</span></h2><ul><li><p><span>Initial - Starting point for a region</span></p></li><li><p><span>Choice - Diamond-shaped symbol with a single incoming transition and two or more outgoing transitions</span></p></li><li><p><span>Join</span></p></li><li><p><span>Deep history</span></p></li><li><p><span>Shallow history</span></p></li></ul><p><span>See [OMG</span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.143ex" height="2ex" role="img" focusable="false" viewBox="0 -709 947 884" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.396ex;"><defs><path id="MJX-11-TEX-I-AE" d="M915 266Q915 140 852 38T689 -120T474 -175Q312 -175 188 -71T38 190Q32 220 32 266V287Q32 345 57 416T129 545Q192 624 282 666T464 709Q513 709 522 708Q599 698 665 666T776 590T853 493T900 387T915 287V266ZM875 285Q875 339 853 399T789 517T676 616T519 668Q510 669 465 669Q380 669 299 630T155 514T77 336Q72 312 72 285V266V256Q72 123 163 11Q290 -135 474 -135Q614 -135 727 -46Q875 81 875 266V285ZM276 457Q275 458 274 460T272 463T270 465T267 467T264 469T258 471T252 472T243 473T232 474T218 474H204V514H335Q477 514 499 510Q560 502 610 467T661 375Q661 362 658 350T648 327T635 308T618 292T601 280T583 269T568 262T554 256L547 253Q548 252 556 247T570 237T586 223T602 202T614 174Q616 169 626 123T638 72Q652 23 683 23Q715 23 720 68Q721 78 724 81T740 84T756 82T760 70Q760 47 747 25T715 -7Q700 -14 673 -14Q672 -14 662 -14T643 -12T619 -7T593 2T568 16T547 37T534 67Q531 80 531 97Q531 103 531 116T532 136Q532 218 472 236Q466 238 413 239H360V148L361 58Q366 47 375 44T418 40H432V0H424Q409 3 318 3T212 0H204V40H218Q242 40 253 42T268 47T276 58V457ZM376 473Q365 471 363 464T360 430V366V276H416Q421 276 434 276T453 276T469 277T486 279T501 282T517 287T529 294T542 305Q561 324 561 375Q561 424 545 444T482 472Q478 473 427 474Q415 474 403 474T384 474L376 473Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="AE" xlink:href="#MJX-11-TEX-I-AE"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>®</mi></math></mjx-assistive-mml></mjx-container><script type="math/tex">\circledR</script><span> UML 2.5.1] for the complete list of pseudo states.</span></p><p>&nbsp;</p><h2 id='compartments-of-a-state'><span>Compartments of a State</span></h2><p>&nbsp;</p><p><img src="./img/compartments-of-a-state.png" alt="compartments-of-a-state" width="350"></p><p>&nbsp;</p><ul><li><p><span>A simple state contains two compartments: </span></p><ul><li><p><span>Name compartment</span></p></li><li><p><span>Internal activities compartment</span></p></li></ul></li></ul><h3 id='name-compartment'><span>Name Compartment</span></h3><ul><li><p><span>Where the name of a state goes.</span></p></li></ul><h3 id='internal-activity-compartment'><span>Internal Activity Compartment</span></h3><p>&nbsp;</p><p><img src="./img/internal-activity-compartment.png" alt="internal-activity-compartment" width="800"></p><p>&nbsp;</p><ul><li><p><span>The internal activities compartment defines a list of internal behaviors associated with a state.</span></p></li><li><p><span>Each entry has the following format:</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="plain"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="plain"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">&lt;behavior-type-label&gt;[/&lt;bahavior-expression&gt;]</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="height: 23px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre></li><li><p><span>Example:</span></p><p><code>entry</code><span>, </span><code>exit</code><span>, </span><code>do</code><span> are internal activities </span><strong><span>labels</span></strong><span> or </span><strong><span>keywords</span></strong><span> defined in the UML. Do not use these keywords outside the internal activity compartment to represent events in the state machine diagram. These labels identify the circumstances under which the behaviors specified by the </span><code>&lt;behavior-expression&gt;</code><span> is executed.</span></p><ul><li><p><code>entry</code></p><p><span>Behavior identified by </span><code>&lt;behavior-expression&gt;</code><span> will be executed upon entry to the state. Use the </span><code>entry</code><span> keyword if the state has entry action. (When entering into a composite state, the entry actions are executed beginning from the outermost state to the innermost state)</span></p></li><li><p><code>exit</code></p><p><span>Behavior identified by </span><code>&lt;behavior-expression&gt;</code><span> will be executed upon exit from the state. Use the </span><code>exit</code><span> keyword if a state has exit action. (When exiting from a composite state, the exit actions are executed beginning from the innermost state to the outermost state.)</span></p></li><li><p><code>do</code></p><p><span>Behavior identified by </span><code>&lt;behavior-expression&gt;</code><span> will be executed as long as the object is in the state or until the computation specified by the expression is completed. This represents ongoing behavior. Use the </span><code>do</code><span> keyword only if a state has </span><code>do</code><span> action.</span></p></li></ul></li><li><p><span>Whether your state requires these internal activities or not depends on your project requirements and how you design your state machine. All these are optional. A state may or may not have the </span><code>entry</code><span> or </span><code>exit</code><span> actions.</span></p></li></ul><p>&nbsp;</p><h2 id='notes'><span>Notes</span></h2><ul><li><p><span>The </span><code>do</code><span> activity behavior commences only after the state&#39;s </span><code>entry</code><span> behavior has completed.</span></p></li><li><p><code>entry</code><span>, </span><code>exit</code><span>, </span><code>do</code><span>, cannot be associated with any transitions.</span></p></li><li><p><span>If all transitions into / out from a state perform the same action, consider specifying the action inside the state to make the diagram less cluttered.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/transitions-tips.png" alt="transitions-tips" width="800"></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
