@@ -220,6 +220,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -613,7 +694,7 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Unix/Linux</span></p><h1 id='unixlinux'><span>Unix/Linux</span></h1><p>&nbsp;</p><h3 id='unixlinux-operating-systems'><span>UNIX/Linux Operating Systems</span></h3><ul><li><p><strong><a href='introduction-to-unix'><span>Introduction to UNIX</span></a></strong></p></li><li><p><strong><a href='posix-and-the-single-unix-specification'><span>POSIX and the Single UNIX Specification</span></a></strong></p></li><li><p><strong><a href='the-unix-architecture'><span>The UNIX Architecture</span></a></strong></p></li><li><p><strong><a href='features-of-unix'><span>Features of UNIX</span></a></strong></p></li><li><p><strong><a href='unix-commands'><span>UNIX Commands</span></a></strong></p></li><li><p><strong><a href='unix-filesystem'><span>UNIX Filesystem</span></a></strong></p></li></ul><h3 id='useful-notes'><span>Useful Notes</span></h3><ul><li><p><strong><a href='ubuntu-setup'><span>Ubuntu Setup</span></a></strong></p></li><li><p><strong><a href='vimrc'><span>.vimrc (Vim Run Command)</span></a></strong></p></li><li><p><strong><a href='bashrc'><span>.bashrc (Bash Run Command)</span></a></strong></p></li><li><p><strong><a href='cli-cheat-sheet'><span>CLI Cheat Sheet</span></a></strong></p></li><li><p><strong><a href='gdb-cheat-sheet'><span>GDB Cheat Sheet</span></a></strong></p></li><li><p><strong><a href='git-cheat-sheet'><span>Git Cheat Sheet</span></a></strong></p></li><li><p><strong><a href='tmux-cheat-sheet'><span>Tmux Cheat Sheet</span></a></strong></p></li><li><p><strong><a href='vim-cheat-sheet'><span>Vim Cheat Sheet</span></a></strong></p></li><li><p><strong><a href='ctags-cscope-cheat-sheet'><span>Ctags/Cscope Cheat Sheet</span></a></strong></p></li><li><p><strong><a href='shell-script'><span>Shell Script</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Unix/Linux</span></a><span> &gt; The UNIX Architecture</span></p><h1 id='the-unix-architecture'><span>The UNIX Architecture</span></h1><p>&nbsp;</p><h2 id='the-unix-architecture-2'><span>The UNIX Architecture</span></h2><p>&nbsp;</p><p><img src="./img/general-unix-architecture.png" alt="pgeneral-unix-architecture" width="600"></p><p>&nbsp;</p><ul><li><p><strong><span>Kernel</span></strong></p><ul><li><p><span>The core of the operating system.</span></p><ul><li><p><span>The system&#39;s bootstrap program (a small piece of program code) loads the kernel into memory at startup.</span></p></li></ul></li><li><p><span>Comprises a set of routines mostly written in C that directly communicate with the hardware.</span></p></li><li><p><span>User programs or the applications that need to access the hardware communicate with the kernel using a set of functions called </span><em><span>system calls</span></em><span>.</span></p></li><li><p><span>Does lots of </span><em><span>resource management</span></em><span>:</span></p><ul><li><p><span>Manages the system&#39;s memory.</span></p></li><li><p><span>Schedules processes and decides their prioities.</span></p></li><li><p><span>Many more ...</span></p></li></ul></li><li><p><span>Has work to do even if no user program is running.</span></p></li><li><p><span>Often called as </span><em><span>the</span></em><span> operating system - a program&#39;s gateway to the computer&#39;s resources.</span></p></li><li><p><span>Represented by the file </span><code>/boot/vmlinuz</code><span>.</span></p></li></ul></li><li><p><strong><span>Shell</span></strong></p><ul><li><p><span>The interface between the </span><em><span>user</span></em><span> and the </span><em><span>kernel</span></em><span>. (&quot;Outer part&quot; of the operating system)</span></p></li><li><p><span>Interpreter that translates user commands into action.</span></p></li><li><p><span>Several shells could be run on only one kernel running on the system.</span></p><ul><li><p><span>One for each user who is logged in.</span></p></li></ul></li><li><p><span>Located in </span><code>/bin</code><span> or </span><code>/usr/bin</code><span>.</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="plain"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="plain"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>2</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">$ echo $SHELL &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">/bin/bash</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 46px;"></div><div class="CodeMirror-gutters" style="height: 46px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre></li><li><p><span>Commonly used shells:</span></p><ul><li><p><span>bash - Bourne again shell (advanced shell that is standard on Linux)</span></p></li><li><p><span>sh - Primitive Bourne shell</span></p></li><li><p><span>csh - (C shell - still popular today)</span></p></li><li><p><span>ksh - Korn shell</span></p></li></ul></li></ul></li><li><p><strong><span>Files</span></strong></p><ul><li><p><span>Containers for storing static information.</span></p></li><li><p><span>Everything in UNIX is considered as files even directories and devices. (Simplifying assumption in UNIX)</span></p></li><li><p><span>Related to another file by being part of a single hierarchical structure called the </span><em><span>file system</span></em><span>.</span></p></li><li><p><span>&quot;Files have </span><em><span>places</span></em><span> and processes have </span><em><span>life</span></em><span>&quot;</span></p></li></ul></li><li><p><strong><span>Process</span></strong></p><ul><li><p><span>A program in execution.</span></p></li><li><p><span>Also form a hierarchy which is best understood when one process is considered as the child of another.</span></p></li></ul></li><li><p><strong><span>System Calls</span></strong></p><ul><li><p><span>Special functions that programs invoke to access kernel services. (e.g., </span><code>open</code><span>, </span><code>close</code><span>, </span><code>write</code><span>, </span><code>fprintf</code><span>, etc.)</span></p></li><li><p><span>POSIX specifies the system calls that all UNIX systems must implement.</span></p><ul><li><p><span>Once software has been developed on one UNIX system using the calls mandated by POSIX, it can be easily ported to another UNIX machine.</span></p></li></ul></li></ul></li></ul></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
