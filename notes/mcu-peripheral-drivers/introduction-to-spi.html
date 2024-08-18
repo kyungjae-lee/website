@@ -1,0 +1,768 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Kyungjae's Website</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.png">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
+</style>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>MCU Peripheral Drivers</span></a><span> &gt; Introduction to SPI</span></p><h1 id='introduction-to-spi'><span>Introduction to SPI</span></h1><p>&nbsp;</p><h2 id='serial-peripheral-interface-spi'><span>Serial Peripheral Interface (SPI)</span></h2><p>&nbsp;</p><p><img src="img/spi.png" alt="spi" width="600"></p><p>&nbsp;</p><ul><li><p><span>Serial Peripheral Interface (SPI) is a synchronous serial communication protocol commonly used for  communication between microcontrollers, sensors, and other devices.</span></p></li><li><p><span>The SPI bus allows the communication between one master device and one or more slave devices.</span></p></li><li><p><span>Four I/O pins are dedicated to SPI communication:</span></p><ul><li><p><strong><span>MOSI (Master Out Slave In)</span></strong></p><ul><li><p><span>The </span><strong><span>data line</span></strong><span> used by the master to send data to the slave.</span></p></li><li><p><span>In general, this pin is used to transmit data in master mode and receive data in slave mode.</span></p></li></ul></li><li><p><strong><span>MISO (Master In Slave Out)</span></strong></p><ul><li><p><span>The </span><strong><span>data line</span></strong><span> used by the slave to send data to the master.</span></p></li><li><p><span>In general, this pin is used to transmit data in slave mode and receive data in master mode.</span></p></li></ul></li><li><p><strong><span>SCLK (Serial Clock)</span></strong></p><ul><li><p><span>The clock signal generated by the master to synchronize data transfer.</span></p></li><li><p><span>Slaves have no control over the serial clock.</span></p></li><li><p><span>Without this clock properly working, communication is not at all possible. So, the #1 debugging tip when SPI communication is not working is to check the clock is being produced or not.</span></p></li></ul></li><li><p><strong><span>SS (Slave Select)</span></strong></p><ul><li><p><span>The signal used by the master to select a specific slave device with which it wants to communicate. </span></p></li><li><p><span>Each slave typically has its own SS line.</span></p></li><li><p><span>When there&#39;s only one slave, SS line is not necessary.</span></p></li><li><p><span>This is NOT a data line.</span></p></li></ul></li></ul></li><li><p><span>For any two devices (i.e., master and slave) to be able to communicate using SPI protocol, both of the devices have to support SPI interfaces.</span></p></li></ul><p>&nbsp;</p><h2 id='spi-communication-sequence'><span>SPI Communication Sequence</span></h2><ol start='' ><li><p><span>The master selects the slave device by asserting the Slave Select (SS) line.</span></p><ul><li><p><span>Only after the SS line is pulled to GND, the other three lines (SCLK, MOSI, MISO) will be activated.</span></p></li><li><p><span>Without SS being pulled to GND, the slave&#39;s data communication lines (MOSI, MISO) will be in HI-Z (or high impedance) state.</span></p></li></ul></li><li><p><span>The master generates a clock signal (SCK) to establish the timing. (Synchronization)</span></p></li><li><p><span>The master sends data on the MOSI line, while the slave reads it.</span></p></li><li><p><span>Simultaneously, the slave prepares its response and sends it on the MISO line.</span></p></li><li><p><span>The clock cycles, and data is exchanged bit by bit until the desired number of bits is transmitted.</span></p></li><li><p><span>Once the data transfer is complete, the master deasserts the Slave Select (SS) line, indicating the end of communication.</span></p></li></ol><p>&nbsp;</p><h2 id='minimal-spi-bus'><span>Minimal SPI Bus</span></h2><ul><li><p><span>Depending on the requirements of your application, the number of pins to use for the SPI communication can be customized.</span></p></li><li><p><span>For example, if a master device is communicating with just one slave device, the SPI bus may consist of just two wires:</span></p><ul><li><p><span>Clock signal line (SCLK)</span></p></li><li><p><span>Synchronous data transfer line (MOSI)</span></p></li></ul><p><span>Since there&#39;s only one slave, the slave&#39;s SS line can be fixed to GND internally or externally.</span></p><p><span>Other signals can be added depending on the data exchange between SPI nodes and their slave select (SS) signal management.</span></p></li></ul><p>&nbsp;</p><p><img src="img/minimal-spi-bus.png" alt="minimal-spi-bus" width="600"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='spi-hardware-behind-the-scenes'><span>SPI Hardware: Behind the Scenes</span></h2><ul><li><p><span>The following diagram shows when the slave is sending data to the master.</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-behind-the-scenes.png" alt="spi-behind-the-scenes" width="600"></p><p>&nbsp;</p><ul><li><p><span>Notice that when the Msb of the slave is transferred to the Lsb of the master, the Msb of the master shifted out of the shift register gets shifted into the Lsb of the slave&#39;s shift register. </span></p><p><span>This is inevitable due to the design and happens in master-to-slave data transfer as well. </span></p></li></ul><p>&nbsp;</p><h2 id='customizing-spi-bus-bus-configuration'><span>Customizing SPI Bus: Bus Configuration</span></h2><ul><li><p><span>The SPI allows the MCU to communicate using different configurations, depending on the device targeted and the application requirements.</span></p></li></ul><h3 id='full-duplex-communication'><span>Full-Duplex Communication</span></h3><ul><li><p><span>By default, the SPI is configured for full-duplex communication. </span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-full-duplex-communication.png" alt="spi-full-duplex-communication" width="800"></p><p>&nbsp;</p><ul><li><p><span>In full-duplex configuration, the shift registers of the master and slave are linked using two unidirectional lines between the MOSI and the MISO pins. (Can send and receive data simultaneously)</span></p></li><li><p><span>During SPI communication, data is shifted synchronously on the SCK clock edges provided by the master.</span></p></li><li><p><span>The master transmits the data to be sent to the slave via the MOSI line and receives data from the slave via the MISO line.</span></p></li></ul><h3 id='half-duplex-communication'><span>Half-Duplex Communication</span></h3><p>&nbsp;</p><p><img src="img/spi-half-duplex-communication.png" alt="spi-half-duplex-communication" width="800"></p><blockquote><p><span>Typical resistance of the resistor placed between MOSI and MISO line is 1Kohm.</span></p></blockquote><p>&nbsp;</p><ul><li><p><span>In this configuration, one single cross connection line is used to link the shift registers of the master and slave together. </span></p></li><li><p><span>During this communication, data is synchronously shifted between the shift registers on the SCK clock edge in the transfer direction selected reciprocally by both master and slave.</span></p></li><li><p><span>Since it is half-duplex, sending and receiving cannot take place simultaneously. At any given time, the sender must be configured to transmitter mode and the receiver must be configured to receiver mode. This configuration can be done in software.</span></p><ul><li><p><span>When the master is in transmitter mode, the slave must be in receiver mode, and vice versa.</span></p></li></ul></li><li><p><span>By using this configuration, unused pins can be used for other purposes.</span></p><ul><li><p><span>MISO of master not necessary</span></p></li><li><p><span>SS of master not necessary since there&#39;s only one slave.</span></p></li></ul></li><li><p><span>Although most of the MCU support the half-duplex SPI communication, not all do. So, please double-check the MCU reference manual.</span></p></li></ul><h3 id='simplex-communication'><span>Simplex Communication</span></h3><ul><li><p><span>Applicable to single master, single slave application (Master in transmit-only mode / slave in receive-only mode)</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-simplex-communication.png" alt="spi-simplex-communicationn" width="800"></p><p>&nbsp;</p><ul><li><p><span>This configuration settings are the same as full-duplex.</span></p></li><li><p><span>The application has to ignore the information captured on the unused input pin (MISO). This unused pin can be used as a standard GPIO.</span></p></li></ul><p>&nbsp;</p><h2 id='spi-block-diagram'><span>SPI Block Diagram</span></h2><ul><li><p><span>Most of the MCUs have similar SPI block diagrams. The foundation is the &quot;Shift register communication&quot;.</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-block-diagram.png" alt="spi-block-diagram" width="800"></p><p>&nbsp;</p><ul><li><p><span>In the case of STM32F407xx MCU, the width of the shift register is 16-bit.</span></p></li><li><p><span>Rx/Tx buffers can be accessed from the address and data bus (APB bus).</span></p><ul><li><p><span>Tx mechanism:</span></p><p><span>When the Tx buffer is free, an interrupt (</span><strong><span>Tx buffer empty</span></strong><span>) will be triggered and the data application wants to send will be loaded into the Tx buffer. The data will be loaded into the shift register when it&#39;s free and then will be sent out through the corresponding communication line.</span></p></li><li><p><span>Rx mechanism:</span></p><p><span>Whenever the data is received, it will be stored in the shift register. When a complete data unit (8-bit) is received, the shift register will load that data into the Rx buffer. Once done, an interrupt (</span><strong><span>Rx buffer full</span></strong><span>) will be triggered and the application will read the data from the Rx buffer.</span></p></li></ul></li><li><p><span>By using the SPI control registers (</span><code>SPIx_CR1</code><span>, </span><code>SPIx_CR2</code><span>) you can configure various aspects of the SPI communication.</span></p></li></ul><p>&nbsp;</p><h2 id='slave-select-nss-pin-management'><span>Slave Select (NSS) Pin Management</span></h2><ul><li><p><span>When a device is in slave mode:</span></p><ul><li><p><span>In slave mode, the NSS works as a standard &quot;chip select&quot; input and lets the slave communicate with the master.</span></p></li></ul></li><li><p><span>When a device is in master mode:</span></p><ul><li><p><span>In master mode, NSS can be used either as output or input.</span></p></li><li><p><span>As an input it can prevent multi-master bus collision, and as an output it can drive a slave select signal of a single slave.</span></p></li><li><p><span>Example: Single master, single slave scenario</span></p><p><span>NSS pin is not required, so set the master&#39;s NSS pin to output, the slave&#39;s NSS pin to input. (If you set the master&#39;s NSS pin to intput then it will be used in detecting multi-master collision when you use the MCU as multi-master circuit. </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-202-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-202-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> Beyond the scope of this project.)</span></p></li></ul></li></ul><p>&nbsp;</p><h2 id='2-types-of-slave-managements'><span>2 Types of Slave Managements</span></h2><ul><li><p><span>Hardware or software slave select management can be set using the </span><code>SSM</code><span> bit in the </span><code>SPIx_CR1</code><span> register.</span></p></li></ul><h3 id='hardware-slave-management'><span>Hardware Slave Management</span></h3><ul><li><p><span>In this case, you are using the actual hardware to select the slave.</span></p></li><li><p><span>Hardware NSS management (</span><code>SSM = 0</code><span>)</span></p><ul><li><p><span>The NSS pin is managed by the hardware.</span></p></li><li><p><span>The master&#39;s NSS pin must be in output mode.</span></p></li><li><p><span>The NSS line must be pulled to low to activate slave&#39;s communication with the master.</span></p></li></ul></li><li><p><span>For master, NSS output will be enabled when </span><code>SSOE = 1</code><span>. When </span><code>SSOE = 1</code><span>,</span></p><p><span>If </span><code>SSM = 0</code><span> and </span><code>SPE = 1</code><span>, then </span><code>NSS</code><span> output = 0 (LOW)</span></p><p><span>If </span><code>SSM = 0</code><span> and </span><code>SPE = 0</code><span>, then </span><code>NSS</code><span> output = 1 (HIGH)</span></p></li></ul><h3 id='software-slave-management'><span>Software Slave Management</span></h3><ul><li><p><span>Software NSS management (</span><code>SSM = 1</code><span>)</span></p><ul><li><p><span>In this configuration, slave select information is driven internally by the </span><code>SSI</code><span> bit value in the control register </span><code>SPIx_CR1</code><span>. The external NSS pin is free for other application uses.</span></p></li><li><p><span>When </span><code>SSI = 0</code><span>, the NSS pin will be pulled to GND and the slave will be selected to communicate with the master without using the NSS line.</span></p></li><li><p><span>When </span><code>SSI = 1</code><span>, the NSS will be pulled to HIGH.</span></p></li></ul></li></ul><h3 id='example'><span>Example</span></h3><ul><li><p><span>In the following example of an application, software slave management cannot be used because the master needs to select the slave first.</span></p><p><span>Also, since the NSS pin of the master is not used, it is a good idea to pull it to +V</span><sub><span>dd</span></sub><span> to avoid any potential errors. (Another way to take care of it is to configure it as &quot;unused&quot;. In general NSS pin is nothing but a GPIO pin configured to NSS pin by using alternate function mode.)</span></p></li><li><p><span>Before initiating the data transfer, the slave must be selected by using the I/O pins of the master as shown below.</span></p></li></ul><p>&nbsp;</p><p><img src="img/master-and-three-independent-slaves.png" alt="master-and-three-independent-slaves" width="600"></p><p>&nbsp;</p><h3 id='summary'><span>Summary</span></h3><ul><li><p><span>Scenario 1: Single master, single slave</span></p><ol start='' ><li><p><span>No need to use NSS pin of master and slave if software slave management is used.</span></p></li><li><p><span>If you don&#39;t want to use software slave management, you can simply connect the NSS pin of the master to that of the slave&#39;s</span></p></li></ol></li><li><p><span>Scenario 2: Single master, multiple slaves</span></p><ol start='' ><li><p><span>Software slave management cannot be used here.</span></p></li><li><p><span>You cannot use NSS pin of the master to connect to the NSS pin of the slaves.</span></p></li><li><p><span>The master has to use some of its GPIO pins to control the different NSS pins of the slaves.</span></p></li></ol></li></ul><p>&nbsp;</p><h2 id='spi-communication-format'><span>SPI Communication Format</span></h2><ul><li><p><span>SPI communication format is dependent on the following three factors:</span></p><ul><li><p><span>SCLK PHASE (CPHA)</span></p></li><li><p><span>SCLK POLARITY (CPOL)</span></p></li><li><p><span>Data Frame Format (DFF)</span></p><ul><li><p><span>Can be either 8-bit data format or 16-bit data format</span></p></li></ul></li></ul></li><li><p><span>During SPI communication, Tx/Rx operations are performed simultaneously.</span></p></li><li><p><span>The serial clock (SCK) synchronizes the shifting and sampling of the information on the data lines.</span></p></li><li><p><span>The communication format depends on the clock phase (CPHA), clock polarity (CPOL) and data frame format (DFF). </span></p></li><li><p><span>To be able to communicate together, the master and slave devices must follow the same communication format.</span></p></li></ul><h3 id='clock-polarity-cpol'><span>CLOCK POLARITY (CPOL)</span></h3><ul><li><p><span>The CPOL bit controls the idle state value of the clock when no data is being transferred.</span></p></li><li><p><span>If CPOL is reset (CPOL = 0), the SCLK pin has a low-level idle state. (Starts LOW, idles LOW)</span></p><p><span>If CPOL is set (CPOL = 1), the SCLK pin has a high-level idle state. (Starts HIGH, idles HIGH)</span></p></li><li><p><span>What to choose purely depends on the requirements of the application. e.g., If an application requires the clock pin to be HIGH during idle state, then CPOL has to be 1.</span></p></li><li><p><span>By default, CPOL = 0</span></p></li></ul><h3 id='clock-phase-cpha'><span>CLOCK PHASE (CPHA)</span></h3><ul><li><p><span>CPHA controls at which clock edge of the SCLK (1</span><sup><span>st</span></sup><span> edge or 2</span><sup><span>nd</span></sup><span> edge) the data should be sampled by the slave.</span></p></li><li><p><span>The combination of CPOL (clock polarity) and CPHA (clock phase) bits selects the data capture clock edge.</span></p></li><li><p><span>Which combination of CPHA and CPOL is to be chosen depends on the requirements of the application.</span></p></li><li><p><span>By default, CPHA = 0</span></p></li></ul><h3 id='summary-2'><span>Summary</span></h3><ul><li><p><span>Different SPI Modes</span></p><figure class='table-figure'><table><thead><tr><th><span>Mode</span></th><th><span>CPOL</span></th><th><span>CPHA</span></th></tr></thead><tbody><tr><td><span>0</span></td><td><span>0</span></td><td><span>0</span></td></tr><tr><td><span>1</span></td><td><span>0</span></td><td><span>1</span></td></tr><tr><td><span>2</span></td><td><span>1</span></td><td><span>0</span></td></tr><tr><td><span>3</span></td><td><span>1</span></td><td><span>1</span></td></tr></tbody></table></figure></li><li><p><span>If </span><strong><span>CPHA=0</span></strong><span>, data will be sampled on the leading edge of the clock.</span></p><ul><li><p><span>Slave samples data through MOSI</span></p></li><li><p><span>Master samples data through MISO</span></p></li></ul></li></ul><p>&nbsp;</p><p><img src="img/spi-cpha-0.png" alt="spi-cpha-0" width="750"></p><p>&nbsp;</p><ul><li><p><span>If </span><strong><span>CPHA=1</span></strong><span>, data will be sampled on the trailing edge of the clock.</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-cpha-1.png" alt="spi-cpha-1" width="700"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='spi-serial-clock-sclk'><span>SPI Serial Clock (SCLK)</span></h2><ul><li><p><span>Always check what the maximum SCLK speed of the SPIx peripheral is that is supported by the MCU in use.</span></p></li><li><p><span>First, you need to know the speed of the APBx bus on which the SPI peripheral is connected.</span></p></li><li><p><span>Then, you can scale the SCLK according to your project&#39;s needs.</span></p></li><li><p><span>The following diagram represents the STM32F407xx MCU&#39;s SPI2/SPI3 clock scaling.</span></p><ul><li><p><span>If you use PLL and drive APB1 bus at its maximum rate 42 MHz, the SPI2 and SPI3 can produce SCLK of 21 MHz.</span></p></li><li><p><span>This means the SPI peripheral&#39;s maximum data transfer rate will be 21 million bits per second. This is very high-speed compared to that of I2C&#39;s.</span></p></li><li><p><span>The second prescalar value (whose min value is 2) can be configured in the control register 1 (CR1) bit fields BR[2:0].</span></p></li></ul></li></ul><p>&nbsp;</p><p><img src="img/spi2-spi3-clock.png" alt="spi2-spi3-clock" width="650"></p><p>&nbsp;</p><ul><li><p><span>If we use the internal RC oscillator of 16 MHz as the system clock, SPI1/SPI2/SPI3 peripherals can produce the serial clock of maximum 8 MHz.</span></p></li></ul><p>&nbsp;</p><h2 id='spi-txrx-algorithms'><span>SPI Tx/Rx Algorithms</span></h2><ul><li><p><span>SPI Tx flow chart</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-send-data-flow-chart.png" alt="spi-send-data-flow-chart" width="650"></p><p>&nbsp;</p><ul><li><p><span>SPI Rx flow chart</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-receive-data-flow-chart.png" alt="spi-receive-data-flow-chart" width="650"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='spi-interrupts'><span>SPI Interrupts</span></h2><ul><li><p><span>Remember! All interrupts that can be generated by SPI peripheral are disabled by default.</span></p></li><li><p><span>During SPI communication, interrupts can be generated by the following events:</span></p><ul><li><p><span>Tx buffer ready to be loaded (i.e., Tx buffer is empty; </span><code>TXE = 1</code><span>)</span></p></li><li><p><span>Data received in Rx buffer (i.e., Rx buffer is NOT empty: </span><code>RXNE = 1</code><span>)</span></p></li><li><p><span>Master mode fault </span></p><ul><li><p><span>This is a fault expected in a multi-master environment.</span></p></li><li><p><span>In a single-master environment, you should not allow this error from occurring. (Manage </span><code>NSS</code><span> pin properly!)</span></p></li></ul></li><li><p><span>Overrun error</span></p></li></ul></li><li><p><span>Interrupts can be enabled/disabled separately.</span></p></li><li><p><span>SPI interrupt requests</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-interrupt-requests.png" alt="spi-interrupt-requests" width="750"></p><p>&nbsp;</p><ul><li><p><span>SPI interrupting the processor</span></p></li></ul><p>&nbsp;</p><p><img src="img/spi-interrupting-the-processor.png" alt="spi-interrupting-the-processor" width="550"></p><p>&nbsp;</p><ul><li><p><span>SPI interrupt handling sequence</span></p></li></ul><p>&nbsp;</p><p><img src="img/example-of-spi-interrupt-handling-sequence.png" alt="example-of-spi-interrupt-handling-sequence" width="800"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='various-serial-communication-protocols'><span>Various Serial Communication Protocols</span></h2><figure class='table-figure'><table><thead><tr><th><span>Protocol</span></th><th><span>Type</span></th><th><span>Max Distance (ft.)</span></th><th><span>Max Speed</span></th><th><span>Typical Usage</span></th></tr></thead><tbody><tr><td><span>USB 3.0</span></td><td><span>Dual simplex serial</span></td><td><span>9 (typical)</span><br /><span>(Up to 49 with 5 hubs)</span></td><td><span>5G</span></td><td><span>Mass storage video</span></td></tr><tr><td><span>USB 2.0</span></td><td><span>Half duplex serial</span></td><td><span>16 (98 ft. with 5 hubs)</span></td><td><span>1.5M, 12M, 480M</span></td><td><span>Keyboard, mouse, drive, speakers, printer, camera</span></td></tr><tr><td><span>Ethernet</span></td><td><span>Serial</span></td><td><span>1600</span></td><td><span>10G</span></td><td><span>Network, communications</span></td></tr><tr><td><span>I2C</span></td><td><span>Synchronous serial</span></td><td><span>18</span></td><td><span>3.4M in high-speed mode</span></td><td><span>Microcontroller communications</span></td></tr><tr><td><span>RS-232</span></td><td><span>Asynchronous serial</span></td><td><span>50-100</span></td><td><span>20K</span></td><td><span>Modem, mouse, instrumentation</span></td></tr><tr><td><span>RS-485</span></td><td><span>Asynchronous serial</span></td><td><span>4000</span></td><td><span>10M</span></td><td><span>Data acquisition and control systems SPI</span></td></tr><tr><td><span>SPI</span></td><td><span>Synchronous serial</span></td><td><span>10</span></td><td><span>fPCLK/2</span></td><td><span>Collect data from sensors, communicate with display</span></td></tr></tbody></table></figure><blockquote><p><span>SPI - Achieving </span><strong><span>high-speed</span></strong><span> data transfer rate within </span><strong><span>short distance</span></strong><span> between the devices.</span></p><p><span>I2C - Similar usage to SPI but supports lower-speed</span></p><p><span>In general, SPI/I2C can be used for communications between on-board peripherals or devices. To cover greater distances and support better quality of service CAN, Ethernet, RS485, RS232 or combination of these can be used.</span></p></blockquote></div></div>
+<footer>
+<p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
+</footer> </body>
+</html>

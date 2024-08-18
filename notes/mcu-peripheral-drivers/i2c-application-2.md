@@ -1,0 +1,400 @@
+[Home](../../) | [Projects](../../projects) | [Notes](../) > <a href="./">MCU Peripheral Drivers</a> > I2C Application 2: Master Rx (Blocking) (`i2c_02_master_rx_blocking.c`)
+
+# I2C Application 2: Master Rx (Blocking)(`i2c_02_master_rx_blocking.c`)
+
+
+
+## Requirements
+
+* I2C master (STM32 Discovery board) and I2C slave (Arduino board) communication.
+
+* When the button on the STM32 board (master) is pressed, the master shall read and display data from the Arduino board (slave). First, the master has to get the length of the data from the slave for it to properly read all data from the slave.
+
+  1. Use I2C SCL = 100 kHz (i.e., standard mode)
+  2. Use internal pull-up resistors for SDA and SCL line
+
+  [!] Note: 3.3 kΩ or 4.7 kΩ external pull-up resistors will be necessary in case your MCU pins do not support internal pull-up resistors.
+
+### Parts Needed
+
+1. Arduino board
+2. STM32 board
+3. Logic level converter
+4. Breadboard and jumper wires
+
+### STM32 Board and Arduino Board Communication Interfaces
+
+
+
+<img src="img/i2c-application-2-communication-interfaces.png" alt="i2c-application-communication-2-interfaces" width="450">
+
+
+
+### STM32 Board and Arduino Board Voltage Levels
+
+* To work around the voltage level difference, a **logic level shifter** will be necessary.
+
+
+
+<img src="./img/spi-application-2-stm32-arduino-voltage-levels.png" alt="spi-application-2-stm32-arduino-voltage-levels" width="700">
+
+### Procedure to Read Data from Slave (Arduino)
+
+1. Master sends command code 0x51 to read the 1 byte of length information from the slave.
+2. Master sends command code 0x52 to read the complete data from the slave. (Reading byte-by-byte based on the length information fetched in Step 1)
+3. (Master displays the received data using semihosting.)
+
+### Using `printf()` to Print Messages in STM32CubeIDE Console
+
+* See <a href="./using-printf-with-serial-wire-viewer">Using `printf()` with Serial Wire Viewer (SWV)</a>
+
+
+
+## Setup
+
+### 1. Find out the GPIO pins that can be used for IC2 communication
+
+* For this application, I2C communication lines SCL, SDA will be used. Find out the GPIO pins over which I2C can communicate! Look up the "Alternate function mapping" table in the datasheet.
+  * I2C1_SCL $\to$ PB6 (AF4)
+  * I2C1_SDA $\to$ PB7 (AF4)
+  
+    > Although, in the documentation, it is said that PB9 can be used as I2C1_SDA, some interference has been detected while testing due to the hardware circuitry called "SWIM" so ended up using PB7 instead. 
+
+### 2. Connect STM32 Discovery board with Arduino Uno board I2C pins
+
+* Be careful not to directly supply 5 volts to the STM32 board pins when the board is not powered up as they may be damaged. When the **logic level shifter** is used, you don't need to worry about this issue.
+
+
+
+<img src="img/i2c-application-2-hardware-setup.png" alt="i2c-application-2-hardware-setup" width="900">
+
+
+
+* To analyze the communication with the logic analyzer, connect the channels as follows:
+
+  * CH0 - SCL
+
+  * CH1 - SDA
+
+  * GND - Common GND of the bread board
+
+### 3. Power Arduino board and download SPI slave sketch to Arduino
+
+* Sketch name: `002I2CSlaveTxString.ino`
+  * You don't need to write an application for Arduino board. It is already provided as a sketch.
+  * As soon as you download this sketch to the Arduino board, it will operate as a slave.
+
+
+
+
+## Code
+
+### `i2c_02_master_rx_blocking.c`
+
+Path: `Project/Src/`
+
+```c
+/*******************************************************************************
+ * File		: i2c_02_master_rx_blocking.c
+ * Brief	: Program to test I2C master's Rx (blocking) functionality
+ * Author	: Kyungjae Lee
+ * Date		: Jun 13, 2023
+ ******************************************************************************/
+
+/**
+ * Pin selection for I2C communication
+ *
+ * I2C1_SCL  - PB6 (AF4)
+ * I2C1_SDA  - PB7 (AF4)
+ */
+
+#include <string.h> 		/* strlen() */
+#include <stdio.h> 			/* printf() */
+#include "stm32f407xx.h"
+
+#define MASTER_ADDR			0x61
+#define SLAVE_ADDR			0x68		/* Check Arduino IDE serial monitor */
+#define MY_ADDR				MASTER_ADDR /* STM32 Discovery board is master */
+
+/* Global variables */
+I2C_Handle_TypeDef I2C1Handle;
+
+/**
+ * delay()
+ * Brief	: Spinlock delays the program execution
+ * Param	: None
+ * Retval	: None
+ * Note		: N/A
+ */
+void delay(void)
+{
+	/* Appoximately ~200ms delay when the system clock freq is 16 MHz */
+	for (uint32_t i = 0; i < 500000 / 2; i++);
+} /* End of delay */
+
+/**
+ * I2C1_PinsInit()
+ * Brief	: Initializes and configures GPIO pins to be used as I2C1 pins
+ * Param	: None
+ * Retval	: None
+ * Note		: N/A
+ */
+void I2C1_PinsInit(void)
+{
+	GPIO_Handle_TypeDef I2CPins;
+
+	I2CPins.pGPIOx = GPIOB;
+	I2CPins.GPIO_PinConfig.GPIO_PinMode = GPIO_PIN_MODE_ALTFCN;
+	I2CPins.GPIO_PinConfig.GPIO_PinOutType = GPIO_PIN_OUT_TYPE_OD;
+	I2CPins.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+	I2CPins.GPIO_PinConfig.GPIO_PinAltFcnMode = 4;
+	I2CPins.GPIO_PinConfig.GPIO_PinSpeed = GPIO_PIN_OUT_SPEED_HIGH;
+
+	/* SCL */
+	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_6;
+	GPIO_Init(&I2CPins);
+
+	/* SDA */
+	I2CPins.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_7;
+	GPIO_Init(&I2CPins);
+} /* End of I2C1_PinsInit */
+
+/**
+ * I2C1_Init()
+ * Brief	: Creates an SPI2Handle initializes SPI2 peripheral parameters
+ * Param	: None
+ * Retval	: None
+ * Note		: N/A
+ */
+void I2C1_Init(void)
+{
+
+	I2C1Handle.pI2Cx = I2C1;
+	I2C1Handle.I2C_Config.I2C_ACKEnable = I2C_ACK_ENABLE;
+	I2C1Handle.I2C_Config.I2C_DeviceAddress = MY_ADDR;
+		/* Since STM32 board is master, I2C_DeviceAddress field does not have
+		 * to be configured. However, you can assign some dummy value to it if
+		 * you wanted to. When selecting the dummy address value, make sure to
+		 * avoid using the reserved addresses defined in the I2C specification.
+		 */
+	I2C1Handle.I2C_Config.I2C_FMDutyCycle = I2C_FM_DUTY_2;
+	I2C1Handle.I2C_Config.I2C_SCLSpeed = I2C_SCL_SPEED_SM;
+
+	I2C_Init(&I2C1Handle);
+} /* End of I2C1_Init */
+
+/**
+ * GPIO_ButtonInit()
+ * Brief	: Initializes a GPIO pin for button
+ * Param	: None
+ * Retval	: None
+ * Note		: N/A
+ */
+void GPIO_ButtonInit(void)
+{
+	GPIO_Handle_TypeDef GPIOBtn;
+
+	/* Zero-out all the fields in the structures (Very important! GPIOLed and GPIOBtn
+	 * are local variables whose members may be filled with garbage values before
+	 * initialization. These garbage values may set (corrupt) the bit fields that
+	 * you did not touch assuming that they will be 0 by default. Do NOT make this
+	 * mistake!
+	 */
+	memset(&GPIOBtn, 0, sizeof(GPIOBtn));
+
+	/* GPIOBtn configuration */
+	GPIOBtn.pGPIOx = GPIOA;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_PIN_MODE_IN;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_PIN_OUT_SPEED_HIGH; /* Doesn't matter */
+	//GPIOBtn.GPIO_PinConfig.GPIO_PinOutType = GPIO_PIN_OUT_TYPE_PP;	/* N/A */
+	GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_NO_PUPD;
+		/* External pull-down resistor is already present (see the schematic) */
+	GPIO_Init(&GPIOBtn);
+} /* End of GPIO_ButtonInit */
+
+
+int main(int argc, char *argv[])
+{
+	printf("Application Running\n");
+
+	uint8_t cmdCode;
+	uint8_t len;
+
+	/* Create an Rx buffer
+	 * (The Arduino sketch is written using the Arduino Wire library. The wire
+	 * library has limitation on how many bytes can be transferred or received
+	 * in single I2C transaction and the limit is 32 bytes. So, don't
+	 * send/receive more than 32 bytes in a single I2C transaction. You may want
+	 * to split it into multiple I2C transactions in such cases.)
+	 */
+	uint8_t rxBuff[32];
+
+	/* Initialize GPIO pin for button */
+	GPIO_ButtonInit();
+
+	/* Initialize I2C pins */
+	I2C1_PinsInit();
+
+	/* Configure I2C peripheral */
+	I2C1_Init();
+
+	/* Enable I2C peripheral (PE bit gets set here) */
+	I2C_PeriControl(I2C1, ENABLE);
+
+	/* Enable ACK
+	 * ACK bit is set and cleared by SW, and cleared by HW when PE=0.
+	 * Since PE bit has just been set in the 'I2C_PeriControl()' function,
+	 * now you can set the ACK bit. */
+	I2C_ManageACK(I2C1, ENABLE);
+
+	/* Wait for button press */
+	while (1)
+	{
+		/* Wait until button is pressed */
+		while (!GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_0));
+
+		/* Introduce debouncing time for button press */
+		delay();
+
+		/* Send the command to fetch 1 byte length info */
+		cmdCode = 0x51;	/* Command code for asking 1 byte length info */
+		I2C_MasterTxBlocking(&I2C1Handle, &cmdCode, 1, SLAVE_ADDR, I2C_REPEATED_START_EN);
+
+		/* Fetch and store the length info received from the slave in @len */
+		I2C_MasterRxBlocking(&I2C1Handle, &len, 1, SLAVE_ADDR, I2C_REPEATED_START_EN);
+
+		/* Send the command to receive the complete data from slave */
+		cmdCode = 0x52;	/* Command code for reading complete data from slave */
+		I2C_MasterTxBlocking(&I2C1Handle, &cmdCode, 1, SLAVE_ADDR, I2C_REPEATED_START_EN);
+
+		/* Receive the complete data from slave */
+		I2C_MasterRxBlocking(&I2C1Handle, rxBuff, len, SLAVE_ADDR, I2C_REPEATED_START_DI);
+			/* Since this is the last transaction, disable the repeated start.
+			 * After this transaction, you should be able to see the whole
+			 * data received in the Rx buffer.
+			 */
+
+		/* Print the data received to the console
+		 *
+		 * Note: To use printf() function to print the data to console,
+		 * 		 a couple of settings have to be done.
+		 * 		 See, https://jackklee.com/arm-cortex-m3-m4-processor-architecture/using-printf-on-arm-cortex-m3-m4-m7-based-mcus
+		 *
+		 * 		 You can also use semihosting feature instead.
+		 */
+		rxBuff[len + 1] = '\0';
+			/* Due to the I2C_MasterRxBlocking() mechanism, rxBuff does not contain
+			 * the terminating null ('\n') character. Add it here!
+			 */
+		printf("Data received: %s\n", rxBuff);
+	}
+} /* End of main */
+```
+
+
+
+## Arduino Sketch (`002I2CSlaveTxString.ino`)
+
+```c
+// Wire Slave Transmitter and receiver
+//Uno, Ethernet A4 (SDA), A5 (SCL)
+#include <Wire.h>
+
+// Include the required Wire library for I2C<br>#include <Wire.h>
+int LED = 13;
+uint8_t active_command = 0xff,led_status=0;
+char name_msg[32] = "Msg from slave.\n";
+
+uint16_t device_id = 0xFF45;
+
+#define SLAVE_ADDR 0x68
+
+uint8_t get_len_of_data(void)
+{
+  return (uint8_t)strlen(name_msg);
+}
+void setup() {
+  // Define the LED pin as Output
+  pinMode (LED, OUTPUT);
+  
+  // Start the I2C Bus as Slave on address 9
+  Wire.begin(SLAVE_ADDR); 
+  
+  // Attach a function to trigger when something is received.
+  Wire.onReceive(receiveEvent);
+  Wire.onRequest(requestEvent);
+
+
+}
+
+
+//write
+void receiveEvent(int bytes) {
+  active_command = Wire.read();    // read one character from the I2C 
+}
+
+//read
+void requestEvent() {
+
+  if(active_command == 0X51)
+  {
+    uint8_t len = get_len_of_data();
+    Wire.write(&len,1);
+    active_command = 0xff;
+  }
+  
+
+  if(active_command == 0x52)
+  {
+   // Wire.write(strlen(name));
+    Wire.write(name_msg,get_len_of_data());
+   // Wire.write((uint8_t*)&name_msg[32],18);
+    active_command = 0xff;
+  }
+  //Wire.write("hello "); // respond with message of 6 bytes
+  // as expected by master
+}
+void loop() {
+  
+
+}
+```
+
+
+
+## Testing
+
+The following snapshots are taken using the Logic Analyzer.
+
+
+
+### Entire Communication
+
+
+
+<img src="img/i2c-application-2-testing-entire-communication.png" alt="i2c-application-2-testing-entire-communication" width="900">
+
+
+
+### Communication in Detail
+
+
+
+<img src="img/i2c-application-2-testing-communication-part-1.png" alt="i2c-application-2-testing-communication-part-1" width="900">
+
+
+
+<img src="img/i2c-application-2-testing-communication-part-2.png" alt="i2c-application-2-testing-communication-part-2" width="900">
+
+
+
+<img src="img/i2c-application-2-testing-communication-part-3.png" alt="i2c-application-2-testing-communication-part-3" width="900">
+
+
+
+### Cross-Checking using the STM32CubeIDE Console
+
+
+
+<img src="img/i2c-application-2-testing-stm32cubeide.png" alt="i2c-application-2-testing-stm32cubeide" width="950">

@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; MCU Peripheral Drivers</span></p><h1 id='mcu-peripheral-drivers'><span>MCU Peripheral Drivers</span></h1><p>&nbsp;</p><h3 id='introduction-to-microcontroller'><span>Introduction to Microcontroller</span></h3><ul><li><p><strong><a href='memory-map'><span>Memory Map</span></a></strong></p></li><li><p><strong><a href='mcu-bus-interfaces'><span>MCU Bus Interfaces</span></a></strong></p></li><li><p><strong><a href='mcu-block-diagram'><span>MCU Block Diagram</span></a></strong></p></li><li><p><strong><a href='clocks'><span>Clocks</span></a></strong></p></li><li><p><strong><a href='vector-table'><span>Vector Table</span></a></strong></p></li><li><p><strong><a href='interrupts'><span>Interrupts</span></a></strong></p></li><li><p><strong><a href='using-printf-with-serial-wire-viewer'><span>Using </span><code>printf()</code><span> with Serial Wire Viewer (SWV)</span></a></strong></p></li></ul><h3 id='mcu-peripheral-driver-development'><span>MCU Peripheral Driver Development</span></h3><ul><li><p><strong><a href='architecture-and-development-plan'><span>Architecture &amp; Development Plan</span></a></strong></p></li><li><p><strong><a href='device-header-file'><span>Device Header File (</span><code>stm32f407xx.h</code><span>)</span></a></strong></p></li></ul><h5 id='general-purpose-inputoutput-gpio-driver'><span>General Purpose Input/Output (GPIO) Driver</span></h5><ul><li><p><strong><a href='introduction-to-gpio'><span>Introduction to GPIO</span></a></strong></p></li><li><p><strong><a href='gpio-driver'><span>GPIO Driver (</span><code>stm32f407xx_gpio_driver.h/.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='gpio-application-1'><span>GPIO Application 1: Toggling On-board LED (</span><code>gpio_01_led_toggle_pushpull.c</code><span>, </span><code>gpio_01_led_toggle_opendrain.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='gpio-application-2'><span>GPIO Application 2: Toggling On-board LED with On-board Button (</span><code>gpio_02_led_toggle_with_button.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='gpio-application-3'><span>GPIO Application 3: Toggling External LED with External Button (</span><code>gpio_03_ext_led_toggle_with_ext_button.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='gpio-application-4'><span>GPIO Application 4: Toggling LED with External Button Interrupt (</span><code>gpio_04_led_toggle_with_ext_button_interrupt.c</code><span>)</span></a></strong></p></li></ul><h5 id='serial-peripheral-interface-spi-driver'><span>Serial Peripheral Interface (SPI) Driver</span></h5><ul><li><p><strong><a href='introduction-to-spi'><span>Introduction to SPI</span></a></strong></p></li><li><p><strong><a href='common-problems-in-spi-and-debugging-tips'><span>Common Problems in SPI &amp; Debugging Tips</span></a></strong></p></li><li><p><strong><a href='spi-driver'><span>SPI Driver (</span><code>stm32f407xx_spi_driver.h/.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='spi-application-1'><span>SPI Application 1: Master Only Tx (Blocking) (</span><code>spi_01_master_only_tx_blocking.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='spi-application-2'><span>SPI Application 2: Master Tx (Blocking) (</span><code>spi_02_master_tx_blocking.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='spi-application-3'><span>SPI Application 3: Master Tx Rx (Blocking) (</span><code>spi_03_master_tx_rx_blocking.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='spi-application-4'><span>SPI Application 4: Master Rx (Interrupt) (</span><code>spi_04_master_rx_interrupt</code><span>)</span></a></strong></p></li></ul><h5 id='inter-integrated-circuit-i2c-driver'><span>Inter-Integrated Circuit (I2C) Driver</span></h5><ul><li><p><strong><a href='introduction-to-i2c'><span>Introduction to I2C</span></a></strong></p></li><li><p><strong><a href='common-problems-in-i2c-and-debugging-tips'><span>Common Problems in I2C &amp; Debugging Tips</span></a></strong></p></li><li><p><strong><a href='i2c-driver'><span>I2C Driver (</span><code>stm32f407xx_i2c_driver.h/.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='i2c-application-1'><span>I2C Application 1: Master Tx (Blocking) (</span><code>i2c_01_master_tx_blocking.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='i2c-application-2'><span>I2C Application 2: Master Rx (Blocking) (</span><code>i2c_02_master_rx_blocking.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='i2c-application-3'><span>I2C Application 3: Master Rx (Interrupt) (</span><code>i2c_03_master_rx_interrupt.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='i2c-application-4'><span>I2C Application 4: Slave Tx (Interrupt) (</span><code>i2c_04_slave_tx_interrupt.c</code><span>)</span></a></strong></p></li></ul><h5 id='universal-synchronousasynchronous-receiver-transmitter-usartuart-driver'><span>Universal Synchronous/Asynchronous Receiver-Transmitter (USART/UART) Driver</span></h5><ul><li><p><strong><a href='introduction-to-usart-uart'><span>Introduction to USART/UART</span></a></strong></p></li><li><p><strong><a href='usart-driver'><span>USART Driver (</span><code>stm32f407xx_usart_driver.h/.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='usart-application-1'><span>USART Application 1:  Tx (Blocking) (</span><code>usart_01_tx_blocking.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='usart-application-2'><span>USART Application 2:  Tx Rx (Interrupt) (</span><code>usart_02_tx_rx_interrupt.c</code><span>)</span></a></strong></p></li></ul><h5 id='reset-and-clock-control-rcc-driver'><span>Reset and Clock Control (RCC) Driver</span></h5><ul><li><p><strong><a href='rcc-driver'><span>RCC Driver (</span><code>stm32f407xx_rcc_driver.h/.c</code><span>)</span></a></strong></p></li></ul><p>&nbsp;</p><h3 id='project-real-time-clock-on-lcd'><span>Project: Real-Time Clock on LCD</span></h3><ul><li><p><strong><a href='introduction-to-real-time-clock-on-lcd'><span>Introduction to Real-Time Clock on LCD</span></a></strong></p></li><li><p><strong><a href='real-time-clock-ds1307'><span>Real-Time Clock (RTC) (DS1307)</span></a></strong></p></li><li><p><strong><a href='16x2-character-lcd-hd44780u'><span>16x2 Character LCD (HD44780U)</span></a></strong></p></li><li><p><strong><a href='board-support-package'><span>Board Support Package (BSP) (</span><code>rtc_ds1307.h/.c</code><span>, </span><code>lcd_hd44780u.h/.c</code><span>)</span></a></strong></p></li><li><p><strong><a href='application-real-time-clock-on-lcd'><span>Application: Real-Time Clock on LCD (</span><code>rtc_on_lcd.c</code><span>)</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>MCU Peripheral Drivers</span></a><span> &gt; Interrupts</span></p><h1 id='interrupts'><span>Interrupts</span></h1><p>&nbsp;</p><h2 id='mcu-interrupt-design'><span>MCU Interrupt Design</span></h2><ul><li><p><span>Some peripherals (e.g., GPIO) deliver their interrupt to the NVIC over the EXTI line while others (e.g., SPI) deliver their interrupt directly to the NVIC. This is the MCU vendor specific design.</span></p><p><span>See the &quot;External interrupt/event controller (EXTI)&quot; section of the MCU reference manual.</span></p><p>&nbsp;</p><p><img src="img/exti-block-diagram-1685053616706-7.png" alt="exti-block-diagram" width="800"></p><p>&nbsp;</p><blockquote><p><span>By default, interrupt requests through all 23 lines are masked. You need to unmask the line you want to enable using the Interrupt Mask Register (</span><code>EXTI_IMR</code><span>).</span></p><p><span>The way the edge detect circuit detects interrupts can be configured by using the Rising Trigger Selection (</span><code>EXTI_RTSR</code><span>) Register and/or Falling Trigger Selection Register (</span><code>EXTI_FTSR</code><span>).</span></p></blockquote><p>&nbsp;</p><p><img src="img/user-button-interrupt-1685053616705-6.png" alt="user-button-interrupt" width="800"></p><p>&nbsp;</p><blockquote><p><span>The pending register is necessary because in some cases, multiple EXTI lines have the same interrupt handler and having </span><code>EXTI_PR</code><span> helps figure out which EXTI line triggered the handler. (The pending bit is a status indicator that signals the occurrence of a  specific event or error. When the pending bit is set, it means that the  event or error has taken place and is waiting to be attended to by the  processor. Once the processor has addressed the event or error, the user can clear the pending bit. The user can only interact with the pending  bit and has no control over the pending state of the EXTI lines in any  other manner.)</span></p><p><span>A pending bit (bits[22:0]) is set when the selected edge event arrives on the external interrupt line. A pending it is cleared by programming it to 1(?). </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-122-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-122-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> I know this is confusing but ST designed it this way. To check if this really works this way, use the debugger. </span></p><p><span>Even if the EXTI0 line is cleared, if the bit[0] of the EXTI Pending Register is not cleared, the processor will get an infinite interrupt request. Make sure to clear it once it is set.</span></p></blockquote></li><li><p><span>e.g., GPIO interrupts:</span></p><ul><li><p><strong><span>0</span></strong><span>th pins of all GPIO port deliver their interrupt to the NVIC over EXTI</span><strong><span>0</span></strong><span> line. Only one at any given time can be selected by the multiplexer and EXTI</span><strong><span>0</span></strong><span>[3:0] bits in the SYSCFG_EXTICR1 register decides it.</span></p></li><li><p><strong><span>1</span></strong><span>th pins of all GPIO port deliver their interrupt to the NVIC over EXTI</span><strong><span>1</span></strong><span> line. Only one at any given time can be selected by the multiplexer and EXTI</span><strong><span>1</span></strong><span>[3:0] bits in the SYSCFG_EXTICR1 register decides it.</span></p></li><li><p><span>...</span></p></li><li><p><strong><span>15</span></strong><span>th pins of all GPIO port deliver their interrupt to the NVIC over EXTI</span><strong><span>15</span></strong><span> line. Only one at any given time can be selected by the multiplexer and EXTI</span><strong><span>15</span></strong><span>[3:0] bits in the SYSCFG_EXTICR4 register decides it.</span></p></li></ul><p><span>In the STM32F407-Discovery board, the user button is connected to the GPIO PA0 pin. That means, the interrupt triggered by the user button press will be delivered over the EXTI0 line and you need to implement the EXTI0 handler to service the interrupt.</span></p></li><li><p><span>How to issue user button interrupt to the processor in STM32?</span></p><ol start='' ><li><p><span>The button is connected to a GPIO pin of the microcontroller.</span></p></li><li><p><span>The GPIO pin should be configured to input mode.</span></p></li><li><p><span>The link between a GPIO port and the corresponding EXTI line must be established using the SYSCFG_EXTICRx register.</span></p></li><li><p><span>Configure the trigger detection (falling/rising/both) for relevant EXTI line. (This is done via EXTI controller regsters.)</span></p></li><li><p><span>Implement the handler to service the interrupt.</span></p></li></ol></li></ul></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

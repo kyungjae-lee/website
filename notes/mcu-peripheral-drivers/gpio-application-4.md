@@ -1,0 +1,102 @@
+[Home](../../) | [Projects](../../projects) | [Notes](../) > <a href="./">MCU Peripheral Drivers</a> > GPIO Application 4: Toggling LED with External Button Interrupt (`gpio_04_led_toggle_with_ext_button_interrupt.c`)
+
+# GPIO Application 4: Toggling LED with External Button Interrupt (`gpio_04_led_toggle_with_ext_button_interrupt.c`)
+
+
+
+## Requirements
+
+* Connect an external button to PD6 pin and toggle the LED whenever the interrupt is triggered by the button press.
+* Interrupt should be triggered during the falling edge of the button press.
+
+
+
+## Code
+
+### `gpio_04_led_toggle_with_ext_button_interrupt.c`
+
+Path: `Project/Src/`
+
+```c
+/*******************************************************************************
+ * File		: gpio_04_led_toggle_with_ext_button_interrupt.c
+ * Brief	: Program to toggle LED whenever an interrupt is triggered by the
+ * 			  the external button press
+ * Author	: Kyungjae Lee
+ * Date		: May 24, 2023
+ ******************************************************************************/
+
+#include <string.h>
+#include "stm32f407xx.h"
+
+#define HIGH			1
+#define LOW 			0
+#define BTN_PRESSED 	LOW
+
+/**
+ * delay()
+ * Brief	: Spinlock delays the program execution
+ * Param	: None
+ * Retval	: None
+ * Note		: N/A
+ */
+void delay(void)
+{
+	/* Appoximately ~200ms delay when the system clock freq is 16 MHz */
+	for (uint32_t i = 0; i < 500000 / 2; i++);
+} /* End of delay */
+
+
+int main(int argc, char *argv[])
+{
+	GPIO_Handle_TypeDef GPIOLed, GPIOBtn;
+
+	/* Zero-out all the fields in the structures (Very important! GPIOLed and GPIOBtn
+	 * are local variables whose members may be filled with garbage values before
+	 * initialization. These garbage values may set (corrupt) the bit fields that
+	 * you did not touch assuming that they will be 0 by default. Do NOT make this
+	 * mistake!
+	 */
+	memset(&GPIOLed, 0, sizeof(GPIOLed));
+	memset(&GPIOBtn, 0, sizeof(GPIOBtn));
+
+	/* GPIOLed configuration */
+	GPIOLed.pGPIOx = GPIOD;
+	GPIOLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_12;
+	GPIOLed.GPIO_PinConfig.GPIO_PinMode = GPIO_PIN_MODE_OUT;
+	GPIOLed.GPIO_PinConfig.GPIO_PinSpeed = GPIO_PIN_OUT_SPEED_HIGH;
+	GPIOLed.GPIO_PinConfig.GPIO_PinOutType = GPIO_PIN_OUT_TYPE_PP;
+	GPIOLed.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_NO_PUPD;
+	GPIO_Init(&GPIOLed);
+
+	/* GPIOBtn configuration */
+	GPIOBtn.pGPIOx = GPIOD;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_6;
+	GPIOBtn.GPIO_PinConfig.GPIO_PinMode = GPIO_PIN_MODE_IT_FT;	/* Interrupt falling-edge */
+	GPIOBtn.GPIO_PinConfig.GPIO_PinSpeed = GPIO_PIN_OUT_SPEED_HIGH; /* Doesn't matter */
+	//GPIOBtn.GPIO_PinConfig.GPIO_PinOutType = GPIO_PIN_OUT_TYPE_PP;	/* N/A */
+	GPIOBtn.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+	GPIO_Init(&GPIOBtn);
+
+	/* IRQ configurations */
+	GPIO_IRQPriorityConfig(IRQ_NO_EXTI9_5, NVIC_IRQ_PRI15);	/* Optional in this case */
+	GPIO_IRQInterruptConfig(IRQ_NO_EXTI9_5, ENABLE);	/* EXTI 9 to 5 */
+
+	while (1);
+} /* End of main */
+
+/**
+ * EXTI9_5_IRQHandler()
+ * Brief	: Handles interrupt requests coming through EXTI lines 5-9
+ * Param	: None
+ * Retval	: None
+ * Note		: N/A
+ */
+void EXTI9_5_IRQHandler(void)
+{
+	delay(); /* Debounding time */
+	GPIO_IRQHandling(GPIO_PIN_6);	/* Clear the pending event from EXTI line */
+	GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_12);
+} /* End of EXTI9_5_IRQHandler */
+```
+
