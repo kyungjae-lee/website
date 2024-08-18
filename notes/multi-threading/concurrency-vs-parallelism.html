@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Multi-Threading (POSIX Threads)</span></p><h1 id='multi-threading-posix-threads'><span>Multi-Threading (POSIX Threads)</span></h1><p>&nbsp;</p><ul><li><p><strong><a href='introduction-to-threads'><span>Introduction to Threads</span></a></strong></p></li><li><p><strong><a href='concurrency-vs-parallelism'><span>Concurrency vs. Parallelism</span></a></strong></p></li><li><p><strong><a href='joinable-and-detached-threads'><span>Joinable &amp; Detached Threads</span></a></strong></p></li><li><p><strong><a href='inter-thread-communication'><span>Inter-Thread Communication</span></a></strong></p></li><li><p><strong><a href='notification-chains'><span>Notification Chains (NFC)</span></a></strong></p></li><li><p><strong><a href='thread-cancellation-introduction'><span>Thread Cancellation - Introduction</span></a></strong></p></li><li><p><strong><a href='thread-cancellation-asynchronous-cancellation'><span>Thread Cancellation - Asynchronous Cancellation</span></a></strong></p></li><li><p><strong><a href='thread-cancellation-deferred-cancellation'><span>Thread Cancellation - Deferred Cancellation</span></a></strong></p></li><li><p><strong><a href='listener-threads'><span>Listener Threads</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-introduction'><span>Thread Synchronization - Introduction</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-mutex'><span>Thread Synchronization - Mutex</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-deadlock'><span>Thread Synchronization - Deadlock</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-condition-variables'><span>Thread Synchronization - Condition Variables</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-thread-barrier'><span>Thread Synchronization - Thread Barrier</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-spinlock'><span>Thread Synchronization - Spinlock</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-semaphore'><span>Thread Synchronization - Semaphore</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-recursive-mutex-lock'><span>Thread Synchronization - Recursive Mutexe/Lock</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-read-write-lock'><span>Thread Synchronization - Read/Write Lock</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-thread-safe-highly-concurrent-crud-operations'><span>Thread Synchronization - Thread-Safe Highly Concurrent CRUD Operations</span></a></strong></p></li><li><p><strong><a href='thread-synchronization-thread-safe-highly-concurrent-crud-operations-demonstration'><span>Thread Synchronization - Thread-Safe Highly Concurrent CRUD Operations - Demonstration</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Multi-Threading (POSIX Threads)</span></a><span> &gt; Concurrency vs. Parallelism</span></p><h1 id='concurrency-vs-parallelism'><span>Concurrency vs. Parallelism</span></h1><p>&nbsp;</p><h2 id='understanding-concurrency'><span>Understanding Concurrency</span></h2><h3 id='meaning'><span>Meaning</span></h3><p><span>Doing two or more different tasks:</span></p><ul><li><p><span>One task at a time</span></p></li><li><p><span>Switching between tasks in the following manner:</span></p><ul><li><p><span>Preempting the current task</span></p></li><li><p><span>Picking up the next task, partially doing it, then preempting it</span></p></li><li><p><span>Picking up the next task, partially doing it, then preempting it</span></p></li><li><p><span>...</span></p></li><li><p><span>Picking up the first task from the point where it was left off, partially doing it, then preempting it</span></p></li><li><p><span>...</span></p></li></ul></li></ul><h3 id='analogy'><span>Analogy</span></h3><p><span>Consider three well-diggers assigned a task to dig their respective 100ft-deep well, they have only one well drilling tool which they have to share. </span></p><ul><li><p><span>Only one person can dig at a time</span></p></li><li><p><span>Current person takes a rest, passes the tool to the 2</span><sup><span>nd</span></sup><span> person, 2</span><sup><span>nd</span></sup><span> person resumes</span></p></li><li><p><span>2</span><sup><span>nd</span></sup><span> person takes a rest, passes the tool to the 3</span><sup><span>rd</span></sup><span> person, 3</span><sup><span>rd</span></sup><span> person resumes</span></p></li><li><p><span>Repeat this process until the task is complete</span></p></li></ul><p><span>In this analogy, the work of all the well-diggers is </span><strong><span>in progression</span></strong><span>. It is slow because they need to share the resource and </span><strong><span>take turns</span></strong><span>. Here, the drilling tool represents the hardware resources.</span></p><p>&nbsp;</p><h2 id='understanding-parallelism'><span>Understanding Parallelism</span></h2><h3 id='meaning-2'><span>Meaning</span></h3><p><span>Doing two or more different tasks:</span></p><ul><li><p><span>In parallel</span></p></li></ul><h3 id='analogy-2'><span>Analogy</span></h3><p><span>Consider three well-diggers assigned a task to dig their respective 100ft-deep well, each one of them has their own well drilling tool.</span></p><ul><li><p><span>All three can dig in parallel (No need for taking turns)</span></p></li></ul><p><span>In this analogy, work of all the well-diggers is </span><strong><span>in progression</span></strong><span>. It is fast because they don&#39;t need to take turns and perform the task </span><strong><span>in parallel</span></strong><span>. Here, the drilling tool represents the hardware resources.</span></p><p>&nbsp;</p><h2 id='understanding-singularism'><span>Understanding Singularism</span></h2><h3 id='meaning-3'><span>Meaning</span></h3><p><span>Doing two or more different tasks:</span></p><ul><li><p><span>One task at a time</span></p></li><li><p><span>Preemption not allowed until the task is complete</span></p></li></ul><h3 id='analogy-3'><span>Analogy</span></h3><p><span>Consider three well-diggers assigned a task to dig their respective 100ft-deep well, each one of them has their own well drilling tool.</span></p><ul><li><p><span>Only one is allowed to dig at a time</span></p></li><li><p><span>Once started, the task cannot be preempted until it is complete</span></p></li><li><p><span>Next person starts the task when the previous one completes the task</span></p></li></ul><p><span>In this analogy, work of all the well-diggers is </span><strong><span>NOT in progression</span></strong><span>. The number of drilling tools provided does not affect the result.</span></p><p>&nbsp;</p><h2 id='concurrency-vs-parallelism-vs-singularism'><span>Concurrency vs. Parallelism vs. Singularism</span></h2><p><span>Time taken (performance) to complete a given task: </span></p><ul><li><p><span>Parallelism </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="3.52ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 1556 580" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><defs><path id="MJX-372-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><g data-mml-node="text"><use data-c="3C" xlink:href="#MJX-372-TEX-N-3C"></use></g><g data-mml-node="text" transform="translate(778,0)"><use data-c="3C" xlink:href="#MJX-372-TEX-N-3C"></use></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;&lt;</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex"><<</script><span> Singularism </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.312ex" role="img" focusable="false" viewBox="0 -540 778 580" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.09ex;"><defs><path id="MJX-373-TEX-N-3C" d="M694 -11T694 -19T688 -33T678 -40Q671 -40 524 29T234 166L90 235Q83 240 83 250Q83 261 91 266Q664 540 678 540Q681 540 687 534T694 519T687 505Q686 504 417 376L151 250L417 124Q686 -4 687 -5Q694 -11 694 -19Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="3C" xlink:href="#MJX-373-TEX-N-3C"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex"><</script><span> Concurrency (due to context switching overhead)</span></p></li></ul><p><span>Concurrency don&#39;t give speed, but it gives progression.</span></p><p><span>Parallelism gives speed as well as progression, but it demands hardware resources.</span></p><p><span>Today&#39;s computer systems, in general, support both the concurrency and parallelism.</span></p><p>&nbsp;</p><h2 id='analogy-to-multi-threading'><span>Analogy to Multi-threading</span></h2><figure class='table-figure'><table><thead><tr><th>&nbsp;</th><th><span>Well Digging Analogy</span></th><th><span>Threading Environment</span></th></tr></thead><tbody><tr><td><span>Workers</span></td><td><span>Well diggers</span></td><td><span>Threads</span></td></tr><tr><td><span>Resources</span></td><td><span>Digging tool</span></td><td><span>CPU, memory, etc.</span></td></tr><tr><td><span>Transition</span></td><td><span>One well digger to another</span></td><td><span>Context switching</span></td></tr><tr><td><span>Work to accomplish</span></td><td><span>100 ft well</span></td><td><span>Work to be done by each thread</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='multi-threading-environment'><span>Multi-threading Environment</span></h2><p><span>Concurrent execution of threads:</span></p><ul><li><p><span>e.g., Execution of threads one by one with preemption on a CPU </span></p></li><li><p><span>All threads are in progression</span></p></li></ul><p><span>Parallel execution of threads:</span></p><ul><li><p><span>e.g., Execution of threads in parallel on multiple CPUs </span></p></li><li><p><span>All threads are in progression</span></p></li></ul><p><span>Singular execution of threads:</span></p><ul><li><p><span>e.g., Execution of threads one after another without preemption on a CPU </span></p></li><li><p><span>Not all threads are in progression. Only one thread is in progression at a time.</span></p></li></ul><p>&nbsp;</p><h2 id='why-do-we-need-concurrency'><span>Why Do We Need Concurrency?</span></h2><p><span>Why is concurrency still used in many modern computer systems when it is relatively poor in performance?</span></p><p><span>Let&#39;s consider a scenario where there are hundreds of threads running on your system at a time:</span></p><ul><li><p><span>User threads (any applications that are running on the user-space)</span></p></li><li><p><span>System threads (any services that are running as a part of the operating system; e.g., scheduler, memory manager, device drivers, etc.)</span></p></li></ul><p><span>and only the finite number of CPUs are available. Then, all live threads have to share the CPUs:</span></p><ul><li><p><span>Parallelism on available CPUs</span></p></li><li><p><span>Concurrency on each CPU</span></p></li><li><p><span>Parallelism and Concurrency co-exist in modern computer systems. (Gives the best performance for multi-threading)</span></p><ul><li><p><span>Threads belong to the same group runs concurrently.</span></p></li><li><p><span>Threads belong to different groups run in parallel.</span></p></li></ul></li></ul><p>&nbsp;</p><p><img src="./img/parallelism-and-concurrency.png" alt="parallelism-and-concurrency" width="600"></p><p>&nbsp;</p><p><span>Having either parallelism along or concurrency alone will incur poor performance. Think why!</span></p><p>&nbsp;</p><h2 id='concurrent-process-design'><span>Concurrent Process Design</span></h2><p><span>We need concurrency because:</span></p><ul><li><p><span>We have only finite number of CPUs in a system </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-374-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-374-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> CPUs need to be shared among threads.</span></p></li><li><p><span>We need to ensure the progression of multiple threads.</span></p></li></ul><h3 id='concurrent-process-design---case-1'><span>Concurrent Process Design - Case 1</span></h3><p><span>When a process needs to wait for an I/O operation while continuing to execute the complete the task, multi-threading is necessary.</span></p><ul><li><p><span>e.g., A process waiting for network packets in one thread, while sending packets periodically in another thread, while waiting for a user input in yet another thread. (Basic requirements of typical network applications)</span></p></li></ul><p>&nbsp;</p><p><img src="./img/concurrent-process-design-example-1.png" alt="concurrent-process-design-example-1" width="650"></p><p>&nbsp;</p><h3 id='concurrent-process-design---case-2'><span>Concurrent Process Design - Case 2</span></h3><p><span>When the given work could be splitted into smaller independent chunks which then can be processed by worker threads.</span></p><ul><li><p><span>e.g., A multi-threaded TCP server serving 100 TCP connected clients at the same time. (Typical TCP server delegates the task to worker threads to entertain the clients&#39; requests.)</span></p></li></ul><p>&nbsp;</p><p><img src="./img/concurrent-process-design-example-2.png" alt="concurrent-process-design-example-1" width="400"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='why-are-threads-called-light-weight-process'><span>Why are Threads Called Light-Weight Process?</span></h2><p><span>Threads are called a </span><strong><span>light-weighted</span></strong><span> process because:</span></p><ul><li><p><span>When a thread is created, it uses almost all (except for the stack memory) the pre-existing resources of the main thread, hence OS don&#39;t have to work hard to create (or delete) an isolated execution environment for a new thread.</span></p></li><li><p><span>When the main thread gets created, the followings are made available for the threads to share:</span></p><ul><li><p><strong><span>Page tables</span></strong><span> are already setup</span></p></li><li><p><strong><span>Shared libraries</span></strong><span> are already loaded</span></p></li><li><p><strong><span>Sockets</span></strong><span> are already opened</span></p></li></ul></li><li><p><span>When a thread dies, the OS don&#39;t have to cleanup every resource used by the thread as those resources could still be in use by other threads of the same process.</span></p><ul><li><p><span>e.g., Heap memory, sockets, opened files, IPCs, etc.</span></p></li></ul></li><li><p><strong><span>Thread switching</span></strong><span> (context switching between threads that belong to the same process) happens much faster than </span><strong><span>process switching</span></strong><span> (context switching between threads that belong to the different process) </span></p></li></ul><p>&nbsp;</p><h2 id='overlapping-vs-non-overlapping-work'><span>Overlapping vs. Non-Overlapping Work</span></h2><p><span>If the threads in a process access the same shared data (e.g., global variable) then the work done by those threads are called </span><strong><span>overlapping work</span></strong><span>.</span></p><ul><li><p><span>e.g., W1 is sorting the array A in an ascending order whereas W2 is sorting the array A in a descending order. Since the array A is a shared data on which the threads T1 and T2 are operating, W1 and W2 are overlapping works.</span></p></li></ul><p><span>Threads within a process may or may not need the synchronization depending on whether the work they are doing is overlapping or not. So, don&#39;t just blindly go for synchronization without analyzing the work the threads are supposed to do.</span></p><p>&nbsp;</p><h2 id='summary'><span>Summary</span></h2><p><span>When multiple threads (same or different processes) share the </span><strong><span>same CPU</span></strong><span> with </span><strong><span>overlapping work</span></strong><span>, we get </span><strong><span>concurrency</span></strong><span>.</span></p><p><span>When multiple threads (same or different processes) share the s</span><strong><span>ame CPU</span></strong><span> with </span><strong><span>non-overlapping work</span></strong><span>, we get </span><strong><span>concurrency</span></strong><span>.</span></p><p><span>When multiple threads (same or different processes) run on </span><strong><span>different CPUs</span></strong><span> with </span><strong><span>non-overlapping work</span></strong><span>, we get </span><strong><span>parallelism</span></strong><span>.</span></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Sagar, A. (2022). </span><em><span>Part A - Multithreading &amp; Thread Synchronization - Pthreads</span></em><span> [Video file]. Retrieved from  </span><a href='https://www.udemy.com/course/multithreading_parta/' target='_blank' class='url'>https://www.udemy.com/course/multithreading_parta/</a></p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

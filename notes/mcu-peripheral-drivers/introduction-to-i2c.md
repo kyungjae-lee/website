@@ -226,7 +226,7 @@
 
 <img src="img/i2c-bus-protocol-2.jpeg" alt="i2c-bus-protocol-2" width="850">
 
-> Image reference: https://www.digikey.be/en/maker/projects/getting-started-with-stm32-i2c-example/ba8c2bfef2024654b5dd10012425fa23
+
 
 * An ACK from the master is an indication for the slave to send one more byte to the master.
 * An ACK from the slave is an indication that the slave has received the data successfully.
