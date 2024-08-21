@@ -220,6 +220,87 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
 :root {
     --side-bar-bg-color: #fafafa;
     --control-text-color: #777;
@@ -610,10 +691,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../'><span>Home</span></a><span> | </span><a href='../projects'><span>Projects</span></a><span> | Notes</span></p><h1 id='notes'><span>Notes</span></h1><p>&nbsp;</p><h3 id='computer-engineering'><span>Computer Engineering</span></h3><ul><li><p><strong><a href='operating-systems'><span>Operating Systems</span></a></strong></p></li><li><p><strong><a href='computer-architecture-and-organization'><span>Computer Architecture &amp; Organization</span></a></strong></p></li><li><p><strong><a href='multi-threading'><span>Multi-Threading (POSIX Threads)</span></a></strong></p></li><li><p><strong><a href='data-structures-and-algorithms'><span>Data Structures &amp; Algorithms</span></a></strong></p></li><li><p><strong><a href='c-programming'><span>C Programming</span></a></strong></p></li><li><p><strong><a href='cpp-programming'><span>C++ Programming</span></a></strong></p></li><li><p><strong><a href='computer-networks'><span>Computer Networks</span></a></strong></p></li><li><p><strong><a href='problem-solving'><span>Problem Solving</span></a></strong></p></li></ul><h3 id='embedded-systems'><span>Embedded Systems</span></h3><ul><li><p><strong><a href='arm-cortex-m3-m4-processor'><span>ARM Cortex-M3/M4 Processor</span></a></strong></p></li><li><p><strong><a href='bootloader'><span>Bootloader</span></a></strong></p></li><li><p><strong><a href='direct-memory-access'><span>Direct Memory Access (DMA)</span></a></strong></p></li><li><p><strong><a href='mcu-peripheral-drivers'><span>MCU Peripheral Drivers</span></a></strong></p></li><li><p><strong><a href='real-time-operating-systems'><span>Real-Time Operating Systems (RTOS)</span></a></strong></p></li><li><p><strong><a href='embedded-systems-design-using-uml-state-machines'><span>Embedded Systems Design using UML State Machines</span></a></strong></p></li></ul><h3 id='linux'><span>Linux</span></h3><ul><li><p><strong><a href='unix-linux'><span>Unix/Linux</span></a></strong></p></li><li><p><strong><a href='embedded-linux'><span>Embedded Linux</span></a></strong></p></li><li><p><strong><a href='linux-device-drivers'><span>Linux Device Drivers</span></a></strong></p></li><li><p><strong><a href='linux-kernel-analysis'><span>Linux Kernel Analysis</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Real-Time Operating Systems (RTOS)</span></a><span> &gt; Overview of FreeRTOS Memory Management</span></p><h1 id='overview-of-freertos-memory-management'><span>Overview of FreeRTOS Memory Management</span></h1><p>&nbsp;</p><h2 id='ram--flash'><span>RAM &amp; Flash</span></h2><ul><li><p><span>In general, MCUs contain RAM and Flash. And, Flash is usually bigger in size than RAM.</span></p></li><li><p><span>See </span><a href='../arm-cortex-m3-m4-processor/different-sections-of-a-program'><span>Different Section of a Program</span></a><span> to see which section of a program goes to which memory.</span></p></li></ul><h3 id='ram'><span>RAM</span></h3><ul><li><p><span>Used to store the application </span><strong><span>DATA</span></strong><span>. (e.g., Global arrays, global variables, etc.)</span></p></li><li><p><span>The </span><strong><span>CODE</span></strong><span> (i.e., instructions) can be downloaded and run on RAM. (e.g., Patches)</span></p></li><li><p><span>A part of RAM is used as </span><strong><span>STACK</span></strong><span> to store local variables, function arguments, return address, etc.</span></p></li><li><p><span>A part of RAM is used as </span><strong><span>HEAP</span></strong><span> for dynamic memory allocations.</span></p></li></ul><h3 id='flash'><span>Flash</span></h3><ul><li><p><span>Mainly used to store the application </span><strong><span>CODE</span></strong><span> (i.e., the instructions generated after compilation of the program).</span></p></li><li><p><span>Also holds constants:</span></p><pre class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" spellcheck="false" lang="c"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="c"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 9.52344px; left: 36px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 28px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>2</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -28px; width: 28px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">char</span> <span class="cm-variable-3">*</span><span class="cm-variable">message</span> <span class="cm-operator">=</span> <span class="cm-string">"Hello World\n"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -28px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 19px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">const</span> <span class="cm-variable-3">int</span> <span class="cm-variable">var</span> <span class="cm-operator">=</span> <span class="cm-number">10</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 46px;"></div><div class="CodeMirror-gutters" style="height: 46px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 27px;"></div></div></div></div></pre></li><li><p><span>Holds the </span><strong><span>VECTOR TABLE</span></strong><span> for interrupts and exceptions of the MCU. (e.g., For any ARM Cortex-M based MCUs, the initial address of the code memory, which is typically Flash, is occupied by the vector table.)</span></p></li></ul><p>&nbsp;</p><h2 id='stack--heap-in-embedded-systems'><span>Stack &amp; Heap in Embedded Systems</span></h2><h3 id='stack'><span>Stack</span></h3><ul><li><p><span>Last-In-First-Out (LIFO) order access of memory</span></p></li><li><p><span>Stack pointer (SP) of an MCU is usually initialized to the highest memory address of RAM (i.e., beginning of stack). However, this depends multiple factors such as which stack model (e.g., full-ascending, full-descending, empty-ascending, empty-descending) is used.</span></p><p><span>Stack pointer initialization is done in the &quot;Startup code&quot; of a project, so if you are writing the </span><strong><span>startup code</span></strong><span> yourself you need to take care of it.</span></p></li><li><p><span>The following diagram shows, how information gets pushed onto stack upon a function call.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/empty-descending-stack-model.png" alt="empty-descending-stack-model" width="700"></p><p>&nbsp;</p><ul><li><p><span>An example of the usage of stack upon a function call.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/usage-of-stack-upon-a-function-call.png" alt="usage-of-stack-upon-a-function-call" width="800"></p><p>&nbsp;</p><h3 id='heap'><span>Heap</span></h3><ul><li><p><span>Out-of-order access of memory</span></p></li><li><p><span>Heap is used for dynamic allocation of memory to the application during the run-time.</span></p></li><li><p><span>A &quot;heap&quot; is a general term used for any memory that is allocated dynamically and randomly.</span></p></li><li><p><span>So, stack is managed by SP, but how is the heap managed?</span></p><p><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-115-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-115-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> It depends on the implementation of the application which utilizes heap.</span></p><p><span>C provides </span><code>malloc</code><span>/</span><code>free</code><span> and C++ provides </span><code>new</code><span>/</span><code>free</code><span> standard library functions and how the heap is managed is completely dependent on the application programmers who utilizes these library functions.</span></p></li><li><p><span>For, embedded system, </span><code>malloc</code><span>/</span><code>free</code><span> APIs are not recommended/suitable because they eat up large amount of code space, lack deterministic nature and incur fragmentation over time as blocks of memory are allocated/deallocated.</span></p><p><span>Therefore, embedded systems programmers need to be careful when using the heap management algorithms.</span></p></li><li><p><span>By default, the FreeRTOS heap (size and starting address) is declared by the FreeRTOS kernel. If you don&#39;t want the kernel to determine, setting the </span><code>configAPPLICATION_ALLOCATED_HEAP</code><span> to 1 allows the heap to be declared (i.e., starting address and size) by the application instead.</span></p></li></ul><h3 id='heap-vs-stack-memory-allocation-speed'><span>Heap vs. Stack Memory Allocation Speed</span></h3><ul><li><p><span>In general, the stack memory allocation is faster than that of the heap. This is because of the way that memory is allocated on the stack.  Allocating memory on the stack is as simple as moving the stack pointer  up. But in Heap, to allocate the memory a recommended algorithm will be  used.</span></p></li></ul><p>&nbsp;</p><h2 id='freertos-stack--heap'><span>FreeRTOS Stack &amp; Heap</span></h2><ul><li><p><span>Depending on the implementation, user task&#39;s TCB and its associated stack can be created in:</span></p><ul><li><p><span>Heap memory of RAM (If created dynamically)</span></p></li><li><p><span>Somewhere in RAM other than the heap and the stack (If created statically)</span></p></li></ul></li><li><p><span>In FreeRTOS, each task&#39;s </span><strong><span>TCB</span></strong><span> and the private </span><strong><span>STACK</span></strong><span> is dynamically allocated on heap.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/freertos-stack-and-heap.png" alt="freertos-stack-and-heap" width="900"></p><p>&nbsp;</p><ul><li><p><span>Task-1, Task-2, Semaphore, Queue, etc. all these are called the &quot;</span><strong><span>dynamically allocated kernel objects</span></strong><span>&quot;.</span></p><p><span>As you might have noticed, </span><code>xTaskCreate()</code><span>, </span><code>xSemaphoreCreateBinary()</code><span>, </span><code>QueueCreate()</code><span>, etc. must be calling </span><code>malloc</code><span> within them to dynamically allocate memory space.</span></p></li></ul><p>&nbsp;</p><h2 id='freertos-heap-management-schemes'><span>FreeRTOS Heap Management Schemes</span></h2><ul><li><p><code>heap_1.c</code><span> ~ </span><code>heap_5.c</code><span> files provided by the FreeRTOS support different heap management schemes with different advantages/disadvantages.</span></p></li><li><p><span>You can choose which scheme to use as per your application&#39;s needs, or you can even implement your own heap management scheme.</span></p></li></ul><p>&nbsp;</p><p><img src="./img/freertos-heap-management-schemes.png" alt="freertos-heap-management-schemes" width="800"></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Nayak, K. (2022). </span><em><span>Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging</span></em><span> [Video file]. Retrieved from </span><a href='https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/' target='_blank' class='url'>https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/</a></p><p>&nbsp;</p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

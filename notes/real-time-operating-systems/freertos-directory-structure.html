@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../'><span>Home</span></a><span> | </span><a href='../projects'><span>Projects</span></a><span> | Notes</span></p><h1 id='notes'><span>Notes</span></h1><p>&nbsp;</p><h3 id='computer-engineering'><span>Computer Engineering</span></h3><ul><li><p><strong><a href='operating-systems'><span>Operating Systems</span></a></strong></p></li><li><p><strong><a href='computer-architecture-and-organization'><span>Computer Architecture &amp; Organization</span></a></strong></p></li><li><p><strong><a href='multi-threading'><span>Multi-Threading (POSIX Threads)</span></a></strong></p></li><li><p><strong><a href='data-structures-and-algorithms'><span>Data Structures &amp; Algorithms</span></a></strong></p></li><li><p><strong><a href='c-programming'><span>C Programming</span></a></strong></p></li><li><p><strong><a href='cpp-programming'><span>C++ Programming</span></a></strong></p></li><li><p><strong><a href='computer-networks'><span>Computer Networks</span></a></strong></p></li><li><p><strong><a href='problem-solving'><span>Problem Solving</span></a></strong></p></li></ul><h3 id='embedded-systems'><span>Embedded Systems</span></h3><ul><li><p><strong><a href='arm-cortex-m3-m4-processor'><span>ARM Cortex-M3/M4 Processor</span></a></strong></p></li><li><p><strong><a href='bootloader'><span>Bootloader</span></a></strong></p></li><li><p><strong><a href='direct-memory-access'><span>Direct Memory Access (DMA)</span></a></strong></p></li><li><p><strong><a href='mcu-peripheral-drivers'><span>MCU Peripheral Drivers</span></a></strong></p></li><li><p><strong><a href='real-time-operating-systems'><span>Real-Time Operating Systems (RTOS)</span></a></strong></p></li><li><p><strong><a href='embedded-systems-design-using-uml-state-machines'><span>Embedded Systems Design using UML State Machines</span></a></strong></p></li></ul><h3 id='linux'><span>Linux</span></h3><ul><li><p><strong><a href='unix-linux'><span>Unix/Linux</span></a></strong></p></li><li><p><strong><a href='embedded-linux'><span>Embedded Linux</span></a></strong></p></li><li><p><strong><a href='linux-device-drivers'><span>Linux Device Drivers</span></a></strong></p></li><li><p><strong><a href='linux-kernel-analysis'><span>Linux Kernel Analysis</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Real-Time Operating Systems (RTOS)</span></a><span> &gt; FreeRTOS Directory Structure</span></p><h1 id='freertos-directory-structure'><span>FreeRTOS Directory Structure</span></h1><p>&nbsp;</p><h2 id='download-freertos'><span>Download FreeRTOS</span></h2><ul><li><p><a href='https://freertos.org/'><span>https://freertos.org/</span></a></p></li><li><p><a href='https://github.com/FreeRTOS/FreeRTOS/releases'><span>https://github.com/FreeRTOS/FreeRTOS/releases</span></a><span> </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-96-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-96-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> GitHub repo (download previous release)</span></p></li></ul><p>&nbsp;</p><h2 id='freertos-directory-structure-2'><span>FreeRTOS Directory Structure</span></h2><ul><li><p><span>The </span><code>FreeRTOS/Source/</code><span> contains the FreeRTOS kernel source code, and contains its own readme file.</span></p><ul><li><p><code>FreeRTOS/Source/include/</code><span> contains header files.</span></p></li><li><p><code>FreeRTOS/Source/portable/</code><span> contains processor architecture-specific files. (Various compiler directories each of which contains various processor architecture-specific files. We&#39;ll be using GCC compiler only!)</span></p></li><li><p><span>Everything else in the </span><code>FreeRTOS/Source/</code><span> is the architecture-independent code.</span></p></li></ul></li><li><p><span>The </span><code>FreeRTOS/Demo/</code><span> contains a demo application for every official FreeRTOS port (i.e., various MCUs), and contains its own readme file.</span></p></li><li><p><span>The </span><code>FreeRTOS/Test/</code><span> contains the tests performed on common code and the portable layer code, and contains its own readme file.</span></p></li><li><p><span>The </span><code>FreeRTOS/License/</code><span> contains the license file that allows you to use the FreeRTOS kernel.</span></p></li></ul><p>&nbsp;</p><h2 id='freertos-plus-directory-structure'><span>FreeRTOS-Plus Directory Structure</span></h2><ul><li><p><code>FreeRTOS-Plus/</code><span> contains various other middleware which can be used with FreeRTOS kernel such as CLI, IO, TCP, UDP, etc. (We&#39;ll not care about this contents.)</span></p></li></ul><p>&nbsp;</p><h2 id='notes'><span>Notes</span></h2><ul><li><p><span>See </span><a href='http://www.freertos.org/a00017.html'><span>FreeRTOS/SourceOrganization</span></a><span> for full details of the directory structure and information on locating the files you require.</span></p></li><li><p><span>The easiest way to use FreeRTOS is to start with one of the pre-configured demo application projects (found in the FreeRTOS/Demo directory).  That way you will have the correct FreeRTOS source files included, and the correct include paths configured. </span></p></li><li><p><span>Once a demo application is building and executing you can remove the demo application file, and start to add in your own application source files.</span></p></li></ul><p>&nbsp;</p><h2 id='see-also'><span>See Also</span></h2><ul><li><p><a href='http://www.freertos.org/FreeRTOS-quick-start-guide.html'><span>Quick Start Guide</span></a></p></li><li><p><a href='http://www.freertos.org/FAQHelp.html'><span>FAQ</span></a></p></li></ul><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Nayak, K. (2022). </span><em><span>Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging</span></em><span> [Video file]. Retrieved from </span><a href='https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/' target='_blank' class='url'>https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/</a></p><p>&nbsp;</p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

@@ -610,10 +610,158 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG2"] path[data-c], mjx-container[jax="SVG2"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+							stroke-width: 0;
+						}
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../'><span>Home</span></a><span> | </span><a href='../projects'><span>Projects</span></a><span> | Notes</span></p><h1 id='notes'><span>Notes</span></h1><p>&nbsp;</p><h3 id='computer-engineering'><span>Computer Engineering</span></h3><ul><li><p><strong><a href='operating-systems'><span>Operating Systems</span></a></strong></p></li><li><p><strong><a href='computer-architecture-and-organization'><span>Computer Architecture &amp; Organization</span></a></strong></p></li><li><p><strong><a href='multi-threading'><span>Multi-Threading (POSIX Threads)</span></a></strong></p></li><li><p><strong><a href='data-structures-and-algorithms'><span>Data Structures &amp; Algorithms</span></a></strong></p></li><li><p><strong><a href='c-programming'><span>C Programming</span></a></strong></p></li><li><p><strong><a href='cpp-programming'><span>C++ Programming</span></a></strong></p></li><li><p><strong><a href='computer-networks'><span>Computer Networks</span></a></strong></p></li><li><p><strong><a href='problem-solving'><span>Problem Solving</span></a></strong></p></li></ul><h3 id='embedded-systems'><span>Embedded Systems</span></h3><ul><li><p><strong><a href='arm-cortex-m3-m4-processor'><span>ARM Cortex-M3/M4 Processor</span></a></strong></p></li><li><p><strong><a href='bootloader'><span>Bootloader</span></a></strong></p></li><li><p><strong><a href='direct-memory-access'><span>Direct Memory Access (DMA)</span></a></strong></p></li><li><p><strong><a href='mcu-peripheral-drivers'><span>MCU Peripheral Drivers</span></a></strong></p></li><li><p><strong><a href='real-time-operating-systems'><span>Real-Time Operating Systems (RTOS)</span></a></strong></p></li><li><p><strong><a href='embedded-systems-design-using-uml-state-machines'><span>Embedded Systems Design using UML State Machines</span></a></strong></p></li></ul><h3 id='linux'><span>Linux</span></h3><ul><li><p><strong><a href='unix-linux'><span>Unix/Linux</span></a></strong></p></li><li><p><strong><a href='embedded-linux'><span>Embedded Linux</span></a></strong></p></li><li><p><strong><a href='linux-device-drivers'><span>Linux Device Drivers</span></a></strong></p></li><li><p><strong><a href='linux-kernel-analysis'><span>Linux Kernel Analysis</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; </span><a href="./"><span>Real-Time Operating Systems (RTOS)</span></a><span> &gt; Task States</span></p><h1 id='task-states'><span>Task States</span></h1><p>&nbsp;</p><h2 id='freertos-task-states'><span>FreeRTOS Task States</span></h2><p>&nbsp;</p><p><img src="./img/freertos-task-states.png" alt="freertos-task-states" width="600"></p><p>&nbsp;</p><h3 id='ready'><span>Ready </span></h3><ul><li><p><span>When a task is ready to be scheduled (or dispatched), it is said to be in the </span><strong><span>Ready</span></strong><span> state.</span></p></li><li><p><span>The scheduler may not schedule the Ready state task to run on the CPU if a higher priority task is currently executing on the CPU. On the other hand, if a higher priority task than a task currently running on a CPU is found in the Ready queue, it immediately preempts the lower priority task. (All depends on the scheduling policy in use.)</span></p></li><li><p><span>In FreeRTOS, whenever a new task is created, it enters the Ready state.</span></p></li></ul><h3 id='running'><span>Running</span></h3><ul><li><p><span>When a task is currently executing on the processor, it is said to be in the </span><strong><span>Running</span></strong><span> state.</span></p></li><li><p><span>Only one process can run on a single core CPU at any given point in time. (Multiple processes running on multiple cores simultaneously </span><mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" style="vertical-align: -0.025ex;"><defs><path id="MJX-140-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><use data-c="2192" xlink:href="#MJX-140-TEX-N-2192"></use></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo accent="false" stretchy="false">→</mo></math></mjx-assistive-mml></mjx-container><script type="math/tex">\to</script><span> Parallel processing)</span></p></li></ul><h3 id='blocked'><span>Blocked</span></h3><ul><li><p><span>A task can leave a CPU from the Running state and chooses not to run on the CPU until an internal or external event is met. This state is the </span><strong><span>Blocked</span></strong><span> state.</span></p></li><li><p><span>When a task is in the Blocked state, it won&#39;t consume any CPU time. (Blocked processes go to the &quot;Blocked queue&quot; and wait there for the events they are waiting for to complete.)</span></p></li><li><p><span>In FreeRTOS, there is an API called </span><code>vTaskDelay()</code><span>. If a task calls this function, then it will enter the Blocked state for the passed number of RTOS ticks (500 RTOS ticks if </span><code>vTaskDelay(500)</code><span>), after which it unblocks and enters the Ready state (an internal temporal event).</span></p></li><li><p><span>A task can also block waiting on an external event, like data arrival to the queue, nonavailability of lock in the case of mutex or semaphore, etc.</span></p></li><li><p><span>Task in a Blocked state has a timeout period; after the timeout period, it unblocks and enters the Ready state even if the event for which it is waiting has not occurred. </span></p></li><li><p><span>A task can enter the Blocked state ONLY from the Running state.</span></p></li><li><p><span>A running task can invoke the </span><code>TaskAbortDelay()</code><span> API using the task handle of the blocked task to unblock it, even if the event the blocked task is waiting for has not yet occurred.</span></p></li><li><p><span>Advantages of blocking:</span></p><ul><li><p><span>Blocking delay can be implemented</span></p><ul><li><p><span>e.g., A task may enter the Blocked state to wait for 10 milliseconds.</span></p></li><li><p><span>Blocking delay APIs - </span><code>vTaskDelay()</code><span>, </span><code>vTaskDelayUntil()</code></p><p><span>Kernel objects (queues, semaphores, mutexes) support APIs which can block a task during operation.</span></p></li></ul></li><li><p><span>Synchronization can be achieved</span></p><ul><li><p><span>e.g., A task may enter the Blocked state to wait for data to arrive on a queue. When the data arrives at the queue, the data will unblock. Until then, the CPU does not have to spinlock to check the data arrival status.</span></p></li></ul></li></ul><p><span>FreeRTOS queues, binary semaphores, counting semaphores, recursive semaphores, and mutexes can all be used to implement synchronization, and thus they support blocking of the task.</span></p></li></ul><h3 id='suspended'><span>Suspended</span></h3><ul><li><p><span>A task enters the Suspended state when it or another task calls </span><code>vTaskSuspend(task_handle)</code><span>.</span></p></li><li><p><span>A Suspended task will not enter Ready state unless some other running tasks cancel the suspension by calling the API </span><code>vTaskResume(task_handle_of_suspended_task)</code><span>.</span></p></li><li><p><span>Unlike a task in the Blocked state, a task in the Suspended state CANNOT transition to the Ready state by an event.</span></p></li><li><p><span>Unlike a task in the Blocked state, a task in the Suspended state doesn&#39;t have a timeout period. The only way a task in the Suspended state can be moved to the Ready state is by a running task calling the API </span><code>vTaskResume(task_handle_of_suspended_task)</code><span>.</span></p></li><li><p><span>A task in Ready state can enter Suspended state directly if a Running task calls </span><code>vTaskSuspend(task_handle)</code><span> using the task handle of the Ready state task.</span></p></li></ul><p>&nbsp;</p><p><span>For more information about the &quot;Task States&quot;, see </span><a href='../operating-systems/process-state-models-and-control'><span>Process State Models and Control</span></a><span>.</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><h2 id='references'><span>References</span></h2><p><span>Nayak, K. (2022). </span><em><span>Mastering RTOS: Hands on FreeRTOS and STM32Fx with Debugging</span></em><span> [Video file]. Retrieved from </span><a href='https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/' target='_blank' class='url'>https://www.udemy.com/course/mastering-rtos-hands-on-with-freertos-arduino-and-stm32fx/</a></p><p>&nbsp;</p></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>
