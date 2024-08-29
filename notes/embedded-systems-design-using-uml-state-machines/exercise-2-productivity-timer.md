@@ -44,20 +44,26 @@ The application that tracks your productive working time.
 
 ### Extended State Variables
 
-* curr_time : `uint32_t`
-* elapsed_time : `uint32_t`
-* pro_time : `uint32_t`
+* The variables that appear on the state machine to be used for storing various data and making decisions.
 
-```c
-/* The main application structure */
-typedef struct protimer_tag
-{
-    uint32_t curr_time;		// Stores the time user has set
-    uint32_t elapsed_time;	// Number of seconds that has elapsed
-    uint32_t pro_time;		// Productive time spent by the user
-    ...
-} protimer_t;
-```
+  * curr_time : `uint32_t`
+
+  * elapsed_time : `uint32_t`
+
+  * pro_time : `uint32_t`
+
+  ```c
+  /* The main application structure */
+  typedef struct protimer_tag
+  {
+      uint32_t curr_time;		// Stores the time user has set
+      uint32_t elapsed_time;	// Number of seconds that has elapsed
+      uint32_t pro_time;		// Productive time spent by the user
+      ...
+  } protimer_t;
+  ```
+
+* A structure that contains these types of variables is also called as "main application structure".
 
 ### Data Structures
 
