@@ -30,7 +30,7 @@
 
   Multi‐threaded client/server socket applications for Linux OS using C and the POSIX thread libraries
 
-* **[Website](https://kyungjae-lee.github.io/website/)**
+* **[Website](website)**
 
   A documentation website for publishing reusable technical information gained from personal studies and projects
 
