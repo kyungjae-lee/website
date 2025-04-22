@@ -122,7 +122,7 @@
 * If you have a **pointer to an object**, you can access the class members by using the **arrow operator or member of pointer operator (`->`)**.
 
   ```cpp
-  Account jack_account = new Account();
+  Account *jack_account = new Account();
   
   // 1. Dereference the poiner, then use the dot operator
   (*jack_account).balance;
@@ -189,7 +189,7 @@
 
   ```cpp
   Account jack_account;
-  jack_ccount.balance = 1000.00;			// Compiler error
+  jack_acount.balance = 1000.00;			// Compiler error
   jack_account.deposit(1000.00);			// OK (Accessing a private member through another member of the class)
   jack_account.name = "Jack's Account";	// Compiler error
   
@@ -289,7 +289,7 @@
   double Account::get_balance() { return balance; }
   ```
   
-  > Notice that we included `accoun.h` and it's in double quotes. Includes with double quotes tell the compiler to include header files that are local to this project. The compiler knows where those are.
+  > Notice that we included `Account.h` and it's in double quotes. Includes with double quotes tell the compiler to include header files that are local to this project. The compiler knows where those are.
   >
   > Includes with angled brackets with no extensions (e.g., `#include <iostream>`) are used to include system header files and the compiler knows where these are located.
   
