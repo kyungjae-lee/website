@@ -8,7 +8,7 @@
 
 * Special member method
 * Invoked during object creation
-* Useful for initialization (to a stable state)
+* Useful for initialization (to a known/safe/stable state)
 * Has same name as the class
 * No return type is specified
 * Can be overloaded
