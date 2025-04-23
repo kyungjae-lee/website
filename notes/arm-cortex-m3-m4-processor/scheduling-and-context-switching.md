@@ -10,6 +10,54 @@
 
 * The decision could be based on many factors such as system load, the priority of tasks, share resource access, or a simple Round-Robin method.
 
+### Preemptive Scheduling
+
+* Definition
+
+  The OS (or RTOS) can interrupt a currently running task and switch to another task based on priority or time slice.
+
+* Example
+
+  If a high-priority task becomes ready while a lower-priority task is running, the CPU will immediately switch to the high-priority task.
+
+* Use Cases
+
+  Real-time systems (e.g., RTOS), multitasking environments, responsive systems, etc.
+
+* Pros
+
+  * Better responsiveness to high-priority events.
+  * Fairer CPU time distribution in time-sharing systems.
+
+* Cons
+
+  * Requires context switching, which adds overhead.
+  * More complex to implement.
+
+### Non-Preemptive (Cooperative) Scheduling
+
+* Definition
+
+  Once a task starts running, it runs to completion (or until it yields the CPU voluntarily).
+
+* Example
+
+  A running task must finish or explicitly give up control for another task to run.
+
+* Use Cases
+
+  Simple embedded systems, cooperative multitasking, deterministic systems, etc.
+
+* Pros
+
+  * Simpler and less overhead (no forced context switches).
+  * Easier to reason about in terms of timing and resource usage.
+
+* Cons
+
+  * Poor responsiveness to high-priority events.
+  * Risk of CPU being hogged by poorly-behaved tasks.
+
 
 
 ## Context switching

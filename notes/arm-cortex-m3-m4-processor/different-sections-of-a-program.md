@@ -14,7 +14,7 @@
 
   * **Data (variables)** - stored in main memory (RAM)
 
-    Data may change during the run-time so, it makes sens to store them in read-write memory (RAM).
+    Data may change during the run-time so, it makes sense to store them in read-write memory (RAM).
 
     Data that will never change (i.e., constants) during the run-time may be stored in read-onlly memory (FLASH).
 
@@ -48,7 +48,7 @@
 
     When ELF file is loaded onto microcontroller, this section is placed in ROM.
 
-  * **User-defined section**s
+  * **User-defined sections**
 
     Contains data/code which programmer demands to put in user-defined sections
 
