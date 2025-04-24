@@ -167,7 +167,7 @@ Startup file can be a C file (.c) or an assembly file (.s).
 
 ### Newlib
 
-* Newlib is a C standard library implementation intended for use on embedded systems, and it is introduced by Cygnus Solutions (now Reg Hat).
+* Newlib is a C standard library implementation intended for use on embedded systems, and it is introduced by Cygnus Solutions (now Red Hat).
 * Newlib is written as a Glibc(CNU  libc) replacement for embedded systems. It can be used with no OS ("bare-metal") or with a lightweight RTOS.
 * Newlib ships with GNU ARM toolchain installation as the default C standard library.
 * GNU libc (glibc) includes ISO C, POSIX, System V, and XPG interfaces. $\micro$Clibc provides ISO C, POSIX and System V, while Newlib provides only ISO C.
