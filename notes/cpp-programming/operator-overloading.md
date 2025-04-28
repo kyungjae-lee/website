@@ -358,8 +358,13 @@ C++ allows the programmer to overload most operators to work with user-defined c
                              to tell the compiler that the right-side object is an R-value
                              so the right-side value will be an R-value reference
   ```
+  > Rvalue reference `&&` (C++11 and later)
+  >
+  > * Used in type declarations to create rvalue references.
+  > * Enables move semantics, which avoids unnecessary copies.
+  
   Note that the RHS object CANNOT be `const` since we'll be modifying that object when we move the data. (i.e., Nullifying the pointer)
-
+  
   Example:
   ```cpp
   Mystring& Mystring::operator=(Mystring &&rhs);
