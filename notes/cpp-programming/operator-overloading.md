@@ -341,7 +341,7 @@ C++ allows the programmer to overload most operators to work with user-defined c
       necessary.
       ```cpp
       Mystring s1;              // empty string
-      s1 = Mystring("Frank");   // move assignment will be called since we are providing R-value reference
+      s1 = Mystring("Frank");   // move assignment will be called since we are providing R-value reference 
            -----------------                                                             -----------------
            temporary object is created                                                        "Frank"
       ```
@@ -400,7 +400,7 @@ C++ allows the programmer to overload most operators to work with user-defined c
       a = Mystring("Hola");     // overloaded constructor then move assignment
                                 // - a temporary unnamed object gets created with "Hola"
                                 //   and destroyed after move assignment operation is done
-      a = "Bonjour"             // overloaded constructor then move assignment
+      a = "Bonjour";            // overloaded constructor then move assignment
                                 // - a temporary unnamed object gets created with
                                 //   "Bonjour" and destroyed after move assignment
                                 //   operation is done
@@ -722,7 +722,7 @@ C++ allows the programmer to overload most operators to work with user-defined c
       char *buff = new char[1000];
       is >> buff;
       obj = Mystring(buff);     // if copy or move assignment are predefined
-      delete[] buffer;
+      delete[] buff;
       return is;
   }
   ```
