@@ -117,7 +117,11 @@
 * **Key Operations**:
 
   ```cpp
-  st.push(x); st.pop(); st.top(); st.empty();
+  s.top();     // access top element
+  s.push(x);   // push an element
+  s.pop();     // remove top element
+  s.empty();   // check if stack is empty
+  s.size();    // get number of elements
   ```
 
 * **Time Complexities**: All **O(1)**
