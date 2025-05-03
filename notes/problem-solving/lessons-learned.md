@@ -167,7 +167,7 @@
   ```cpp
   vector<vector<int>> v;
   v[0].push_back(1);                // ERROR since v[0] does not exist yet!
-  v[0].push_back(vector<int>(5, 1); // OK (inserts {1, 1, 1, 1, 1} into v[0])
+  v[0].push_back(vector<int>(5, 1));// OK (inserts {1, 1, 1, 1, 1} into v[0])
   
   vector<vector<int>> v(3);         // creates a 2D vector that contains 3 vectors
   v[0].push_back(1);                // OK (inserts '1' at the end of the vector v[0])
@@ -236,18 +236,14 @@
   To do something with the popped value, `top` operation has to be used first to store the value to be popped.
 
   The core interface of the C++ STL `Queue`:
-  ```plain
-  Interface         Effect
-  ================  ======================================================================
-  push()            Inserts an element into the queue
-  front()           Returns the next element in the queue without removing it (the element
-                    that was inserted first)
-  back()            Returns the last element in the queue without removing it (the element
-                    that was inserted last)
-  pop()             Removes an element from the queue (does not return it)
-  size()            Returns the current number of elements
-  empty()           Returns whether the queue is empty (equivalent to size()==0)
-  ```
+  | Interface | Effect                                                       |
+  | --------- | ------------------------------------------------------------ |
+  | `push()`  | Inserts an element into the queue.                           |
+  | `front()` | Returns the next element in the queue without removing it (the element that was inserted first). |
+  | `back()`  | Returns the last element in the queue without removing it (the element that was inserted last). |
+  | `pop()`   | Removes an element from the queue (does not return it).      |
+  | `size()`  | Returns the current number of elements.                      |
+  | `empty()` | Returns whether the queue is empty (equivalent to `size() == 0`). |
 
 
 
@@ -304,7 +300,7 @@
   string s = "KyungjaeLee 1988"
   
   name = s.substr(0, s.find(' '));  // name contains "KyungjaeLee"
-  year = s.substr(s.find(' ') + 1); // name contains "1988"
+  year = s.substr(s.find(' ') + 1); // year contains "1988"
   ```
 
 
@@ -317,26 +313,18 @@
 
   **Vector:**
 
-  ```plain
-  Operation                 Effect
-  ========================  ==============================================================
-  c.erase(pos)              Removes the element at iterator position pos and returns the
-                            position of the next element
-  c.erase(beg, end)         Removes elements of the range [beg, end) and returns the
-                            position of the next element
-  ```
+  | Operation           | Effect                                                       |
+  | ------------------- | ------------------------------------------------------------ |
+  | `c.erase(pos)`      | Removes the element at iterator position `pos` and returns the position of the next element. |
+  | `c.erase(beg, end)` | Removes elements in the range `[beg, end)` and returns the position of the next element. |
+  
   **Set/Multiset, Map/Multimap, Unordered Containers:**
-
-  ```plain
-  Operation                 Effect
-  ========================  ==============================================================
-  c.erase(val)              Removes all elements equal to val and returns the number of
-                            removed elements
-  c.erase(pos)              Removes the element at iterator position pos and returns the
-                            following position (returned nothing before C++11)
-  c.erase(beg, end)         Removes all elements of the range [beg, end) and returns the
-                            following position (returned nothing before C++11)
-  ```
+  
+  | Operation           | Effect                                                       |
+  | ------------------- | ------------------------------------------------------------ |
+  | `c.erase(val)`      | Removes all elements equal to `val` and returns the number of removed elements. |
+  | `c.erase(pos)`      | Removes the element at iterator position `pos` and returns the following position (returned nothing before C++11). |
+  | `c.erase(beg, end)` | Removes all elements in the range `[beg, end)` and returns the following position (returned nothing before C++11). |
 
 
 
