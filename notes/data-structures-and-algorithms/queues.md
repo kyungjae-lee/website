@@ -16,7 +16,7 @@
 
 ### Interface
 
-```c
+```cpp
 #ifndef QUEUE_HPP
 #define QUEUE_HPP
 
@@ -53,7 +53,7 @@ private:
 
 ### Implementation
 
-```c
+```cpp
 #include "queue.hpp"
 #include <stdexcept>
 
@@ -154,7 +154,7 @@ void queue::clear()
 
 ### Test Driver
 
-```c
+```cpp
 #include <iostream>
 #include "queue.hpp"
 

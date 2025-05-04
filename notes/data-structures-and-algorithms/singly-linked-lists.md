@@ -14,7 +14,7 @@
 
 ### Interface
 
-```c
+```cpp
 #ifndef SLIST_HPP
 #define SLIST_HPP
 
@@ -60,7 +60,7 @@ private:
 
 ### Implementation
 
-```c
+```cpp
 #include "slist.hpp"
 #include <stdexcept>
 
@@ -317,7 +317,7 @@ void slist::print() const
 
 ### Test Driver
 
-```c
+```cpp
 #include <iostream>
 #include "slist.hpp"
 
