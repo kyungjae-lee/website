@@ -335,3 +335,20 @@
   string s3 = s1 + "def" + s2;  // s3 will be "abcdefghi"
   ```
 
+
+
+* `i++` vs. `++i` in a `for` loop condition statement, which one to use?
+
+  The difference between `++i` (pre-increment) and `i++` (post-increment) in a `for` loop lies in **how the increment operation is performed internally** — though in most `for` loop cases, the difference is negligible in practice for **primitive types** like `int`.
+
+  However for user-defined types like iterators or custom objects `++i` is preferred.
+
+  Because `i++` may involve:
+
+  - A copy of the original value
+  - Then an increment
+  - Returning the old copy
+
+  Whereas `++i`:
+
+  - Simply increments and returns a reference, usually more efficient.
