@@ -32,7 +32,7 @@ public:
 class slist
 {
 public:
-	slist() : p_head(nullptr), cnt(0) {}
+	slist() : p_front(nullptr), cnt(0) {}
 	~slist() { clear(); }
 	void push_front(const int val);
 	void push_back(const int val);
@@ -51,7 +51,7 @@ public:
 	void print() const;
 	
 private:
-	node *p_head;
+	node *p_front;
 	int cnt;
 };
 
@@ -67,8 +67,8 @@ private:
 void slist::push_front(const int val)
 {
 	node *p_new = new node(val);
-	p_new->p_next = p_head;
-	p_head = p_new;
+	p_new->p_next = p_front;
+	p_front = p_new;
 	++cnt;
 }
 
@@ -76,13 +76,13 @@ void slist::push_back(const int val)
 {
 	node *p_new = new node(val);
 
-	if (!p_head)
+	if (!p_front)
 	{
-		p_head = p_new;
+		p_front = p_new;
 	}
 	else
 	{
-		node *p_temp = p_head;
+		node *p_temp = p_front;
 
 		while (p_temp->p_next)
 		{
@@ -108,7 +108,7 @@ void slist::insert_at(const int idx, const int val)
 	}
 
 	node *p_new = new node(val);
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 
 	for (int i = 0; i < idx - 1; ++i)
 	{
@@ -123,32 +123,32 @@ void slist::insert_at(const int idx, const int val)
 
 void slist::pop_front()
 {
-	if (!p_head)
+	if (!p_front)
 	{
 		return;
 	}
 
-	node *p_temp = p_head;
-	p_head = p_head->p_next;
+	node *p_temp = p_front;
+	p_front = p_front->p_next;
 	delete p_temp;
 	--cnt;
 }
 
 void slist::pop_back()
 {
-	if (!p_head)
+	if (!p_front)
 	{
 		return;
 	}	
 
-	if (!p_head->p_next)
+	if (!p_front->p_next)
 	{
-		delete p_head;
-		p_head = nullptr;
+		delete p_front;
+		p_front = nullptr;
 	}
 	else
 	{
-		node *p_temp = p_head;
+		node *p_temp = p_front;
 
 		while (p_temp->p_next->p_next)
 		{
@@ -174,7 +174,7 @@ void slist::erase_at(const int idx)
 		return pop_front();
 	}
 
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 
 	for (int i = 0; i < idx - 1; ++i)
 	{
@@ -189,17 +189,17 @@ void slist::erase_at(const int idx)
 
 void slist::erase_val(const int val)
 {
-	if (!p_head)
+	if (!p_front)
 	{
 		return;
 	}
 
-	if (val == p_head->data)
+	if (val == p_front->data)
 	{
 		pop_front();
 	}
 
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 
 	while (p_temp->p_next && val != p_temp->p_next->data)
 	{
@@ -223,7 +223,7 @@ int slist::get_at(const int idx) const
 		throw std::out_of_range("Index out of range");
 	}
 
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 
 	for (int i = 0; i < idx; ++i)
 	{
@@ -235,7 +235,7 @@ int slist::get_at(const int idx) const
 
 int slist::find(const int val) const
 {
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 	int idx = 0;
 
 	while (p_temp)
@@ -254,22 +254,22 @@ int slist::find(const int val) const
 
 int slist::front() const
 {
-	if (!p_head)
+	if (!p_front)
 	{
 		throw std::runtime_error("List is empty");
 	}
 
-	return p_head->data;
+	return p_front->data;
 }
 
 int slist::back() const
 {
-	if (!p_head)
+	if (!p_front)
 	{
 		throw std::runtime_error("List is empty");
 	}
 
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 
 	while (p_temp->p_next)
 	{
@@ -291,10 +291,10 @@ bool slist::empty() const
 
 void slist::clear()
 {
-	while (p_head)
+	while (p_front)
 	{
-		node *p_temp = p_head;
-		p_head = p_head->p_next;
+		node *p_temp = p_front;
+		p_front = p_front->p_next;
 		delete p_temp;
 	}
 
@@ -303,7 +303,7 @@ void slist::clear()
 
 void slist::print() const
 {
-	node *p_temp = p_head;
+	node *p_temp = p_front;
 
 	while (p_temp)
 	{

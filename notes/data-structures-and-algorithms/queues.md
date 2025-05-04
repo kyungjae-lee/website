@@ -17,256 +17,176 @@
 ### Interface
 
 ```c
-//==============================================================================
-// File		: queue.h
-// Brief	: Interface for Queue using Singly-Linked List
-// Author	: Kyungjae Lee
-// Date		: Jun 03, 2023
-//==============================================================================
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
 
-#ifndef QUEUE_H
-#define QUEUE_H
-
-// Class for queue (using singly-linked list) nodes
-class Node
+class node
 {
 public:
-    int value;
-    Node *next;
+	node(int val) : data(val), p_next(nullptr) {}
 
-    Node(int value);            // Constructor
+	int data;
+	node *p_next;
 };
 
-// Class for queues (using singly-linked list)
-class Queue
+class queue
 {
-public:    
-    // Public interface
-    Queue(int value);           // Constructor  
-    void enqueue(int value);    // Inserts a node into the last node of the queue
-    int dequeue();              // Deletes the first node of the queue
-    int getFirst(void);         // Returns the value of the first node of queue
-    int getLast(void);          // Returns the number of the last node of the queue
-    int getLength(void);        // Returns the number of the last node of the queue
-    void printQueue(void);      // Prints all nodes in the queue
-    ~Queue();                   // Destructor
+public:
+	queue();
+	~queue();
+	void push(const int val);	// enqueue
+	void pop();					// dequeue
+	int front() const;
+	int back() const;
+	bool empty() const;
+	int size() const;
+	void clear();
 
 private:
-    Node *first;
-    Node *last;
-    int length;
+	node *p_front;
+	node *p_back;
+	int cnt;
 };
 
-#endif  // QUEUE_H
+#endif
 ```
 
 ### Implementation
 
 ```c
-//==============================================================================
-// File		: queue.cpp
-// Brief	: Implementation of Queue using Singly-Linked List
-// Author	: Kyungjae Lee
-// Date		: Jun 03, 2023
-//==============================================================================
+#include "queue.hpp"
+#include <stdexcept>
 
-#include <iostream>
-#include <cstdlib>		// EXIT_FAILURE
-#include "queue.h"
-
-
-using namespace std;
-
-//------------------------------------------------------------------------------
-// Implementation of Node class interface
-//------------------------------------------------------------------------------
-
-// Constructor
-// T = O(1)
-Node::Node(int value)
+queue::queue()
+	: p_front(nullptr), p_back(nullptr), cnt(0)
 {
-    this->value = value;
-    next = nullptr;
+	// do nothing
 }
 
-//------------------------------------------------------------------------------
-// Implementation of Queue (using singly-linked list) class interface
-//------------------------------------------------------------------------------
-
-// Constructor
-// T = O(1)
-Queue::Queue(int value)
+queue::~queue()
 {
-    Node *newNode = new Node(value);
-    first = newNode;
-    last = newNode;
-    length = 1;
+	while (!empty())
+	{
+		pop();
+	}
 }
 
-// Inserts a node into the last node of the queue
-// T = O(1)
-void Queue::enqueue(int value)
+void queue::push(const int val)
 {
-    Node *newNode = new Node(value);
+	node *p_new = new node(val);
 
-    // Insert a node into an empty queue
-    if (length == 0)    // (first == nullptr) or (last == nullptr)
-    {
-        first = newNode;
-        last = newNode;
-    }
-    // Insert a node into a non-empty queue
-    else
-    {
-        last->next = newNode;
-        last = newNode;
-    }
+	if (empty())
+	{
+		p_front = p_back = p_new;
+	}
+	else
+	{
+		p_back->p_next = p_new;
+		p_back = p_new;
+	}
 
-    length++;
+	++cnt;
 }
 
-// Deletes the first node of the queue
-// T = O(1)
-int Queue::dequeue(void)
+void queue::pop()
 {
-    // Do not allow dequeue operation on an empty queue
-    if (length == 0)
-    {
-        cout << "ERROR: Cannot dequeue from an empty queue. Terminating!" << endl;
-        exit(EXIT_FAILURE);
-    }
+	if (empty())
+	{
+		throw std::runtime_error("Queue underflow");
+	}
 
-    Node *delNode = first;
-    int dequeuedValue = first->value;
+	node *p_del = p_front;
+	p_front = p_front->p_next;
+	delete p_del;
 
-    // If only 1 node in the queue
-    if (length == 1)
-    {
-        first == nullptr;
-        last == nullptr;
-    }
-    // If 2+ nodes in the queue
-    else
-    {   
-        first = first->next;
-    }
+	if (nullptr == p_front)
+	{
+		p_back = nullptr;
+	}
 
-    delete delNode;
-    length--;
-    
-    return dequeuedValue;
+	--cnt;
 }
 
-// Returns the value of the first node of the queue
-// T = O(1)
-int Queue::getFirst(void)
+int queue::front() const
 {
-    return first->value;
+	if (empty())
+	{
+		throw std::runtime_error("Queue is empty");
+	}
+
+	return p_front->data;
 }
 
-// Returns the value of the last node of the queue
-// T = O(1)
-int Queue::getLast(void)
+int queue::back() const
 {
-    return last->value;
+	if (empty())
+	{
+		throw std::runtime_error("Queue is empty");
+	}
+
+	return p_back->data;
 }
 
-// Returns the number of nodes in the queue
-// T = O(1)
-int Queue::getLength(void)
+bool queue::empty() const
 {
-    return length;
+	return 0 == cnt; // return nullptr == p_front;
 }
 
-// Prints all nodes in the queue
-// T = O(n)
-void Queue::printQueue(void)
+int queue::size() const
 {
-    Node *temp = first;
-
-    while (temp)
-    {
-        cout << temp->value << " ";
-        temp = temp->next;
-    }
-
-    cout << endl;
+	return cnt;
 }
 
-// Destructor
-// T = O(n)
-Queue::~Queue(void)
+void queue::clear()
 {
-    // first, last, length will be destroyed by default, but the nodes will not.
-    // So, make sure to delete them manually in the destructor.
+	while (p_front)
+	{
+		node *p_del = p_front;
+		p_front = p_front->p_next;
+		delete p_del;
 
-    Node *delNode = first;
+		// or simply just call 'pop()' in this while loop
+	}
 
-    while (first)
-    {
-        first = first->next;
-        delete delNode;
-        delNode = first;
-    }
+	cnt = 0;
 }
 ```
 
 ### Test Driver
 
 ```c
-//==============================================================================
-// Filen	: main.cpp
-// Brief	: Test driver for Queue using Singly-Linked List
-// Author	: Kyungjae Lee
-// Date		: Jun 03, 2023
-//==============================================================================
-
 #include <iostream>
-#include "queue.h"
-
-using namespace std;
+#include "queue.hpp"
 
 int main(int argc, char *argv[])
 {
-    // Create a queue
-    Queue *q = new Queue(4);
-    
-    // Enqueue nodes into the queue
-    q->enqueue(3);
-    q->enqueue(2);
-    q->enqueue(1);
+    queue q;
 
-    // Print queue information
-    cout << "First: " << q->getFirst() << endl;     // 4
-    cout << "Last: " << q->getLast() << endl;       // 1
-    cout << "Length: " << q->getLength() << endl;   // 4
-    cout << "Queue elements: "; q->printQueue();    // 4 3 2 1
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);	// 1 -> 2 -> 3 -> 4 -> 5
 
-    cout << endl;
-    
-    // Dequeue nodes from the queue
-    q->dequeue();
-    q->dequeue();
+    std::cout << q.front() << std::endl;	// 1
+    std::cout << q.back() << std::endl;		// 5
+	
+	q.pop();
+    std::cout << q.size() << std::endl;		// 4
+    std::cout << q.empty() << std::endl;	// 0
 
-    // Print queue information
-    cout << "First: " << q->getFirst() << endl;     // 2
-    cout << "Last: " << q->getLast() << endl;       // 1
-    cout << "Length: " << q->getLength() << endl;   // 2
-    cout << "Queue elements: "; q->printQueue();    // 2 1
+    q.clear();
+    std::cout << q.size() << std::endl;		// 0
 
     return 0;
 }
 ```
 
 ```plain
-First: 4
-Last: 1
-Length: 4
-Queue elements: 4 3 2 1 
-
-First: 2
-Last: 1
-Length: 2
-Queue elements: 2 1 
+1
+5
+4
+0
+0
 ```
 
