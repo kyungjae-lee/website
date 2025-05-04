@@ -62,22 +62,23 @@ private:
 
 ```c
 #include "slist.hpp"
+#include <stdexcept>
 
 void slist::push_front(const int val)
 {
-	node *p_new_node = new node(val);
-	p_new_node->p_next = p_head;
-	p_head = p_new_node;
-	cnt++;
+	node *p_new = new node(val);
+	p_new->p_next = p_head;
+	p_head = p_new;
+	++cnt;
 }
 
 void slist::push_back(const int val)
 {
-	node *p_new_node = new node(val);
+	node *p_new = new node(val);
 
 	if (!p_head)
 	{
-		p_head = p_new_node;
+		p_head = p_new;
 	}
 	else
 	{
@@ -88,10 +89,10 @@ void slist::push_back(const int val)
 			p_temp = p_temp->p_next;
 		}
 
-		p_temp->p_next = p_new_node;
+		p_temp->p_next = p_new;
 	}
 
-	cnt++;
+	++cnt;
 }
 
 void slist::insert_at(const int idx, const int val)
@@ -106,18 +107,18 @@ void slist::insert_at(const int idx, const int val)
 		return push_front(val);
 	}
 
-	node *p_new_node = new node(val);
+	node *p_new = new node(val);
 	node *p_temp = p_head;
 
-	for (int i = 0; i < idx - 1; i++)
+	for (int i = 0; i < idx - 1; ++i)
 	{
 		p_temp = p_temp->p_next;
 	}
 
-	p_new_node->p_next = p_temp->p_next;
-	p_temp->p_next = p_new_node;
+	p_new->p_next = p_temp->p_next;
+	p_temp->p_next = p_new;
 
-	cnt++;
+	++cnt;
 }
 
 void slist::pop_front()
@@ -130,7 +131,7 @@ void slist::pop_front()
 	node *p_temp = p_head;
 	p_head = p_head->p_next;
 	delete p_temp;
-	cnt--;
+	--cnt;
 }
 
 void slist::pop_back()
@@ -158,7 +159,7 @@ void slist::pop_back()
 		p_temp->p_next = nullptr;
 	}
 
-	cnt--;
+	--cnt;
 }
 
 void slist::erase_at(const int idx)
@@ -175,15 +176,15 @@ void slist::erase_at(const int idx)
 
 	node *p_temp = p_head;
 
-	for (int i = 0; i < idx - 1; i++)
+	for (int i = 0; i < idx - 1; ++i)
 	{
 		p_temp = p_temp->p_next;
 	}
 
-	node *p_del_node = p_temp->p_next;
+	node *p_del = p_temp->p_next;
 	p_temp->p_next = p_temp->p_next->p_next;
-	delete p_del_node;
-	cnt--;
+	delete p_del;
+	--cnt;
 }
 
 void slist::erase_val(const int val)
@@ -207,12 +208,12 @@ void slist::erase_val(const int val)
 
 	if (p_temp->p_next)
 	{
-		node *p_del_node = p_temp->p_next;
+		node *p_del = p_temp->p_next;
 		p_temp->p_next = p_temp->p_next->p_next;
-		delete p_del_node;
+		delete p_del;
 	}
 
-	cnt--;
+	--cnt;
 }
 
 int slist::get_at(const int idx) const
@@ -224,7 +225,7 @@ int slist::get_at(const int idx) const
 
 	node *p_temp = p_head;
 
-	for (int i = 0; i < idx; i++)
+	for (int i = 0; i < idx; ++i)
 	{
 		p_temp = p_temp->p_next;
 	}
