@@ -17,42 +17,33 @@
 ### Interface
 
 ```cpp
-//==============================================================================
-// File		: stack.h
-// Brief	: Interface for Stack using Singly-Linked List
-// Author	: Kyungjae Lee
-// Date		: Jun 3, 2023
-//==============================================================================
+#ifndef STACK_HPP
+#define STACK_HPP
 
-#ifndef STACK_H
-#define STACK_H
-
-// Class for stack (using singly-linked list) nodes
-class Node
+class node
 {
 public:
-    int value;
-    Node *next;
+	node(int val) : data(val), p_next(nullptr) {}
 
-    Node(int value);                    // Constructor
+	int data;
+	node *p_next;
 };
 
-// Class for stacks (using singly-linked list)
-class Stack
+class stack
 {
-public:    
-    // Public interface
-    Stack(int value);       // Constructor  
-    void push(int value);   // Inserts a node into the top of stack
-    int pop(void);          // Deletes a node from the top of stack
-    int getTop(void);       // Returns the value of the top of stack
-    int getHeight(void);    // Returns the number of nodes in the stack
-    void printStack(void);  // Prints all nodes in the stack
-    ~Stack();               // Destructor
+public:
+	stack();
+	~stack();
+	void push(const int val);
+	void pop();
+	int top() const;
+	bool empty() const;
+	int size() const;
+	void clear();
 
 private:
-    Node *top;				// Pointer to top of stack
-    int height;				// Number of nodes in the stack
+	node *p_top;
+	int cnt;
 };
 
 #endif
@@ -61,174 +52,107 @@ private:
 ### Implementation
 
 ```cpp
-//==============================================================================
-// File		: stack.cpp
-// Brief	: Implementation of Stack using Singly-Linked List
-// Author	: Kyungjae Lee
-// Date		: Jun 3, 2023
-//==============================================================================
+#include "stack.hpp"
+#include <stdexcept>
 
-#include <iostream>
-#include "stack.h"
-#include <cstdlib>		// EXIT_FAILURE
-
-using namespace std;
-
-//------------------------------------------------------------------------------
-// Implementation of Node class interface
-//------------------------------------------------------------------------------
-
-// Constructor
-// T = O(1)
-Node::Node(int value)
+stack::stack()
+	: p_top(nullptr), cnt(0)
 {
-    this->value = value;
-    next = nullptr;
+	// Do nothing
 }
 
-//------------------------------------------------------------------------------
-// Implementation of Stack (using singly-linked list) class interface
-//------------------------------------------------------------------------------
-
-// Constructor
-// T = O(1)
-Stack::Stack(int value)
+stack::~stack()
 {
-    Node *newNode = new Node(value);
-    top = newNode;
-    height = 1;
+	while (!empty())
+	{
+		pop();
+	}
 }
 
-// Inserts a node into the top of stack
-// T = O(1)
-void Stack::push(int value)
+void stack::push(const int val)
 {
-    Node *newNode = new Node(value);
-
-    // Push a node into a (empty or non-empty) stack
-    newNode->next = top;
-    top = newNode;
-    height++;
+	node *p_new = new node(val);
+	p_new->p_next = p_top;
+	p_top = p_new;
+	++cnt;
 }
 
-// Deletes a node from the top of stack
-// T = O(1)
-int Stack::pop(void)
+void stack::pop()
 {
-    // Do not allow pop operation on an empty stack
-    if (length == 0)
-    {
-        cout << "ERROR: Cannot pop from an empty stack. Terminating!" << endl;
-        exit(EXIT_FAILURE);
-    }
+	if (empty())
+	{
+		throw std::runtime_error("Stack underflow");
+	}
 
-    Node *delNode = top;
-    int poppedValue = top->value;
-    top = top->next;
-    delete delNode;
-    height--;
-
-    return poppedValue;
+	node *p_del = p_top;
+	p_top = p_top->p_next;
+	delete p_del;
+	--cnt;
 }
 
-// Returns the value of the top of stack
-// T = O(1)
-int Stack::getTop(void)
+int stack::top() const
 {
-    return top->value;
+	if (empty())
+	{
+		throw std::runtime_error("Stack is empty");
+	}
+
+	return p_top->data;
 }
 
-// Returns the number of nodes in the stack
-// T = O(1)
-int Stack::getHeight(void)
+bool stack::empty() const
 {
-    return height;
+	return 0 == cnt;
 }
 
-// Prints all nodes in the stack
-// T = O(n)
-void Stack::printStack(void)
+int stack::size() const
 {
-    Node *temp = top;
-
-    while (temp)
-    {
-        cout << temp->value << " ";
-        temp = temp->next;
-    }
-
-    cout << endl;
+	return cnt;
 }
 
-// Destructor
-// T = O(n)
-Stack::~Stack(void)
+void stack::clear()
 {
-    // top, height will be destroyed by default, but the nodes will not.
-    // So, make sure to delete them manually in the destructor.
+	while (nullptr != p_top)
+	{
+		node *p_del = p_top;
+		p_top = p_top->p_next;
+		delete p_del;
+	}
 
-    Node *delNode = top;
-
-    while (top)
-    {
-        top = top->next;
-        delete delNode;
-        delNode = top;
-    }
+	cnt = 0;
 }
 ```
 
 ### Test Driver
 
 ```cpp
-//==============================================================================
-// File		: main.cpp
-// Brief	: Test driver for Stack using Singly-Linked List
-// Author	: Kyungjae Lee
-// Date		: Jun 3, 2023
-//==============================================================================
-
 #include <iostream>
-#include "stack.h"
-
-using namespace std;
+#include "stack.hpp"
 
 int main(int argc, char *argv[])
 {
-    // Create a stack
-    Stack *s = new Stack(4);
-    
-    // Push nodes to stack
-    s->push(3);
-    s->push(2);
-    s->push(1);
+	stack s;
 
-    // Print stack information
-    cout << "Top: " << s->getTop() << endl;         // 1
-    cout << "Height: " << s->getHeight() << endl;   // 4
-    cout << "Stack elements: "; s->printStack();    // 1 2 3 4
-    
-    cout << endl;
-    
-    // Pop nodes from stack
-    s->pop();
-    s->pop();
+	s.push(1);
+	s.push(2);
+	s.push(3);
+	s.push(4);
+	s.push(5);
+	
+	std::cout << s.top() << std::endl;		// 5
+	std::cout << s.size() << std::endl;		// 5
+	std::cout << s.empty() << std::endl;	// 0
 
-    // Print stack information
-    cout << "Top: " << s->getTop() << endl;         // 3
-    cout << "Height: " << s->getHeight() << endl;   // 2
-    cout << "Stack elements: "; s->printStack();    // 3 4
+	s.clear();
+	std::cout << s.size() << std::endl;		// 0
 
-    return 0;
+	return 0;
 }
 ```
 
 ```plain
-Top: 1
-Height: 4
-Stack elements: 1 2 3 4 
-
-Top: 3
-Height: 2
-Stack elements: 3 4 
+5
+5
+0
+0
 ```
