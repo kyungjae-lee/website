@@ -41,14 +41,14 @@ public:
 	void pop_back();
 	void erase_at(const int idx);
 	void erase_val(const int val);
-	int get_at(const int idx);
-	int find(const int val);
-	int front();
-	int back();
-	int size();
-	bool empty();
+	int get_at(const int idx) const;
+	int find(const int val) const;
+	int front() const;
+	int back() const;
+	int size() const;
+	bool empty() const;
 	void clear();
-	void print();
+	void print() const;
 	
 private:
 	node *p_head;
@@ -101,7 +101,7 @@ void slist::insert_at(const int idx, const int val)
 		return;
 	}
 
-	if (0 == idx)
+	if (idx == 0)
 	{
 		return push_front(val);
 	}
@@ -168,7 +168,7 @@ void slist::erase_at(const int idx)
 		return;
 	}
 
-	if (0 == idx)
+	if (idx == 0)
 	{
 		return pop_front();
 	}
@@ -215,7 +215,7 @@ void slist::erase_val(const int val)
 	cnt--;
 }
 
-int slist::get_at(const int idx)
+int slist::get_at(const int idx) const
 {
 	if (idx < 0 || idx >= cnt)
 	{
@@ -232,7 +232,7 @@ int slist::get_at(const int idx)
 	return p_temp->data;
 }
 
-int slist::find(const int val)
+int slist::find(const int val) const
 {
 	node *p_temp = p_head;
 	int idx = 0;
@@ -251,7 +251,7 @@ int slist::find(const int val)
 	return -1;
 }
 
-int slist::front()
+int slist::front() const
 {
 	if (!p_head)
 	{
@@ -261,7 +261,7 @@ int slist::front()
 	return p_head->data;
 }
 
-int slist::back()
+int slist::back() const
 {
 	if (!p_head)
 	{
@@ -278,12 +278,12 @@ int slist::back()
 	return p_temp->data;
 }
 
-int slist::size()
+int slist::size() const
 {
 	return cnt;
 }
 
-bool slist::empty()
+bool slist::empty() const
 {
 	return 0 == cnt;
 }
@@ -300,7 +300,7 @@ void slist::clear()
 	cnt = 0;
 }
 
-void slist::print()
+void slist::print() const
 {
 	node *p_temp = p_head;
 
