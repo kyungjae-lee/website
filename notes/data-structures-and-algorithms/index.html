@@ -608,12 +608,34 @@ header, .context-menu, .megamenu-content, footer{
     background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
 }
 
+/* Below this point, added for custom styling. */
+pre {
+    white-space: pre;             /* Keep formatting, no wrapping */
+    overflow-x: auto;             /* Enable horizontal scroll */
+    font-size: 1em;               /* Base font size, adjustable */
+    max-width: 100vw;             /* Ensure it doesn't overflow screen */
+    box-sizing: border-box;       /* Include padding in width calculation */
+    padding: 1em;                 /* Optional: clean spacing */
+}
+
+/* Optional: Adjust font size slightly for small screens */
+@media (max-width: 768px) {
+pre {
+    font-size: 0.9em;           /* Slightly smaller font on tablets and phones */
+}
+}
+
+@media (max-width: 480px) {
+pre {
+    font-size: 0.85em;          /* Even smaller font on very small phones */
+}
+}
 
 
 </style>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Data Structures &amp; Algorithms</span></p><h1 id='data-structures--algorithms'><span>Data Structures &amp; Algorithms</span></h1><p>&nbsp;</p><h3 id='data-structures'><span>Data Structures</span></h3><ul><li><p><strong><a href='singly-linked-lists'><span>Singly-Linked Lists</span></a></strong></p></li><li><p><strong><a href='doubly-linked-lists'><span>Doubly-Linked Lists</span></a></strong></p></li><li><p><strong><a href='stacks'><span>Stacks</span></a></strong></p></li><li><p><strong><a href='queues'><span>Queues</span></a></strong></p></li><li><p><strong><a href='trees'><span>Trees</span></a></strong></p></li><li><p><strong><a href='hash-tables'><span>Hash Tables</span></a></strong></p></li><li><p><strong><a href='graphs'><span>Graphs</span></a></strong></p></li></ul><h3 id='algorithms'><span>Algorithms</span></h3><ul><li><p><strong><a href='recursion'><span>Recursion</span></a></strong></p></li><li><p><strong><a href='bubble-sort'><span>Bubble Sort: T = O(n</span><sup><span>2</span></sup><span>) , S = O(1)</span></a></strong></p></li><li><p><strong><a href='selection-sort'><span>Selection Sort: T = O(n</span><sup><span>2</span></sup><span>) , S = O(1)</span></a></strong></p></li><li><p><strong><a href='insertion-sort'><span>Insertion Sort: T = O(n</span><sup><span>2</span></sup><span>) , S = O(1)</span></a></strong></p></li><li><p><strong><a href='merge-sort'><span>Merge Sort: T = O(n logn) , S = O(n)</span></a></strong></p></li><li><p><strong><a href='quick-sort'><span>Quick Sort: T = O(n logn) , S = O(n)</span></a></strong></p></li><li><p><strong><a href='tree-traversal'><span>Tree Traversal (Pre-Order, In-Order, Post-Order)</span></a></strong></p></li><li><p><strong><a href='breadth-first-search'><span>Breadth-First Search (BFS)</span></a></strong></p></li></ul></div></div>
+<div id='write'  class=''><p><a href='../../'><span>Home</span></a><span> | </span><a href='../../projects'><span>Projects</span></a><span> | </span><a href='../'><span>Notes</span></a><span> &gt; Data Structures &amp; Algorithms</span></p><h1 id='data-structures--algorithms'><span>Data Structures &amp; Algorithms</span></h1><p>&nbsp;</p><h3 id='data-structures'><span>Data Structures</span></h3><ul><li><p><strong><a href='singly-linked-lists'><span>Singly-Linked Lists</span></a></strong></p></li><li><p><strong><a href='doubly-linked-lists'><span>Doubly-Linked Lists</span></a></strong></p></li><li><p><strong><a href='stacks'><span>Stacks</span></a></strong></p></li><li><p><strong><a href='queues'><span>Queues</span></a></strong></p></li><li><p><strong><a href='trees'><span>Trees</span></a></strong></p></li><li><p><strong><a href='hash-tables'><span>Hash Tables</span></a></strong></p></li><li><p><strong><a href='graphs'><span>Graphs</span></a></strong></p></li><li><p><strong><a href='ring-buffer'><span>Ring Buffer</span></a></strong></p></li></ul><h3 id='algorithms'><span>Algorithms</span></h3><ul><li><p><strong><a href='recursion'><span>Recursion</span></a></strong></p></li><li><p><strong><a href='bubble-sort'><span>Bubble Sort: T = O(n</span><sup><span>2</span></sup><span>) , S = O(1)</span></a></strong></p></li><li><p><strong><a href='selection-sort'><span>Selection Sort: T = O(n</span><sup><span>2</span></sup><span>) , S = O(1)</span></a></strong></p></li><li><p><strong><a href='insertion-sort'><span>Insertion Sort: T = O(n</span><sup><span>2</span></sup><span>) , S = O(1)</span></a></strong></p></li><li><p><strong><a href='merge-sort'><span>Merge Sort: T = O(n logn) , S = O(n)</span></a></strong></p></li><li><p><strong><a href='quick-sort'><span>Quick Sort: T = O(n logn) , S = O(n)</span></a></strong></p></li><li><p><strong><a href='tree-traversal'><span>Tree Traversal (Pre-Order, In-Order, Post-Order)</span></a></strong></p></li><li><p><strong><a href='breadth-first-search'><span>Breadth-First Search (BFS)</span></a></strong></p></li></ul></div></div>
 <footer>
 <p style="text-align: center;"><i>- Original works by Kyungjae Lee -</i></p>
 </footer> </body>

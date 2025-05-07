@@ -13,6 +13,7 @@
 * **[Trees](trees)**
 * **[Hash Tables](hash-tables)**
 * **[Graphs](graphs)**
+* **[Ring Buffer](ring-buffer)**
 
 ### Algorithms
 
