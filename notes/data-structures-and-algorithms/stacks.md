@@ -156,3 +156,125 @@ int main(int argc, char *argv[])
 0
 0
 ```
+
+
+
+## Stack Using Singly-Linked List (C)
+
+### Interface
+
+```c
+#ifndef STACK_H
+#define STACK_H
+
+#include <stdbool.h>
+
+typedef struct node
+{
+	int data;
+	struct node *p_next;
+} node;
+
+typedef struct
+{
+	node *p_top;
+	int cnt;
+} stack;
+
+// Public interface
+void stack_init(stack *s);
+void stack_push(stack *s, const int val);
+void stack_pop(stack *s);
+int stack_top(const stack *s);
+bool stack_empty(const stack *s);
+int stack_size(const stack *s);
+void stack_clear(stack *s);
+
+#endif
+```
+
+### Implementation
+
+```c
+#include "stack.h"
+#include "stdio.h"
+#include "stdlib.h"
+
+void stack_init(stack *s)
+{
+	s->p_top = NULL;
+	s->cnt = 0;
+}
+
+void stack_push(stack *s, const int val)
+{
+	node *p_new = (node *)malloc(sizeof(node));
+
+	if (!p_new)
+	{
+		fprintf(stderr, "Failed to allocate memory for new node\n");	
+		exit(EXIT_FAILURE);
+	}
+
+	p_new->data = val;
+	p_new->p_next = s->p_top;
+	s->p_top = p_new;
+	s->cnt++;
+}
+
+void stack_pop(stack *s)
+{
+	if (stack_empty(s))
+	{
+		fprintf(stderr, "Stack underflow\n");
+		exit(EXIT_FAILURE);
+	}
+
+	node *p_del = s->p_top;
+	s->p_top = s->p_top->p_next;
+	free(p_del);
+	s->cnt--;
+}
+
+int stack_top(const stack *s)
+{
+	if (stack_empty(s))
+	{
+		fprintf(stderr, "Stack is empty\n");
+		exit(EXIT_FAILURE);
+	}
+
+	return s->p_top->data;
+}
+
+bool stack_empty(const stack *s)
+{
+	return 0 == s->cnt;
+}
+
+int stack_size(const stack *s)
+{
+	return s->cnt;
+}
+
+void stack_clear(stack *s)
+{
+	while (s->p_top)
+	{
+		stack_pop(s);
+	}
+}
+```
+
+### Test Driver
+
+```c
+5
+0
+5
+4
+4
+1
+0
+```
+
