@@ -4,9 +4,29 @@
 
 
 
-## Ring Buffer
+## Introduction
 
-### Interface
+A **ring buffer** is a fixed-size data structure that uses a single, contiguous block of memory as a circular queue. It maintains two indices (`front` and `back`) to manage reading and writing. When the end of the buffer is reached, it wraps around to the beginning — forming a logical circle.
+
+### Pros:
+
+* **Constant-Time Operations**: `O(1)` time for enqueue and dequeue (no shifting of elements).
+* **Fixed Memory Footprint**: Efficient for systems with limited memory or real-time constraints.
+* **Cache-Friendly**: Data is stored contiguously in memory.
+* **Ideal for Streaming**: Commonly used in audio buffers, UART RX/TX buffers, and producer-consumer models.
+
+### Cons:
+
+* **Fixed Capacity**: Must predefine buffer size; resizing is non-trivial.
+* **Wasted Slot (optional)**: Some implementations leave one slot empty to distinguish full vs. empty.
+* **Requires Careful Index Management**: Logic for wraparound and full/empty detection can be error-prone.
+* **Not Suited for Arbitrary Insertion/Deletion**: Only supports FIFO (queue-style) behavior.
+
+
+
+## Implementation (C++)
+
+### Header (`rbuffer.hpp`)
 
 ```cpp
 #ifndef RBUFFER_HPP
@@ -39,7 +59,7 @@ private:
 #endif
 ```
 
-### Implementation
+### Source (`rbuffer.cpp`)
 
 ```cpp
 #include "rbuffer.hpp"

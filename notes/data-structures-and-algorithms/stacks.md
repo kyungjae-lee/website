@@ -4,9 +4,9 @@
 
 
 
-## Stack Using Singly-Linked List (C++)
+## Introduction
 
-* `push()` and `pop()` operations are designed to be done on the head of the list since both of their time complexity is O(1).
+A **stack** is a linear data structure that follows the **Last In, First Out (LIFO)** principle. Elements are added (`push`) and removed (`pop`) only from the **top** of the stack. It can be implemented using arrays, linked lists, or other containers, and is widely used in function call management, undo operations, and parsing expressions.
 
 
 
@@ -14,7 +14,29 @@
 
 
 
-### Interface
+### Pros:
+
+* **Simple and Fast**: `O(1)` time for `push` and `pop` operations.
+* **Easy to Implement**: Can be built using arrays or linked lists.
+* **Useful in Algorithms**: Backtracking, recursion, depth-first search (DFS), etc.
+* **Memory-Efficient with Linked List**: Grows dynamically without resizing.
+
+### Cons:
+
+* **Limited Access**: Only the top element is accessible; no random access.
+* **Fixed Size (Array-Based)**: Requires resizing or limits capacity.
+* **Not Ideal for Search or Arbitrary Removal**: Inefficient for operations other than LIFO.
+
+### Compared to Queues:
+
+* **Better**: For backtracking, recursion, nested structure parsing.
+* **Worse**: When first-in elements must be accessed or preserved.
+
+
+
+## Implementation (C++)
+
+### Header (`stack.hpp`)
 
 ```cpp
 #ifndef STACK_HPP
@@ -49,7 +71,7 @@ private:
 #endif
 ```
 
-### Implementation
+### Source (`stack.cpp`)
 
 ```cpp
 #include "stack.hpp"

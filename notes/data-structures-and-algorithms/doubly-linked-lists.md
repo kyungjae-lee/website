@@ -4,7 +4,9 @@
 
 
 
-## Doubly-Linked List (C++)
+## Introduction
+
+A **doubly linked list** is a linear data structure where each node contains a data value, a pointer to the **next node**, and a pointer to the **previous node**. This bidirectional linkage allows traversal in both forward and backward directions. It is particularly useful when two-way navigation or efficient deletion from both ends is required.
 
 
 
@@ -12,7 +14,28 @@
 
 
 
-### Interface
+### Pros:
+
+* **Bidirectional Traversal**: Can move both forward and backward through the list.
+* **Efficient Insertions/Deletions**: `O(1)` insertion or removal from both ends or given nodes (with pointer access).
+* **Flexible Memory Usage**: Dynamically grows and shrinks at runtime.
+
+### Cons:
+
+* **Higher Memory Overhead**: Each node stores two pointers (`next` and `prev`), doubling pointer storage compared to a singly linked list.
+* **More Complex Management**: Insertions and deletions require careful pointer updates in both directions.
+* **Less Cache-Friendly**: Like singly linked lists, nodes are non-contiguous in memory.
+
+### Compared to Singly-Linked Lists:
+
+* **Better**: Easier to delete nodes from the middle, supports reverse traversal.
+* **Worse**: Slightly more memory usage and pointer management complexity.
+
+
+
+## Implementation (C++)
+
+### Header (`dlist.hpp`)
 
 ```c
 //==============================================================================
@@ -63,7 +86,7 @@ private:
 #endif	// DOUBLY_LINKED_LIST_H
 ```
 
-### Implementation
+### Source (`dlist.cpp`)
 
 ```c
 //==============================================================================

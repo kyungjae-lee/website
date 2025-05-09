@@ -4,9 +4,9 @@
 
 
 
-## Queue Using Singly-Linked List (C++)
+## Introduction
 
-* The only design that allows both the `enqueue()` and `dequeue()` to be of O(1) time complexity is to enqueue to the last node and dequeue from the first node.
+A **queue** is a linear data structure that follows the **First In, First Out (FIFO)** principle. Elements are added at the **back (enqueue)** and removed from the **front (dequeue)**. It is commonly used in scheduling, buffering, and breadth-first traversal scenarios.
 
 
 
@@ -14,7 +14,29 @@
 
 
 
-### Interface
+### Pros:
+
+* **Simple FIFO Logic**: Maintains processing order, ideal for task scheduling and buffering.
+* **Efficient Operations**: `O(1)` time for `enqueue` and `dequeue` (with a linked list or circular buffer).
+* **Flexible Implementations**: Can be implemented using arrays, linked lists, or circular buffers.
+* **Dynamic Size (Linked List)**: Grows as needed without reallocation.
+
+### Cons:
+
+* **Limited Access**: Only the front and rear elements can be accessed — no random access or indexed lookup.
+* **Fixed Capacity (Array-Based)**: Unless dynamically resized, array-based queues have limited space.
+* **Inefficient Deletion/Search**: Not suitable for arbitrary removal or searching through the queue.
+
+### Compared to Stacks:
+
+* **Better**: When processing order must be preserved (e.g., printers, CPU scheduling).
+* **Worse**: When backtracking or nested operations are needed (stack excels there).
+
+
+
+## Implementation (C++)
+
+### Header (`queue.hpp`)
 
 ```cpp
 #ifndef QUEUE_HPP
@@ -51,7 +73,7 @@ private:
 #endif
 ```
 
-### Implementation
+### Source (`queue.cpp`)
 
 ```cpp
 #include "queue.hpp"

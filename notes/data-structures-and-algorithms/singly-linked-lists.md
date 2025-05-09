@@ -4,7 +4,9 @@
 
 
 
-## Singly-Linked List (C++)
+## Introduction
+
+A **singly linked list** is a linear data structure made up of nodes, where each node contains a data value and a pointer to the **next node** in the sequence. The list is traversed in one direction — from the front to the back — by following these `next` pointers. It supports dynamic memory usage and is ideal for frequent insertions or deletions at known positions.
 
 
 
@@ -12,7 +14,30 @@
 
 
 
-### Interface
+### Pros:
+
+* **Dynamic Size**: Easily grows or shrinks without reallocating or copying (unlike arrays).
+* **Efficient Insertion/Deletion**: `O(1)` time to insert or delete at the head (or with a known pointer).
+* **Low Memory Overhead per Element**: Requires only one pointer (`next`) per node.
+* **No Wasted Space**: No need to preallocate or resize like arrays.
+
+### Cons:
+
+* **No Random Access**: Accessing the `n`-th element takes `O(n)` time; cannot do `list[i]` like arrays.
+* **Sequential Traversal Only**: Cannot traverse backward; no `prev` pointer.
+* **More Memory per Element Than Arrays**: Each node stores a pointer along with data.
+* **Cache Unfriendly**: Nodes are not contiguous in memory, leading to poor cache performance compared to arrays or vectors.
+
+### Compared to Arrays:
+
+* **Better**: Insert/delete at front/back (if `back` pointer is maintained).
+* **Worse**: Random access, cache locality, memory overhead.
+
+
+
+## Implementation (C++)
+
+### Header (`slist.hpp`)
 
 ```cpp
 #ifndef SLIST_HPP
@@ -58,7 +83,7 @@ private:
 #endif
 ```
 
-### Implementation
+### Source (`slist.cpp`)
 
 ```cpp
 #include "slist.hpp"
