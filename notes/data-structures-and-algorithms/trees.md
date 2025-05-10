@@ -4,30 +4,58 @@
 
 
 
-## Binary Trees Terminology
+## Terminology
+
+| Term          | Definition                                                   |
+| ------------- | ------------------------------------------------------------ |
+| Node          | A basic unit containing data and links to child nodes.       |
+| Root          | The topmost node of the tree; has no parent.                 |
+| Parent        | A node that has one or more child nodes.                     |
+| Child         | A node that descends from another node.                      |
+| Leaf          | A node with no children.                                     |
+| Internal Node | A node with at least one child (i.e. not a leaf). Root is also an internal node. |
+| Edge          | A connection between a parent and a child node.              |
+| Path          | A sequence of nodes connected by edges.                      |
+| Height        | The number of edges on the longest path from a node to a leaf. |
+| Depth         | The number of edges from the root to a node.                 |
+| Level         | The depth of a node plus one (root is at level 1).           |
+| Subtree       | A tree formed from any node and its descendants.             |
+| Sibling       | Nodes that share the same parent.                            |
+| Degree        | The number of children a node has.                           |
+| Balanced Tree | A tree where the height difference between subtrees is minimal. |
+| Binary Tree   | A tree where each node has at most two children (left and right). |
+
+
+
+## Binary Trees
+
+A **binary tree** is a hierarchical data structure where each node has at most **two children**: a **left child** and a **right child**. It is commonly used to represent structured data like arithmetic expressions, hierarchical relationships, and is the foundation of many search and sorting algorithms.
+
+### Common Types
 
 * **Full binary tree**
-  * Every node points to either 0 or 2 nodes
+  * Every node has 0 or 2 children.
 * **Complete binary tree**
-  * All levels, except possibly the last one, are completely filled, and the last level is filled from left to right with no missing nodes. 
-  * Not "perfect" since the bottom level is not filled all the way across
+  * All levels are filled except possibly the last, which is filled left to right with no missing nodes. 
+  * Not "perfect" since the bottom level is not filled all the way across.
 * **Perfect binary tree**
-  * Any level of a binary tree that has any nodes is perfectly filled all the way across
+  * All internal nodes have 2 children, and all leaves are at the same level.
   * All perfect binary trees are both "complete" and "full"
-* **Siblings**
-  * Nodes that share the same parent
-  * In a tree, each node (except for the root node) has exactly one parent.
-* **Leaf node**
-  * Any node in a tree that has no children
-* **Internal node (a.k.a. inner node or non-leaf node)**
-  * Any node in a tree that is not a leaf node
-  * Root node is also an internal node.
+* **Binary Search Tree (BST)**
+  * Left child < parent < right child.
 
 
 
-## Binary Search Trees (C++)
 
-* A binary search tree (BST) is a binary tree data structure in which each node has a key/value associated with it, and the keys satisfy the following properties:
+## Binary Search Trees
+
+A **Binary Search Tree (BST)** is a type of binary tree where each node follows a specific ordering rule:
+
+- The **left subtree** contains only nodes with values **less than** the parent node.
+- The **right subtree** contains only nodes with values **greater than** the parent node.
+- This rule applies **recursively** to every subtree in the tree.
+
+BSTs are widely used for **efficient searching, insertion, and deletion**, with average-case time complexity of **O(log n)** for balanced trees.
 
 
 
@@ -40,205 +68,3 @@
   $\to$ Divide and conquer!
 
 * If a tree never forks, it is essentially a linked list, in which case the search time complexity will be O(n). However, since this is not a general case, a binary search tree is still treated as an O(log n) data structure.
-
-### Interface
-
-```c
-//==============================================================================
-// File		: binary_search_tree.h
-// Brief	: Interface for Binary Search Tree (BST)
-// Author	: Kyungjae Lee
-// Date		: Jun 29, 2023
-//==============================================================================
-
-#ifndef BINARY_SEARCH_TREE_H
-#define BINARY_SEARCH_TREE_H
-
-// Class for binary search tree nodes
-class Node
-{
-public:
-    int value;
-    Node *left;			// Pointer to the left child
-    Node *right;		// Pointer to the right child
-
-    Node(int value);	// Constructor
-};
-
-// Class for binary search tree
-class BinarySearchTree
-{
-public:    
-    // Public interface
-    BinarySearchTree(void);		// Constructor	
-    ~BinarySearchTree(void);	// Destructor
-	bool insert(int value);		// Inserts a node into the BST
-	bool contains(int value);	// Checks if the BST contains the passed node
-
-//private:
-    Node *root;
-};
-
-#endif // BINARY_SEARCH_TREE_H
-```
-
-### Implementation
-
-```c
-//==============================================================================
-// File		: binary_search_tree.cpp
-// Brief	: Implementation of Binary Search Tree (BST)
-// Author	: Kyungjae Lee
-// Date		: Jun 29, 2023
-//==============================================================================
-
-#include <iostream>
-#include "binary_search_tree.h"
-
-using namespace std;
-
-//------------------------------------------------------------------------------
-// Implementation of Node class interface
-//------------------------------------------------------------------------------
-
-// Constructor
-// T = O(1)
-Node::Node(int value)
-{
-    this->value = value;
-    left = nullptr;
-    right = nullptr;
-} // End of Node constructor
-
-//------------------------------------------------------------------------------
-// Implementation of Binary Search Tree class interface
-//------------------------------------------------------------------------------
-
-// Constructor
-// T = O(1)
-BinarySearchTree::BinarySearchTree(void)
-{
-    root = nullptr;
-} // End of BinarySearchTree constructor
-
-// Inserts a node into the BST
-// T = O(log n); Technically O(log n) since the Big-O measures the worst case
-bool BinarySearchTree::insert(int value)
-{
-	Node *newNode = new Node(value);
-
-	if (root == nullptr)
-	{
-		// Handle inserting a node into an empty BST
-		root = newNode;
-		return true;
-	}
-
-	Node *curr = root;
-	
-	while (true)
-	{
-		if (newNode->value == curr->value)
-		{
-			// Do not allow inserting a node whose value is already present in
-			// the BST
-			return false;
-		}
-		else if (newNode->value < curr->value)
-		{
-			// newNode with the smaller value goes to the left
-			if (curr->left == nullptr)
-			{
-				// Spot is empty, so insert the newNode there
-				curr->left = newNode;
-				return true;
-			}
-			else
-			{
-				// Spot is not empty, advance the curr and keep searching
-				curr = curr->left;
-			}
-		}
-		else
-		{
-			// newNode with the greater value goes to the right
-			if (curr->right == nullptr)
-			{
-				// Spot is empty, so insert the newNode there
-				curr->right = newNode;
-				return true;
-			}
-			else
-			{
-				// Spot is not empty, advance the curr and keep searching
-				curr = curr->right;
-			}
-
-		}
-	}
-} // End of insert */
-
-// Checks if the BST contains the passed node
-// T = O(log n); Technically O(log n) since the Big-O measures the worst case
-bool BinarySearchTree::contains(int value)
-{
-	Node *curr = root;
-
-	while (curr)
-	{
-		if (value < curr->value)
-			curr = curr->left;
-		else if (value > curr->value)
-			curr = curr->right;
-		else
-			return true;
-	}
-
-	return false;
-} // End of contains
-```
-
-### Test Driver
-
-```c
-//==============================================================================
-// File		: main.cpp
-// Brief	: Test driver for Binary Search Tree (BST)
-// Author	: Kyungjae Lee
-// Date		: Jun 29, 2023
-//==============================================================================
-
-#include <iostream>
-#include "binary_search_tree.h"
-
-using namespace std;
-
-int main(int argc, char *argv[])
-{
-    // Create a BST
-    BinarySearchTree *bst = new BinarySearchTree();
-    
-	// Insert nodes
-	bst->insert(47);
-	bst->insert(21);
-	bst->insert(76);
-	bst->insert(18);
-	bst->insert(57);
-	bst->insert(82);
-	bst->insert(27);
-
-	cout << bst->root->left->right->value << endl;			// 27
-
-	cout << "Contains 27: " << bst->contains(27) << endl;	// 1
-	cout << "Contains 17: " << bst->contains(17) << endl;	// 0
-
-    return 0;
-}
-```
-
-```plain
-27
-Contains 27: 1
-Contains 17: 0
-```
-

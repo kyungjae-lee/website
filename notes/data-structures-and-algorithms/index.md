@@ -11,6 +11,7 @@
 * **[Stacks](stacks)**
 * **[Queues](queues)**
 * **[Trees](trees)**
+* **[Binary Search Trees (BST)](binary-search-trees)**
 * **[Hash Tables](hash-tables)**
 * **[Graphs](graphs)**
 * **[Ring Buffer](ring-buffer)**
