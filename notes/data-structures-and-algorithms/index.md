@@ -12,6 +12,7 @@
 * **[Queues](queues)**
 * **[Trees](trees)**
 * **[Binary Search Trees (BST)](binary-search-trees)**
+* **[Priority Queues](priority-queues)**
 * **[Hash Tables](hash-tables)**
 * **[Graphs](graphs)**
 * **[Ring Buffer](ring-buffer)**
