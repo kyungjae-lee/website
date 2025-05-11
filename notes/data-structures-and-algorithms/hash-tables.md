@@ -322,6 +322,69 @@ int chtable::hash(const std::string &key) const
 
 > L19: Revisit why you can't use `push_back(key, val)` there!
 
+### Test Driver
+
+```cpp
+#include <iostream>
+#include "chtable.hpp"
+
+int main(int argc, char *argv[])
+{
+	chtable ht;
+
+	ht.insert("apple", 10);
+	ht.insert("banana", 20);
+	ht.insert("grape", 30);
+	ht.insert("banana", 25); // update
+
+	ht.print();
+	std::cout << std::endl;
+
+	int value;
+	if (ht.get("banana", value))
+	{
+		std::cout << "banana -> " << value << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	ht.remove("apple");
+	std::cout << "After removing 'apple':" << std::endl;
+	ht.print();
+
+    return 0;
+}
+```
+
+```plain
+0:
+1:
+2: {apple, 10}
+3:
+4: {banana, 25}
+5:
+6:
+7:
+8:
+9:
+10: {grape, 30}
+
+banana -> 25
+
+After removing 'apple':
+0:
+1:
+2:
+3:
+4: {banana, 25}
+5:
+6:
+7:
+8:
+9:
+10: {grape, 30}
+```
+
 
 
 ## Chained Hash Table 1 (C++) 
