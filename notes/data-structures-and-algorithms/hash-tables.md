@@ -33,12 +33,12 @@
 * `std::map` (header: `<map>`)
   * Implemented using **binary search tree (BST)**. Due to the nature of the BST, it is ordered map.
   * Iterator will iterate through the elements based on key order.
-  * The time complexity of all the functions is $O(\log n)$.
+  * The time complexity of all the functions is O(log n).
 * `std::unordered_map` (header: `<unordered_map>`)
   * Implemented using **hash table**.
   * *Keys* are unique.
   * It is NOT guaranteed that the iterator will iterate through the elements based on key  order.
-  * Time complexity of all the functions is $O(1)$.
+  * Time complexity of all the functions is O(1).
   * Functions: `insert()`, `at()`, `size()`, `erase()`, etc.    
 
 
@@ -186,6 +186,141 @@
 
     - $h(k, i) = h_1(k) + h_2(k)$
     - Two auxiliary hash functions should be carefully chosen so that the elements are distributed in a uniform and random manner.
+
+
+
+## Implementation (C++) - Chained Hash Table
+
+### Header (`chtable.hpp`)
+
+```cpp
+#ifndef CHTABLE_HPP
+#define CHTABLE_HPP
+
+#include <vector>
+#include <list>
+#include <string>
+
+class pair 
+{
+public:
+	pair(const std::string &key, const int val) : k(key), v(val) {}
+
+	std::string k;
+	int v;
+};
+
+class chtable
+{
+public:
+	chtable() : bucket_arr(NUM_OF_BUCKETS) {}
+	void insert(const std::string &key, const int val);
+	bool get(const std::string &key, int &val_out) const;
+	bool contains(const std::string &key) const;
+	void remove(const std::string &key);
+	void print() const;
+
+private:
+	static const int NUM_OF_BUCKETS = 11; // prime number is good
+	std::vector<std::list<pair>> bucket_arr;
+
+	int hash(const std::string &key) const;
+};
+
+#endif
+```
+
+### Source (`chtable.cpp`)
+
+```cpp
+#include "chtable.hpp"
+#include <iostream>
+
+void chtable::insert(const std::string &key, const int val)
+{
+	int i = hash(key);
+
+	for (pair &p : bucket_arr[i])
+	{
+		if (p.k == key)
+		{
+			p.v = val; // update value
+			return;
+		}
+	}
+
+	// NOTE: here push_back(key, val) won't work!
+	bucket_arr[i].emplace_back(key, val); // insert a new pair
+}
+
+bool chtable::get(const std::string &key, int &val_out) const
+{
+	int i = hash(key);
+
+	for (const pair &p : bucket_arr[i])
+	{
+		if (p.k == key)
+		{
+			val_out = p.v;
+			return true;
+		}
+	}
+
+	// key not found
+	return false;
+}
+
+bool chtable::contains(const std::string &key) const
+{
+	int dummy;
+	return get(key, dummy);
+}
+
+void chtable::remove(const std::string &key)
+{
+	int i = hash(key);
+	auto &bucket = bucket_arr[i];
+
+	for (auto it = bucket.begin(); it != bucket.end(); ++it)
+	{
+		if (it->k == key)
+		{
+			bucket.erase(it);
+			return;
+		}
+	}
+}
+
+void chtable::print() const
+{
+	for (int i = 0; i < NUM_OF_BUCKETS; ++i)
+	{
+		std::cout << i << ": ";
+
+		for (const pair &p : bucket_arr[i])
+		{
+			std::cout << "{" << p.k << ", " << p.v << "} ";
+		}
+		
+		std::cout << std::endl;
+	}
+}
+
+// private function
+int chtable::hash(const std::string &key) const
+{
+	int sum = 0;
+
+	for (char c : key)
+	{
+		sum += c; // add ascii values
+	}
+
+	return sum % NUM_OF_BUCKETS;
+}
+```
+
+> L19: Revisit why you can't use `push_back(key, val)` there!
 
 
 
