@@ -10,30 +10,31 @@
 
 ### LeetCode
 
-1. **[LC - E - 2. Add Two Numbers](lc-e-2-add-two-numbers)**
-2. **[LC - E - 14. Longest Common Prefix](lc-e-14-longest-common-prefix)**
-3. **[LC - E - 20. Valid Parentheses (stack, map)](lc-e-20-valid-parentheses)**
-4. **[LC - E - 108. Convert Sorted Array to Binary Search](lc-e-108-conver-sorted-array-to-binary-search-tree)**
-5. **[LC - E - 141. Linked List Cycle (unordered_set, Floyd's Cycle Detection Algorithm - Two Pointers)](lc-e-141-linked-list-cycle)**
-6. **[LC - E - 242. Valid Anagram (unordered_map)](lc-e-242-valid-anagram)**
-7. **[LC - E - 257. Binary Tree Paths (DFS)](lc-e-257-binary-tree-paths)**
-8. **[LC - E - 258. Add Digits](lc-e-258-add-digits)**
-9. **[LC - E - 263. Ugly Number](lc-e-263-ugly-number)**
-10. **[LC - E - 268. Missing Number (bit manipulation)](lc-e-268-missing-number)**
-11. **[LC - E - 338. Counting Bits](lc-e-338-counting-bits)**
-12. **[LC - E - 344. Reverse String](lc-e-344-reverse-string)**
-13. **[LC - E - 383. Ransom Note (map)](lc-e-383-ransom-note)**
-14. **[LC - E - 404. Sum of Left Leaves (DFS)](lc-e-404-sum-of-left-leaves)**
-15. **[LC - E - 501. Find Mode in Binary Search Tree](lc-e-501-find-mode-in-binary-search-tree)**
-16. **[LC - E - 762. Prime Number of Set Bits in Binary Representation (bit manipulation)](lc-e-762-prime-number-of-set-bits-in-binary-representation)**
-17. **[LC - E - 796. Rotate String (sprintf, strstr)](lc-e-796-rotate-string)**
-18. **[LC - E - 1047. Remove All Adjacent Duplicates In String 1 (stack)](lc-e-1047-remove-all-adjacent-duplicates-in-string-1)**
-19. **[LC - E - 1122. Relative Sort Array (map, multiset)](lc-e-1122-relative-sort-array)**
-20. **[LC - E - 1209. Remove All Adjacent Duplicates In String 2 (stack, recursion)](lc-e-1209-remove-all-adjacent-duplicates-in-string-2)**
-21. **[LC - E - 1356. Sort Integers by The Number of 1 Bits (struct, qsort, bubble sort)](lc-e-1356-sort-integers-by-the-number-of-1-bits)**
-22. **[LC - E - 2220. Minimum Bit Flips to Convert Number](lc-e-2220-minimum-bit-flips-to-convert-number)**
-23. **[LC - E - 2595. Number of Even and Odd Bits](lc-e-2595-number-of-even-and-odd-bits)**
-24. **[LC - M - 658. Find K Closest Elements (multimap, vector, sort)](lc-m-658-find-k-closest-elements)**
+1. **[LC - E - 1. Two Sum](lc-e-1-two-sum)**
+2. **[LC - E - 2. Add Two Numbers](lc-e-2-add-two-numbers)**
+3. **[LC - E - 14. Longest Common Prefix](lc-e-14-longest-common-prefix)**
+4. **[LC - E - 20. Valid Parentheses (stack, map)](lc-e-20-valid-parentheses)**
+5. **[LC - E - 108. Convert Sorted Array to Binary Search](lc-e-108-conver-sorted-array-to-binary-search-tree)**
+6. **[LC - E - 141. Linked List Cycle (unordered_set, Floyd's Cycle Detection Algorithm - Two Pointers)](lc-e-141-linked-list-cycle)**
+7. **[LC - E - 242. Valid Anagram (unordered_map)](lc-e-242-valid-anagram)**
+8. **[LC - E - 257. Binary Tree Paths (DFS)](lc-e-257-binary-tree-paths)**
+9. **[LC - E - 258. Add Digits](lc-e-258-add-digits)**
+10. **[LC - E - 263. Ugly Number](lc-e-263-ugly-number)**
+11. **[LC - E - 268. Missing Number (bit manipulation)](lc-e-268-missing-number)**
+12. **[LC - E - 338. Counting Bits](lc-e-338-counting-bits)**
+13. **[LC - E - 344. Reverse String](lc-e-344-reverse-string)**
+14. **[LC - E - 383. Ransom Note (map)](lc-e-383-ransom-note)**
+15. **[LC - E - 404. Sum of Left Leaves (DFS)](lc-e-404-sum-of-left-leaves)**
+16. **[LC - E - 501. Find Mode in Binary Search Tree](lc-e-501-find-mode-in-binary-search-tree)**
+17. **[LC - E - 762. Prime Number of Set Bits in Binary Representation (bit manipulation)](lc-e-762-prime-number-of-set-bits-in-binary-representation)**
+18. **[LC - E - 796. Rotate String (sprintf, strstr)](lc-e-796-rotate-string)**
+19. **[LC - E - 1047. Remove All Adjacent Duplicates In String 1 (stack)](lc-e-1047-remove-all-adjacent-duplicates-in-string-1)**
+20. **[LC - E - 1122. Relative Sort Array (map, multiset)](lc-e-1122-relative-sort-array)**
+21. **[LC - E - 1209. Remove All Adjacent Duplicates In String 2 (stack, recursion)](lc-e-1209-remove-all-adjacent-duplicates-in-string-2)**
+22. **[LC - E - 1356. Sort Integers by The Number of 1 Bits (struct, qsort, bubble sort)](lc-e-1356-sort-integers-by-the-number-of-1-bits)**
+23. **[LC - E - 2220. Minimum Bit Flips to Convert Number](lc-e-2220-minimum-bit-flips-to-convert-number)**
+24. **[LC - E - 2595. Number of Even and Odd Bits](lc-e-2595-number-of-even-and-odd-bits)**
+25. **[LC - M - 658. Find K Closest Elements (multimap, vector, sort)](lc-m-658-find-k-closest-elements)**
 
 ### Elements of Programming Interviews
 
