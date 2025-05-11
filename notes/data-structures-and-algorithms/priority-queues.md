@@ -11,6 +11,12 @@ A **priority queue** is an abstract data structure where **each element has a pr
 - By default, the **highest priority** (usually the largest number) is dequeued first.
 - Internally, it’s typically implemented using a **binary heap** for efficient performance.
 
+
+
+<img src="./img/min-heap-max-heap.png" alt="min-heap-max-heap" width="700">
+
+
+
 ### Pros:
 
 * **Efficient operations**: `push`, `pop`, and `top` all run in **O(log n)** time with a binary heap.

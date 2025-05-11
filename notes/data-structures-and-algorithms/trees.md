@@ -38,6 +38,13 @@ A **binary tree** is a hierarchical data structure where each node has at most *
 * **Complete binary tree**
   * All levels are filled except possibly the last, which is filled left to right with no missing nodes. 
   * Not "perfect" since the bottom level is not filled all the way across.
+
+
+
+<img src="./img/array-representation-of-a-complete-binary-tree.png" alt="array-representation-of-a-complete-binary-tree" width="700">
+
+
+
 * **Perfect binary tree**
   * All internal nodes have 2 children, and all leaves are at the same level.
   * All perfect binary trees are both "complete" and "full"
