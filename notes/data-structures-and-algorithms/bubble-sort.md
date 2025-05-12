@@ -74,6 +74,8 @@ int main(int argc, char *argv[])
 
 ## Implementation (C)
 
+### Source (`bubble_sort.c`)
+
 ```cpp
 #include <stdio.h>
 #include <stdbool.h>
