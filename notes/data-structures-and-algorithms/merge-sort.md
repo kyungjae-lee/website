@@ -4,225 +4,199 @@
 
 
 
-## Merge Sort
+## Introduction
 
-* A **divide-and-conquer** sorting algorithm that works by repeatedly dividing the unsorted list into smaller sublists, sorting those sublists, and then merging them back together to obtain a sorted list. It employs a recursive approach to sorting.
+* **Merge Sort** is a **divide-and-conquer** sorting algorithm that:
 
-* Merge sort is known for its stable nature and efficient time complexity of O(n logn), making it suitable for larger lists.
+  1. Recursively **divides** the array into halves until single elements remain.
+  2. Then **merges** those halves back together in **sorted order**.
 
-  Technical speaking,
+* **Merge sort** is a **stable**, efficient sorting algorithm with a time complexity of **O(n log n)**, making it well-suited for large datasets.
+
+  Technically:
   $$
-  \text{T} \propto O({n \log n} + n)
+  T(n)=O(nlog⁡n+n)
   $$
-  The term 'n log n' signifies that we iterate through all 'n' items 'log  n' times (representing the recursive depth) during the process of splitting the original array into arrays of size 1 and merging them back into an array of size 'n' recursively.
+  
 
-  The last term, 'n,' accounts for the total number of splits required to break down the original array into arrays of size 1 (and, of course, another 'n' for putting them back together). However, this 'n'  term is non-dominant and thus dropped, as it has a lesser impact on the  overall time complexity.
+  - The **`n log n`** term comes from dividing the array in half `log n` times and processing `n` elements at each level during merging.
+  - The extra **`n`** term accounts for the total number of splits, but it’s **non-dominant**, so it's omitted in the final complexity.
 
-* Merge sort has space complexity of O(n), where "n" is the number of elements in the input array. This is because merge sort requires additional space to store the temporary subarrays during the merging process.
-
-### Algorithm
-
-1. **Input:** An array of elements to be sorted.
-2. **Divide:** Divide the input array into two equal (or nearly equal) halves.
-3. **Recursion:** Recursively apply merge sort on each of the two halves until each subarray contains only one element or is empty.
-4. **Merge:** Combine the sorted subarrays by merging them. This involves comparing elements from both subarrays and placing them in order in a new temporary array.
-5. **Copy Back:** Copy the merged elements from the temporary array back into the original array in their correct sorted order.
-6. **Repeat:** Continue this process, dividing, sorting, merging, and copying, until the entire array is sorted.
-
-### Pseudo-code
-
-```plain
-MergeSort(arr):
-	if length(arr) <= 1:
-		return arr
-		
-	mid = length(arr) / 2
-	left = MergeSort(arr[0:mid])
-	right = MergeSort(arr[mid:end])
-	
-	merged = Merge(left, right)
-	return merged
-	
-Merge(left, right):
-	result = []
-	while left is not empty and right is not empty:
-		if left[0] <= right [0]:
-			result.append(left[0])
-			left = left[1:]
-		else
-			result.append(right[0])
-			right = right[1:]
-			
-	// Append any remaining elements
-	result.extend(left)
-	result.extend(right)
-	return result
-```
+* **Space complexity** is **O(n)** because merge sort needs additional memory to hold temporary subarrays during merging.
 
 
 
-## Code (C++)
+## Implementation (C++)
+
+### Source (`merge_sort.cpp`)
 
 ```cpp
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
-// Merge function to combine two sorted arrays
-vector<int> merge(vector<int>& left, vector<int>& right)
+// merge two sorted halves into original array
+void merge(std::vector<int> &arr, const std::vector<int> &left, const std::vector<int> &right)
 {
-    vector<int> merged;
-    int leftIdx = 0, rightIdx = 0;
-    
-    while (leftIdx < left.size() && rightIdx < right.size())
-    {
-        if (left[leftIdx] <= right[rightIdx])
-        {
-            merged.push_back(left[leftIdx]);
-            leftIdx++;
-        }
-        else
-        {
-            merged.push_back(right[rightIdx]);
-            rightIdx++;
-        }
-    }
-    
-    while (leftIdx < left.size())
-    {
-        merged.push_back(left[leftIdx]);
-        leftIdx++;
-    }
-    
-    while (rightIdx < right.size())
-    {
-        merged.push_back(right[rightIdx]);
-        rightIdx++;
-    }
-    
-    return merged;
+	int i = 0;	// index for origiinal array
+	int l = 0;	// index for left subarray
+	int r = 0;	// index for right subarray
+
+	// merge elements of two subarrays
+	while (l < left.size() && r < right.size())
+	{
+		if (left[l] <= right[r])
+		{
+			arr[i++] = left[l++];
+		}
+		else
+		{
+			arr[i++] = right[r++];
+		}
+	}
+
+	// copy remaining elements (only one subarray may ahve leftovers)
+	while (l < left.size())
+	{
+		arr[i++] = left[l++];
+	}
+	while (r < right.size())
+	{
+		arr[i++] = right[r++];
+	}
 }
 
-// Merge sort function
-vector<int> mergeSort(vector<int>& arr)
+// recursive merge sort
+void merge_sort(std::vector<int> &arr)
 {
-    if (arr.size() <= 1)
-        return arr;
-    
-    int mid = arr.size() / 2;
-    vector<int> left(arr.begin(), arr.begin() + mid);	// [0, mid)
-    vector<int> right(arr.begin() + mid, arr.end());	// [mid, end) == [mid, last idx]
-    
-    left = mergeSort(left);
-    right = mergeSort(right);
-    
-    return merge(left, right);
+	// base case
+	if (arr.size() <= 1)
+	{
+		return;
+	}
+
+	int mid = arr.size() / 2;
+
+	std::vector<int> left(arr.begin(), arr.begin() + mid);	// [arr[0], arr[mid - 1]] 
+	std::vector<int> right(arr.begin() + mid, arr.end());	// [arr[mid], arr[arr.size() - 1]]
+
+	// recursive case
+	merge_sort(left);
+	merge_sort(right);
+	merge(arr, left, right);
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    vector<int> arr = {6, 4, 2, 1, 5, 3};
-    vector<int> sortedArr = mergeSort(arr);
+    std::vector<int> arr = {5, 2, 9, 1, 5, 6};
+    merge_sort(arr);
     
-    for (auto val : sortedArr)
-        cout << val << " ";
+    for (auto &elem : arr)
+	{
+        std::cout << elem << " ";
+	}
 	
-    cout << endl;
+    std::cout << std::endl;
     
     return 0;
 }
 ```
 
 ```plain
-1 2 3 4 5 6
+1 2 5 5 6 9
 ```
 
 
 
-## Code (C)
+## Implementation (C)
+
+### Source (`merge_sort.c`)
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 
-// Merge function to combine two sorted arrays
-void merge(int arr[], int left[], int leftSize, int right[], int rightSize)
+// merge two sorted subarrays into the original array
+void merge(int *arr, const int *left, const int l_size, const int *right, const int r_size)
 {
-    int leftIdx = 0, rightIdx = 0, idx = 0;
-    
-    while (leftIdx < leftSize && rightIdx < rightSize)
-    {
-        if (left[leftIdx] <= right[rightIdx])
-        {
-            arr[idx] = left[leftIdx];
-            leftIdx++;
-        }
-        else
-        {
-            arr[idx] = right[rightIdx];
-            rightIdx++;
-        }
-        
-        idx ++;
-    }
-    
-    while (leftIdx < leftSize)
-    {
-        arr[idx] = left[leftIdx];
-        leftIdx++;
-        idx++;
-    }
-    
-    while (rightIdx < rightIdx)
-    {
-        arr[idx] = right[rightIdx];
-        rightIdx++;
-        idx++;
-    }
+	int i = 0;	// index for original array	
+	int l = 0;	// index for left subarray	
+	int r = 0;	// index for right subarray	
+
+	// merge elements of two subarrays
+	while (l < l_size && r < r_size)
+	{
+		if (left[l] <= right[r])
+		{
+			arr[i++] = left[l++];
+		}
+		else
+		{
+			arr[i++] = right[r++];
+		}
+	}
+
+	// copy remaining elements (only one subarray may ahve leftovers)
+	while (l < l_size)
+	{
+		arr[i++] = left[l++];
+	}
+
+	while (r < r_size)
+	{
+		arr[i++] = right[r++];
+	}
 }
 
-// Merge sort function
-void mergeSort(int arr[], int size)
+// recursive merge sort
+void merge_sort(int *arr, int size)
 {
-    if (size <= 1)
-        return;
-    
-    int mid = size / 2;
-    int *left = (int *)malloc(mid * sizeof(int));
-    int *right = (int *)malloc((size - mid) * sizeof(int));
-    
-    for (int i = 0; i < mid; i++)
- 		left[i] = arr[i];
-    
-    for (int i = mid; i < size; i++)
-        right[i - mid] = arr[i];
-    
-    mergeSort(left, mid);
-    mergeSort(right, size - mid);
-    merge(arr, left, mid, right, size - mid);
-    
-    free(left);
-    free(right);
+	if (size <= 1)
+	{
+		return;
+	}
+
+	int mid = size / 2;
+
+	// allocate and copy left and right halves
+	int *left = (int *)malloc(mid * sizeof(int));
+	int *right = (int *)malloc((size - mid) * sizeof(int));
+
+	for (int l = 0; l < mid; ++l)
+	{
+		left[l] = arr[l];
+	}
+
+	for (int r = mid; r < size; ++r)
+	{
+		right[r - mid] = arr[r];
+	}
+
+	merge_sort(left, mid);
+	merge_sort(left, size - mid);
+	merge(arr, left, mid, right, size - mid);
+
+	free(left);
+	free(right);
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    int arr[] = {6, 4, 2, 1, 5, 3};
-    int size = sizeof(arr) / sizeof(arr[0]);
-    
-	mergeSort(arr, size);
-    
-    for (int i = 0; i < size; i++)
-        printf("%d ", arr[i]);
+	int arr[] = {5, 2, 9, 1, 5, 6};
+	int size = sizeof(arr) / sizeof(arr[0]);
+
+	merge_sort(arr, size);
+
+	for (int i = 0; i < size; ++i)
+	{
+		printf("%d ", arr[i]);
+	}
+
+	puts("");
 	
-    puts("");
-    
-    return 0;
+	return 0;
 }
 ```
 
 ```plain
-1 2 3 4 5 6
+1 2 5 5 6 9
 ```
-
