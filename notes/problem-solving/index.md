@@ -28,13 +28,14 @@
 16. **[LC - E - 501. Find Mode in Binary Search Tree](lc-e-501-find-mode-in-binary-search-tree)**
 17. **[LC - E - 762. Prime Number of Set Bits in Binary Representation (bit manipulation)](lc-e-762-prime-number-of-set-bits-in-binary-representation)**
 18. **[LC - E - 796. Rotate String (sprintf, strstr)](lc-e-796-rotate-string)**
-19. **[LC - E - 1047. Remove All Adjacent Duplicates In String 1 (stack)](lc-e-1047-remove-all-adjacent-duplicates-in-string-1)**
-20. **[LC - E - 1122. Relative Sort Array (map, multiset)](lc-e-1122-relative-sort-array)**
-21. **[LC - E - 1209. Remove All Adjacent Duplicates In String 2 (stack, recursion)](lc-e-1209-remove-all-adjacent-duplicates-in-string-2)**
-22. **[LC - E - 1356. Sort Integers by The Number of 1 Bits (struct, qsort, bubble sort)](lc-e-1356-sort-integers-by-the-number-of-1-bits)**
-23. **[LC - E - 2220. Minimum Bit Flips to Convert Number](lc-e-2220-minimum-bit-flips-to-convert-number)**
-24. **[LC - E - 2595. Number of Even and Odd Bits](lc-e-2595-number-of-even-and-odd-bits)**
-25. **[LC - M - 658. Find K Closest Elements (multimap, vector, sort)](lc-m-658-find-k-closest-elements)**
+19. **[LC - E - 912. Sort an Array](lc-e-912-sort-an-array)**
+20. **[LC - E - 1047. Remove All Adjacent Duplicates In String 1 (stack)](lc-e-1047-remove-all-adjacent-duplicates-in-string-1)**
+21. **[LC - E - 1122. Relative Sort Array (map, multiset)](lc-e-1122-relative-sort-array)**
+22. **[LC - E - 1209. Remove All Adjacent Duplicates In String 2 (stack, recursion)](lc-e-1209-remove-all-adjacent-duplicates-in-string-2)**
+23. **[LC - E - 1356. Sort Integers by The Number of 1 Bits (struct, qsort, bubble sort)](lc-e-1356-sort-integers-by-the-number-of-1-bits)**
+24. **[LC - E - 2220. Minimum Bit Flips to Convert Number](lc-e-2220-minimum-bit-flips-to-convert-number)**
+25. **[LC - E - 2595. Number of Even and Odd Bits](lc-e-2595-number-of-even-and-odd-bits)**
+26. **[LC - M - 658. Find K Closest Elements (multimap, vector, sort)](lc-m-658-find-k-closest-elements)**
 
 ### Elements of Programming Interviews
 
