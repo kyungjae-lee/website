@@ -1,6 +1,6 @@
-[Home](../../) | [Projects](../../projects) | [Notes](../) > <a href="./">Problem Solving</a> > LC - E - 1. Two Sum
+[Home](../../) | [Projects](../../projects) | [Notes](../) > <a href="./">Problem Solving</a> > LC - E - 912. Sort an Array
 
-# LC - E - 1. Two Sum
+# LC - E - 912. Sort an Array
 
 
 
@@ -9,105 +9,60 @@
 
 ### Solution 1
 
-Brute-force approach - Checking all possible combinations with two nested loops.
+Merge sort.
 
 **Complexity Analysis:**
 
-* T = O(n^2^)
+* T = O(n log n)
 
-* S = O(1)
+* S = O(n)
 
 **Solution:**
 
 ```cpp
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        int n = nums.size();
-        for (int i = 0; i < n - 1; ++i)
+    vector<int> sortArray(vector<int>& nums) {
+        // base case        
+        if (nums.size() <= 1)
+            return nums;
+        
+        int mid = nums.size() / 2;
+        
+        // split the original array into halves
+        vector<int> left(nums.begin(), nums.begin() + mid);
+        vector<int> right(nums.begin() + mid, nums.end());
+
+        sortArray(left);
+        sortArray(right);
+        merge(nums, left, right);
+
+        return nums;
+    }
+
+private:
+    void merge(vector<int> &arr, const vector<int> &left, const vector<int> &right)
+    {
+        int i = 0;  // index for the original array
+        int l = 0;  // index for the left subarray
+        int r = 0;  // index for the right subarray
+
+        // memrge elements of the two subarrays
+        while (l < left.size() && r < right.size())
         {
-            for (int j = i + 1; j < n; ++j)
-            {
-                if (nums[i] + nums[j] == target)
-                {
-                    return {i, j};
-                }   
-            }
+            arr[i++] = (left[l] <= right[r]) ? left[l++] : right[r++];
         }
 
-        // No solution found
-        return {};
+        // copy remaining elements (only one subarray may have leftovers)
+        while (l < left.size())
+        {
+            arr[i++] = left[l++];
+        }
+
+        while (r < right.size())
+        {
+            arr[i++] = right[r++];
+        }
     }
 };
 ```
-
-
-
-### Solution 2
-
-Instead of checking all possible combinations with two nested loops (**O(n²)**), this solution uses a **hash table (`unordered_map`)** to reduce the time complexity to **O(n)**.
-
-**Complexity Analysis:**
-
-* T = O(n)
-* S = O(1)
-
-**Solution:** Two-pass
-
-```cpp
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> um;
-        int n = nums.size();
-
-        // Build the hash table to map values to indices
-        for (int i = 0; i < n; ++i)
-        {
-            um[nums[i]] = i;
-        }
-
-        // Find the complement
-        for (int i = 0; i < n; ++i)
-        {
-            int complement = target - nums[i];
-            
-            if (um.count(complement) && um[complement] != i)
-            {
-                return {i, um[complement]};
-            }
-        }
-
-        // No solution found
-        return{};
-    }
-};
-```
-
-**Solution:** One-pass
-
-```cpp
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        unordered_map<int, int> um;
-        int n = nums.size();
-
-        for (int i = 0; i < n; ++i)
-        {
-            int complement = target - nums[i];
-
-            if (um.count(complement))
-            {
-                return {um[complement], i};
-            }
-
-            um[nums[i]] = i;
-        }
-
-        // No solution found
-        return{};
-    }
-};
-```
-
