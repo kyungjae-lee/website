@@ -152,3 +152,234 @@ void rbuffer::clear()
 3
 ```
 
+
+
+## Implementation (C)
+
+### Header (`rbuffer.h`)
+
+```c
+#ifndef RBUFFER_H
+#define RBUFFER_H
+
+#include <stdbool.h>
+
+typedef struct
+{
+	int *buffer;
+	int capacity;
+	int head;
+	int tail;
+	int size;
+} rbuffer;
+
+// initializes the ring buffer
+bool rbuffer_init(rbuffer *rb, const int cap);
+
+// frees allocated memory
+void rbuffer_destroy(rbuffer *rb);
+
+// adds an element to the buffer
+bool rbuffer_push(rbuffer *rb, const int val);
+
+// removes the oldest element
+bool rbuffer_pop(rbuffer *rb);
+
+// finds the oldest element if any
+bool rbuffer_front(rbuffer *rb, int *out_val);
+
+// checks if buffer is empty
+bool rbuffer_empty(const rbuffer *rb);
+
+// checks if buffer is full
+bool rbuffer_full(const rbuffer *rb);
+
+// clears the buffer
+void rbuffer_clear(rbuffer *rb);
+
+// returns the number of elements currently in the buffer
+int rbuffer_size(const rbuffer *rb);
+
+#endif
+```
+
+### Source (`rbuffer.c`)
+
+```c
+#include "rbuffer.h"
+#include <stdlib.h>
+#include <stddef.h>
+
+// initializes the ring buffer
+bool rbuffer_init(rbuffer *rb, const int cap)
+{
+	if (!rb || cap <= 0)
+	{
+		return false;
+	}
+
+	rb->buffer = (int *)malloc(cap * sizeof(int));
+	if (!rb->buffer)
+	{
+		// memory allocation failed
+		return false;
+	}
+
+	rb->head = 0;
+	rb->tail = 0;
+	rb->size = 0;
+	rb->capacity = cap;
+
+	return true;
+}
+
+// frees allocated memory
+void rbuffer_destroy(rbuffer *rb)
+{
+	if (!rb)
+	{
+		return;
+	}
+
+	if (rb->buffer)
+	{
+		free(rb->buffer);
+		rb->buffer = NULL;
+	}
+
+	rb->head = 0;
+	rb->tail = 0;
+	rb->size = 0;
+	rb->capacity = 0;
+}
+
+// adds an element to the buffer
+bool rbuffer_push(rbuffer *rb, const int val)
+{
+	if (!rb || !rb->buffer || rbuffer_full(rb))
+	{
+		return false;
+	}
+
+	rb->buffer[rb->tail] = val;
+	rb->tail = (rb->tail + 1) % rb->capacity;
+	rb->size++;
+
+	return true;
+}
+
+// removes the oldest element
+bool rbuffer_pop(rbuffer *rb)
+{
+	if (!rb || !rb->buffer || rbuffer_empty(rb))
+	{
+		return false;
+	}
+
+	rb->head = (rb->head + 1) % rb->capacity;
+	rb->size--;
+
+	return true;
+}
+
+// finds the oldest element if any
+bool rbuffer_front(rbuffer *rb, int *out_val)
+{
+	if (!rb || !rb->buffer || rbuffer_empty(rb))
+	{
+		return false;
+	}
+	
+	if (out_val)
+	{
+		*out_val = rb->buffer[rb->head];
+	}
+
+	return true;
+}
+
+// checks if buffer is empty
+bool rbuffer_empty(const rbuffer *rb)
+{
+	return !rb || (rb->size == 0);
+}
+
+// checks if buffer is full
+bool rbuffer_full(const rbuffer *rb)
+{
+	return !rb && rb->buffer && (rb->size == rb->capacity);
+}
+
+// clears the buffer
+void rbuffer_clear(rbuffer *rb)
+{
+	if (!rb)
+	{
+		return;
+	}
+
+	rb->head = 0;
+	rb->tail = 0;
+	rb->size = 0;
+}
+
+// returns the number of elements currently in the buffer
+int rbuffer_size(const rbuffer *rb)
+{
+	if (!rb)
+	{
+		return 0;
+	}
+
+	return rb->size;
+}
+```
+
+### Test Driver
+
+```c
+#include <stdio.h>
+#include "rbuffer.h"
+
+int main(int argc, char *argv[])
+{
+	rbuffer rb;
+
+	rbuffer_init(&rb, 5);
+
+	rbuffer_push(&rb, 10);
+	rbuffer_push(&rb, 20);
+	rbuffer_push(&rb, 30);
+	rbuffer_push(&rb, 40);
+	rbuffer_push(&rb, 50);
+
+	int val;
+	while (!rbuffer_empty(&rb))
+	{
+		if (rbuffer_front(&rb, &val))
+		{
+			printf("%d\n", val);
+		}
+		
+		rbuffer_pop(&rb);
+	}
+
+	rbuffer_destroy(&rb);
+
+	printf("%d %d\n", rbuffer_empty(&rb), rbuffer_full(&rb));
+
+	return 0;
+}
+```
+
+```plain
+10
+20
+30
+40
+50
+1 0
+```
+
+
+
