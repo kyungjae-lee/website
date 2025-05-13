@@ -115,7 +115,17 @@
 
 ## I2C Protocol
 
-* I2C communication is always initiated by the master generating the "start condition" on the SDA line.
+* I2C communication is always initiated by the **master** generating:
+
+  * A start condition on the SDA line.
+
+  * A 7-bit address followed by a write bit (0) → this makes up the 8-bit address frame.
+
+  After sending the address byte, the I2C master releases the SDA line and expects the slave device to pull SDA low during the 9th clock cycle (the ACK bit).
+
+  * If a device with the matching address is present, it pulls SDA low during that 9th clock cycle → ACK received.
+
+  * If no device is present at that address, no one pulls SDA low → SDA stays high → the master reads that as a NACK. (So, a NACK is not something actively sent by a device. It's simply the lack of an ACK - the bus stays high during the ACK clock cycle, and the master interpret this high level as a NACK. In short, ACK is active, but NACK is passive.)
 
 * Every byte put on the SDA line must be eight-bit long.
 * Each byte must byte must be followed by an ACK bit.
