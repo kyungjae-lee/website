@@ -6,189 +6,209 @@
 
 ## GNU Debugger (GDB) Cheat Sheet
 
+```shell
+$ g++ -g source.cpp -o program
+$ gdb program.exe
+```
+
+> `-g` option embeds symbolic debug information into the output file `program`. This debug info includes:
+>
+> * Function names
+> * Variable names and types
+> * Line numbers in source code
+> * Mapping between binary instructions and source code
+
+| Command                                    | Description                                                  |
+| ------------------------------------------ | ------------------------------------------------------------ |
+| `break <location>` or <br />`b <location>` | Set a breakpoint (e.g., `b main`, `b 11`, `b file.cpp:25`, `b func`). |
+| `run` or `r`                               | Start the program from the beginning.                        |
+| `delete`                                   | Delete all breakpoints. Use `delete <n>` to remove a specific one. |
+| `disable <n>` / `enable <n>`               | Disable or enable a breakpoint.                              |
+| `info breakpoints` or `i b`                | List current breakpoints and their status.                   |
+| `next` or `n`                              | Execute the next line (step over function calls).            |
+| `step` or `s`                              | Step into the function call on the current line.             |
+| `finish`                                   | Run until the current function returns.                      |
+| `continue` or `c`                          | Resume execution after a breakpoint.                         |
+| `print <expr>` or `p <expr>`               | Print the value of an expression or variable.                |
+| `display <expr>`                           | Auto-print the value of an expression each time the program stops. |
+| `undisplay <n>`                            | Remove a display expression.                                 |
+| `backtrace` or `bt`                        | Show call stack (current function and callers).              |
+| `frame <n>`                                | Switch to frame number `n` in the call stack.                |
+| `up` / `down`                              | Move one frame up or down (in terms of stack number where `#0` being the top frame) the stack. |
+| `info locals`                              | Show local variables in the current frame.                   |
+| `info args`                                | Show function arguments in the current frame.                |
+| `list` or `l`                              | Show source code near the current line or a specific location. |
+| `set var <var>=<value>`                    | Change the value of a variable.                              |
+| `watch <expr>`                             | Set a watchpoint (pause when the expression changes).        |
+| `info watchpoints`                         | List watchpoints.                                            |
+| `stepi` or `si`                            | Step one machine instruction.                                |
+| `nexti` or `ni`                            | Step over one machine instruction.                           |
+| `quit` or `q`                              | Exit GDB.                                                    |
+
+
+
+## Sample Program to Practice GDB
+
+### Source (`gdb.cpp`)
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void f3()
+{
+    int f3_var = 30;
+    cout << f3_var << end;
+}
+
+void f2()
+{
+    int f2_var = 20;
+    cout << f2_var << end;
+    f3();
+}
+
+void f1()
+{
+    int f1_var = 10;
+    cout << f1_var << end;
+    f2();
+}
+
+int main(int argc, char *argv[])
+{
+	int main_var = 50;
+    cout << main_var << endl;
+    f1();
+    return 0;
+}
+```
+
+Compile the program:
+
 ```plain
-# GDB Cheat Sheet
+g++ -g gdb.cpp
+```
 
+Attach GDB:
 
-## GDB 
+```plain
+gdb .\a.exe
+```
 
-* GNU Project Debugger
+Set breakpoints:
 
+```plain
+(gdb) break main
+Breakpoint 1 at 0x14000152c: file gdb.cpp, line 26.
+(gdb) b f3
+Breakpoint 2 at 0x140001468: file gdb.cpp, line 6.
+```
 
-## Startup
+View breakpoints:
 
-* % gdb -help					print startup help, show switches
-* % gdb object					normal debug
-* % gdb objct core				core debug (must specify core file)
-* % gdb ogject pid				attatch to running process
-* % gdb							use file command to load object
+```plain
+(gdb) info breakpoints
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x000000014000152c in main(int, char**) at gdb.cpp:26
+2       breakpoint     keep y   0x0000000140001468 in f3() at gdb.cpp:6
+```
 
+Run the program:
 
-## Help
+```plain
+(gdb) run
+Starting program: D:\workspace\cpp\a.exe 
+[New Thread 23204.0x21f4]
+[New Thread 23204.0x1ef0]
+[New Thread 23204.0x34e4]
 
-* (gdb) help					list command classes
-* (gdb) help running			list commands in one command class
-* (gdb) help run				bottom-level help for a command "run"
-* (gdb) help info				list info commands (running program state)
-* (gdb) help info line			help for a particular info command 
-* (gdb) help show				list show commands (gdb state)
-* (gdb) help show commands		specific help for a show command
+Thread 1 hit Breakpoint 1, main (argc=1, argv=0xf2080) at gdb.cpp:26
+26              int main_var = 50;
+```
 
+Continue to the next breakpoint:
 
-## Breakpoints
+```plain
+(gdb) continue
+Continuing.
+50
+10
+20
 
-* (gdb) break main				set a breakpoint on a function
-* (gdb) break 101				set a breakpoint on a line number
-* (gdb) break basic.c:101		set a breakpoint at file and line (or function)
-* (gdb) info breakpoints		show breakpoints
-* (gdb) delete 1				delete a breakpoint by number
-* (gdb) delete					delete all breakpoints (prompted)
-* (gdb) clear					delete breakpoints at currentl line
-* (gdb) clear function			delete breakpoints a function
-* (gdb) clear line				delete breakpoints at line
-* (gdb) disable 2				turn a breakpoint off, but don't remove it
-* (gdb) enable 2				turn a disabled breakpoint back on
-* (gdb) tbreak function|line	set a temporary breakpoint
-* (gdb) commands break-no ... end			set gdb commands with breakpoint
-* (gdb) ignore break-no count				ignore btp N-1 times before activation
-* (gdb) condition break-no expression		break only if condition is true
-* (gdb) condition 2 i == 20	example: break on breakpoint 2 if i equals to 20
-* (gdb) watch expression		set software watchpoint on variable
-* (gdb) info watchpoints		show current watchpoints
+Thread 1 hit Breakpoint 2, f3 () at gdb.cpp:6
+6           int f3_var = 30;
+```
 
+View call stack:
 
-## Running the Program
+```plain
+(gdb) backtrace
+#0  f3 () at gdb.cpp:6
+#1  0x00007ff677a314d2 in f2 () at gdb.cpp:14
+#2  0x00007ff677a31511 in f1 () at gdb.cpp:21
+#3  0x00007ff677a3155c in main (argc=1, argv=0xf2080) at gdb.cpp:28
+```
 
-* (gdb) run 					run the program with current arguments
-* (gdb) run args redirection	run with args and redirection
-* (gdb) set args args...		set arguments for run
-* (gdb) show args				show current arguments to run
-* (gdb) cont					continue the program
-* (gdb) step					single step the program; step into functions
-* (gdb) step count				single step \fIcount\fR times
-* (gdb) next					step but step over functions
-* (gdb) next count				next \fIcount\fR times
-* (gdb) CTRL-C					actually SIGINT, stop execution of current program
-* (gdb) attach process-id		attach to running program
-* (gdb) detach					detach from running program
-* (gdb) finish					finish current function's execution
-* (gdb) kill					kill current executing program
+> `#n` refers to each stack frame number.
 
+View local variables:
 
-## Stack Backtrace
+```plain
+(gdb) info locals
+f3_var = 0
+```
 
-* (gdb) bt						printf stack backtrace
-* (gdb) frame					show current execution position
-* (gdb) up						move up stack trace (towards main)
-* (gdb) down					move down stack trace (away from main)
-* (gdb) info locals				print automatic variable in frame
-* (gdb) info args				print function parameters
+View the value of a local variable in a different stack frame:
 
+```plain
+(gdb) frame 2
+#2  0x00007ff677a31511 in f1 () at gdb.cpp:21
+21          f2();
+(gdb) print f1_var
+$1 = 10
+```
 
-## Browsing Source
+> First, you need to go to the stack frame in which the variable you want to print is declared.
 
-* (gdb) list 101				list 10 lines around line 101
-* (gdb) list 1,10				list lines 1 to 10
-* (gdb) list main				list lines around function
-* (gdb) list basic.c:main		list from another file basic.c
-* (gdb) list -					list previous 10 lines
-* (gdb) list *0x22e4			*list source at address
-* (gdb) cd dir					change current directory to \fIdir\fR
-* (gdb) pwd						print working directory
-* (gdb) search regexpr			forward current for regular expression
-* (gdb) reverse-search regexpr	backward search for regular expression
-* (gdb) dir dirname				add directory to source path
-* (gdb) dir						reset source path to nothing
-* (gdb) show directories		show source path
+View the source code near the current line:
 
+```plain
+(gdb) list
+16
+17      void f1()
+18      {
+19          int f1_var = 10;
+20          cout << f1_var << endl;
+21          f2();
+22      }
+23
+24      int main(int argc, char *argv[])
+25      {
+```
 
-## Browsing Data
+View the current line:
 
-* (gdb) print expression		print expression, added to value history
-* (gdb) print/x expressionR		print in hex
-* (gdb) print array[i]@count	artificial array - print array range
-* (gdb) print $					print last value
-* (gdb) print *$->next			*print thru list
-* (gdb) print $1				print value 1 from value history
-* (gdb) print ::gx				force scope to be global
-* (gdb) print 'basic.c'::gx		flobal scope in named file (>=4,6)
-* (gdb) print/x &main			print address of function
-* (gdb) x/countFormatSize address		low-level examine command
-* (gdb) x/x &gx					print gx in hex
-* (gdb) x/4wx &main				print 4 longs at start of \fImain\fR in hex
-* (gdb) x/gf &gd1				print double
-* (gdb) help x					show formats for x
-* (gdb) info locals				print local automatics only
-* (gdb) info functions regexp	print function names
-* (gdb) info variables regexp	print global variable names
-* (gdb) ptype name				print type of expression
-* (gdb) whatis expression		print type of expression
-* (gdb) set variable = expression		assign value
-* (gdb) display expression		display expression result at stop
-* (gdb) undisplay				delete displays
-* (gdb) info display			show displays
-* (gdb) show values				print value history (>= gdb 4.0)
-* (gdb) info history			print value history (gdb 3.5)
+```plain
+(gdb) frame
+#2  0x00007ff677a31511 in f1 () at gdb.cpp:21
+21          f2();
+```
 
+Return to the top stack frame:
 
-## Object File Manipulation
+```plain
+(gdb) f 0 
+#0  f3 () at gdb.cpp:6
+6           int f3_var = 30;
+```
 
-* (gdb) file object				load new file for debug (sym+exec)
-* (gdb) file					discard sym+exec file info
-* (gdb) symbol-file object		load only symbol table
-* (gdb) exec-file object		specify object to run (not sym-file)
-* (gdb) core-file core			post-mortem debugging
+Run until the current function returns:
+```plain
+(gdb) finish
+Run till exit from #0  f3 () at gdb.cpp:6
+30[New Thread 23204.0x2738]
 
-
-## Signal Control
-
-* (gdb) info signals			print signal setup
-* (gdb) handle signo actions	set debugger actions for signal
-* (gdb) handle INT print		print message when signal occurs
-* (gdb) handle INT noprint		don't print message
-* (gdb) handle INT stop			stop program when signal occurs
-* (gdb) handle INT nostop		don't stop program
-* (gdb) handle INT pass			allow program to receive signal
-* (gdb) handle INT nopass		debugger catches signal; program doesn't
-* (gdb) signal signo			continue and send signal to program
-* (gdb) signal 0				continue and send no signal to program
-
-
-## Machine-Level Debug
-
-* (gdb) info registers			print registers sans floats
-* (gdb) info all-registers		print all registers
-* (gdb) print/x $pc				print one register
-* (gdb) step1					single step at machine level
-* (gdb) s1						single step at machine level
-* (gdb) next1					single step (over functions) at machine level
-* (gdb) n1						single step (over functions) at machine level
-* (gdb) display/i $pc			print current instruction in display
-* (gdb) x/x &gx					print variable gx in hex
-* (gdb) info line 22			print address for object code for line 22
-* (gdb) info line *0x2c4e		*print line number of object code at address
-* (gdb) x/10i main				disassemble first 10 instructions in \fImain\fR
-* (gdb) disassemble addr		disassemble code for function around addr
-
-
-## History Display
-
-* (gdb) show commands			print command history (>= gdb 4.0)
-* (gdb) info editing			print command history (gdb 3.5)
-* (gdb) EXC-CTRL-J				switch to vi edit mode from emacs edit mode
-* (gdb) set history expansion on		turn on c-shell like history
-* (gdb) break class::member		set breakpoint on class member. may get menu
-* (gdb) list class::member		list member in class
-* (gdb) ptype class				print class members
-* (gdb) print *this				*print contents of this pointer
-* (gdb) rbreak regexpr			useful for breakpoint on overloaded member name
-
-
-## Miscellaneous
-
-* (gdb) define command ... end	define user command
-* (gdb) RETURN					repeat last command
-* (gdb) shell command args		execute shell command
-* (gdb) source file				load gdb commands from file
-* (gdb) quit					quit job 
+f2 () at gdb.cpp:15
+15      }
 ```
