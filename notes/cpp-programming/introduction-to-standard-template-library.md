@@ -4,97 +4,173 @@
 
 
 
-## Overview
+## Prerequisites
 
-* What is the STL
-* Generic programming / Meta-programming
-  * Preprocessor macros
-  * Function templates
-  * Class templates
-
-* STL containers
-  * Array
-  * Vector
-  * Deque
-  * List and forward list
-  * Set and multi set
-  * Map and multi map
-  * Stack and queue
-  * Priority queue
-  * Algorithms
-
-* STL iterators
-* STL algorithms
+* g++ (C++17)
+* Vim
+* make
+* GDB
+* Valgrind
 
 
 
 ## What is STL?
 
-* A library of powerful, reusable, adaptable, generic classes and functions
-* Implemented using C++ templates
-* Implements common data structures and algorithms
-* Huge class library!!!
-* Alexander Stepanov (1994)
+STL or the Standard Template Library, is a set of template classes to provide common programming data structures and algorithms. STL consists of four main groups:
 
-
-
-## Why use the STL?
-
-* Assortment of commonly used containers
-* Known time and space complexity
-* Tried and tested - Reusability!!!
-* Consistent, fast, and type-safe
-* Extensible
-
-
-
-## Elements of the STL
-
-### Containers
-
-* Collections of objects or primitive types
-* Types of containers
-  * Sequence containers - array, vector, list, forward_list, deque
-  * Associative containers - set, multi set, map, multi map
-  * Container adapters - stack, queue, priority queue
+* Algorithms
+* Containers
+* Functions (Functors)
+* Utilities
 
 ### Algorithms
 
-* Functions for processing sequences of elements from containers
-* About 60 algorithms in the STL
-* Non-modifying
-* Modifying
-* e.g., find, max, count, accumulate, sort, etc.
+STL defines a collection of standalone functions that act on ranges of elements (iterators). They do various types of tasks:
 
-### Iterators
+* Non-modifying - Search, compare, count
+* Modifying - Copy, move, replace, fill, partition, sort, shuffle
 
-* Generate sequences of element from containers
-* Types of iterators
-  * Input iterators - from the container to the program
-  * Output iterators - from the program to the container
-  * Forward iterators - navigate one item at a time in one direction
-  * Bi-directional iterators - navigate one item at a time both directions
-  * Random access iterators - directly access a container item
-* e.g., forward, reverse, by value, by reference, constant, etc.
+Having a good knowledge of what is available from the standard library will accelerate your programming and help you avoid re-solving low-level problems.
 
-### Example
+### Containers
 
-* Vector and sort
+The bread and butter of STL containers is hat most developers think of when they think of the C++ standard library. STL provides different categories of containers:
 
-  ```cpp
-  #include <vector>
-  #include <algorithm>
-  
-  std::vector<int> v{1, 5, 3};
-  
-  std::sort(v.begin(), v.end());	// Now v contains {1, 3, 5}
-  ```
+* Sequence containers
+  * Contains sequences of homogeneous items that are accessed via indices.
+  * e.g., Vector, list, deque
+* Associative containers
+  * Contains data in key-value pairs. 
+  * All keys have the same data type, and all values have the same data type, but the key and the value types can be different.
+  * Instead of items being stored and accessed by their index, they are stored and associated with their key.
+  * e.g., Sets, maps
+* Adapter containers
+  * These are simply a different interface to an existing data type. For example, a stack might just be a deque on the backend with a more restricted API.
+  * e.g., Queue, stack
 
-* Accumulate
+### Functions (Functors)
 
-  ```cpp
-  int sum{};
-  
-  sum = std::accumulate(v.begin(), v.end(), 0);
-  std::cout << sum << std::endl;	// 9 (1 + 3 + 5)
-  ```
+STL provides function objects called functors that can be used just like functions. They achieve this by creating a class with an operator overload of the `operator()`. Some functionality they provide are:
+
+* Arithmetic
+* Comparison
+* Logical
+
+These can be used anywhere a callable is expected.
+
+### Utilities
+
+Especially with the additions after C++11, there are several STL headers that don't really fall under a category and can be considered as utilities:
+
+* Threads - Facilities for creating multi-threaded programs.
+* Iterators - Universal ways to access elements in containers.
+* Chrono (time) - Standard way to define and convert between times.
+* Any - Allows you to store any value into a container so they can become heterogeneous containers.
+
+* Memory - A way to avoid resource-owning pointers which removes the possibility of memory leaks from program.
+
+
+
+## Understanding C++ Templates
+
+To understand the C++ STL, you must first understand C++ templates and what they offer programmers. Templates allow programmers to write generic C++ code that can apply to many different types of data.
+
+### Example - Templated Class
+
+```cpp
+#include <iostream>
+#include <string>
+
+template<typename T>
+class container
+{
+public:
+    explicit container(T t) : t(t) {}
+    friend std::ostream& operator<<(std::ostream &os, const Container<T> &c)
+    { return (os << "Container holding: " << c.t); }
+
+private:
+    T t;
+};
+
+int main(int argc, char *argv[])
+{
+    container<int> c(100);
+    container<std::string> s("Some String");
+
+    std::cout << c << std::endl;
+    std::cout << s << std::endl;
+
+    return 0;
+}
+```
+
+```plain
+Container holding: 100
+Container holding: Some String
+```
+
+### Example - Templated Function
+
+```cpp
+#include <iostream>
+
+// Normal templated function
+template<typename T>
+bool is_greater(T t1, T t2)
+{
+    return t1 > t2;
+}
+
+// Special templated function for <int> type
+template<>
+bool is_greater(int t1, int t2)
+{
+    std::cout << "Specialized for int" << std::endl;
+    return t1 > t2;
+}
+
+int main(int argc, char *argv[])
+{
+    std::cout << std::boolalpha; // Print true or false instead of 1 or 0
+
+    std::cout << is_greater(5, 10) << std::endl; // Spacial templated function
+    std::cout << is_greater(23.45, 10.789) << std::endl;
+    std::cout << is_greater("ZZZ", "AAA") << std::endl;
+    std::cout << is_greater('c', 'r') << std::endl;
+
+    return 0;
+}
+```
+
+```plain
+false
+true
+true
+false
+```
+
+### Example - Templated Lambda
+
+```cpp
+int main(int argc, char *argv[])
+{
+    std::cout << std::boolalpha;
+    
+    auto f = [] <typename T> (T t1, T t2)
+	{
+    	return t1 == t2;
+	};
+    
+    std::cout << "Lambda returns: " << f(10, 10) << std::endl;
+    
+    return 0;
+}
+```
+
+```plain
+true
+```
+
+
+
