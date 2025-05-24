@@ -32,7 +32,8 @@
 
 ### Standard Template Library (STL)
 
-* **[STL Cheat Sheet](stl-cheat-sheet)**
 * **[Introduction to Standard Template Library](introduction-to-standard-template-library)**
 * **[Generic Programming & Templates](generic-programming-and-templates)**
+* **[Introduction to STL Containers](introduction-to-stl-containers)**
+* **[STL Cheat Sheet](stl-cheat-sheet)**
 
