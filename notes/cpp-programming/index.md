@@ -32,14 +32,7 @@
 
 ### Standard Template Library (STL)
 
-* **[Introduction to Standard Template Library](introduction-to-standard-template-library)**
-* **[General Concepts](general-concepts)**
-* **[Utilities](utilities)**
-* **[Introduction to Containers](introduction-to-containers)**
-* **[Vector (`std::vector`)](vector)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
+* **[Introduction to Standard Template Library](introduction-to-standard-template-library)**
 * **[Generic Programming & Templates](generic-programming-and-templates)**
-* **[Vectors](vectors)**
-* **[Stacks](stacks)**
-* **[Queues](queues)**
 
