@@ -197,3 +197,127 @@ Generic programming can be achieved by using:
 
 ### Generic Programming with Class Templates
 
+* The following class holds items where the item has a name and a data of any type.
+
+  ```cpp
+  template <typename T>
+  class item
+  {
+  public:
+      item(std::string name, T val) : name{name}, val{val} {}
+      std::string get_name() const { return name; }
+      T get_value() const { return val; }
+  private:
+      std::string name;
+      T val;
+  };
+  
+  item<int> item1 {"Kyungjae", 1};
+  item<double> item2 {"House", 1000.0};
+  item<std::string> item3 {"Developer", "A"};
+  std::vecto<item<int>> v;
+  v.push_back(item<int>("Yena", 2));
+  ```
+
+* Just like function templates, class templates can also have multiple **template parameters** and their types can be different.
+
+  ```cpp
+  template <typename T1, typename T2>
+  struct my_pair
+  {
+      T1 first;
+      T2 second;
+  };
+  
+  my_pair<std::string, int> p1 {"Kyungjae", 100};
+  my_pair<int, double> p2 {124, 13.6};
+  std::vector<my_pair<int, double>> v;
+  ```
+
+  This is already defined in STL as `std::pair`.
+
+  ```cpp
+  #include <utility>
+  
+  std::pair<std::string, int> p {"Kyungjae", 100};
+  std::cout << p.first;	// Kyungjae
+  std::cout << p.second;	// 100
+  ```
+
+  
+
+## Project: Create a Generic Array Class Template
+
+This is just for practice purposes. Since C++11, the STL includes `std::array`, a template-based, fixed-size array class. Use `std::array` instead of raw arrays whenever possible for improved safety, usability, and integration with STL algorithms.
+
+```cpp
+#include <iostream>
+#include <string>
+
+// Here the 'N' is a non-type template parameter.
+template <typename T, int N>
+class array
+{
+public:
+    array() = default;
+    array(T init_val)
+    {
+        for (auto &v: values)
+            v = init_val;
+    }
+    void fill(T val)
+    {
+        for (auto &v : values)
+            v = val;
+    }
+    int get_size() const { return size; };
+    T& operator[](int idx) { return values[idx]; }
+    
+private:
+    int size {N};
+    T values[N];
+
+    friend std::ostream& operator<<(std::ostream &os, const array<T, N> &arr)
+    {
+        os << "[ ";
+        for (const auto &v: arr.values)
+            os << v << " ";
+        os << "]" << std::endl;
+        return os;
+    }
+};
+
+int main(int argc, char *argv[])
+{
+    array<int, 5> a1;
+    std::cout << "The size of a1 is: " << a1.get_size() << std::endl;
+    std::cout << a1 << std::endl;
+
+    a1.fill(0);
+    std::cout << "The size of a1 is: " << a1.get_size() << std::endl;
+    std::cout << a1 << std::endl;
+
+    a1.fill(10);
+    a1[0] = 1000; // a1.operator[](0)
+    a1[3] = 2000;
+    std::cout << a1 << std::endl;
+
+    array<int, 100> a2 {1};
+    std::cout << "The size of a2 is: " << a2.get_size() << std::endl;
+    std::cout << a2 << std::endl;
+
+    array<std::string, 10> strs(std::string{"ooo"});
+    std::cout << "The size of strs is: " << strs.get_size() << std::endl;
+    std::cout << strs << std::endl;
+
+    strs[0] = std::string{"xxx"};
+    std::cout << strs << std::endl;
+
+    strs.fill(std::string{"X"});
+    std::cout << strs << std::endl;
+
+    return 0;
+}
+```
+
+> All the array objects in the `main` function are created on the stack, not on the heap.
