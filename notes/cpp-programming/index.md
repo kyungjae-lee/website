@@ -34,6 +34,7 @@
 
 * **[Introduction to Standard Template Library](introduction-to-standard-template-library)**
 * **[General Concepts](general-concepts)**
+* **[Utilities](utilities)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
 * **[Generic Programming & Templates](generic-programming-and-templates)**
 * **[Vectors](vectors)**
