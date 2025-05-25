@@ -11,6 +11,7 @@
 * Implements common data structures and algorithms.
 * Huge class library!
 * Developed by Alexander Stepanov (1994).
+* Reference: [cppreference.com](https://en.cppreference.com/w/)
 
 
 
