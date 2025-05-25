@@ -146,7 +146,7 @@
 
 
 
-## Project: Variour Usages of Iterators
+## Project: Various Usages of Iterators
 
 ```cpp
 #include <iostream>
@@ -295,5 +295,45 @@ int main(int argc, char *argv[])
     test5();
     return 0;
 }
+```
+
+```plain
+
+TEST1
+1
+2
+4
+2
+5
+
+TEST3
+1
+2
+3
+4
+5
+
+TEST3
+1
+2
+3
+4
+5
+4
+3
+2
+1
+Yena
+Sunny
+Kyungjae:C++
+Sunny:Python
+Yena:Assembly
+
+TEST5
+3
+4
+5
+6
+7
 ```
 
