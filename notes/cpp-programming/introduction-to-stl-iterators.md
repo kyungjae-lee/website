@@ -146,7 +146,7 @@
 
 
 
-## Project: Iterator Usage
+## Project: Variour Usages of Iterators
 
 ```cpp
 #include <iostream>
@@ -170,20 +170,20 @@ void test1(void)
 {
     std::cout << "\nTEST1" << std::endl;
     
-    std::vector<int> v {1, 2, 3, 4, 5};
-    auto it = v.begin();	// Point to 1
+    std::vector<int> v{1, 2, 3, 4, 5};
+    auto it = v.begin();	// Points to 1
     std::cout << *it << std::endl;
     
-    it++;                   // Point to 2
+    it++;                   // Points to 2
     std::cout << *it << std::endl;
     
-    it += 2;				// Point to 4
+    it += 2;				// Points to 4
     std::cout << *it << std::endl;
     
-	it -= 2;				// Point to 2
+	it -= 2;				// Points to 2
     std::cout << *it << std::endl;
     
-    it = v.end() - 1;		// Point to 5
+    it = v.end() - 1;		// Points to 5
     std::cout << *it << std::endl;
     
 }
@@ -193,7 +193,7 @@ void test2(void)
 {
     std::cout << "\nTEST2" << std::endl;
 
-    std::vector<int> v {1, 2, 3, 4, 5};
+    std::vector<int> v{1, 2, 3, 4, 5};
 
     std::vector<int>::iterator it = v.begin();
 
@@ -214,10 +214,85 @@ void test2(void)
     print(v);
 }
 
+// Using a const iterator.
+void test3(void)
+{
+    std::cout << "\nTEST3" << std::endl;
+
+    std::vector<int> v{1, 2, 3, 4, 5};
+    std::vector<int>::const_iterator cit = v.begin();
+    // auto cit = v.cbegin();
+
+    while (cit != v.end())
+    {
+        std::cout << *cit << std::endl;
+        cit++;
+    }
+
+    // Compiler error upon an attempt to change elements
+    cit = v.begin();
+    while (cit != v.end())
+    {
+        // *cit = 0;    // Compiler error - read only!
+        cit++;
+    }
+}
+
+// More iterators.
+void test4(void)
+{
+    // Using a reverse iterator over a vector.
+    std::vector<int> v{1, 2, 3, 4};
+    auto rit = v.rbegin();  // Starts at 4.
+    while (rit != v.rend())
+    {
+        std::cout << *rit << std::endl;
+        rit++;
+    }
+
+    // Const reverse iterator over a list (implemented as doubly-linked list).
+    std::list<std::string> l{"Kyungjae", "Sunny", "Yena"};
+    auto crit = l.crbegin();    // Points to Yena.
+    std::cout << *crit << std::endl;
+    crit++;                     // Points to Sunny.
+    std::cout << *crit << std::endl;
+
+    // Iterator over a map.
+    std::map<std::string, std::string> m{
+        {"Kyungjae", "C++"},
+        {"Sunny", "Python"},
+        {"Yena", "Assembly"}
+    };
+    auto it = m.begin();    // Iterator over map of <string, string> pairs.
+    while (it != m.end())
+    {
+        std::cout << it->first << ":" << it->second << std::endl;
+        it++;
+    }
+}
+
+// Iterator over a subset of a container
+void test5(void)
+{
+    std::cout << "\nTEST5" << std::endl;
+    
+    std::vector<int> v{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    auto s = v.begin() + 2; // Start
+    auto e = v.end() - 3;   // End
+    while (s != e)
+    {
+        std::cout << *s << std::endl;
+        s++;
+    }
+}
+
 int main(int argc, char *argv[])
 {
     test1();
-    test2();
+    test3();
+    test3();
+    test4();
+    test5();
     return 0;
 }
 ```
