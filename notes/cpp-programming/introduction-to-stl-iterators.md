@@ -154,5 +154,71 @@
 #include <set>
 #include <map>
 #include <list>
+
+// Display any vector of integers using range-based for loop
+void print(const std::vector<int> &v)
+{
+    std::cout << "[ ";
+    for (auto const &n : v)
+    {
+        std::cout << n << " ";
+    }
+    std::cout << "]" << std::endl;
+}
+
+void test1(void)
+{
+    std::cout << "\nTEST1" << std::endl;
+    
+    std::vector<int> v {1, 2, 3, 4, 5};
+    auto it = v.begin();	// Point to 1
+    std::cout << *it << std::endl;
+    
+    it++;                   // Point to 2
+    std::cout << *it << std::endl;
+    
+    it += 2;				// Point to 4
+    std::cout << *it << std::endl;
+    
+	it -= 2;				// Point to 2
+    std::cout << *it << std::endl;
+    
+    it = v.end() - 1;		// Point to 5
+    std::cout << *it << std::endl;
+    
+}
+
+// Display all vector elements using an iterator.
+void test2(void)
+{
+    std::cout << "\nTEST2" << std::endl;
+
+    std::vector<int> v {1, 2, 3, 4, 5};
+
+    std::vector<int>::iterator it = v.begin();
+
+    while (it != v.end())
+    {
+        std::cout << *it << std::endl;
+        it++;
+    }
+
+    // Change all vector elements to 0.
+    it = v.begin();
+    while (it != v.end())
+    {
+        *it = 0;
+        it++;
+    }
+
+    print(v);
+}
+
+int main(int argc, char *argv[])
+{
+    test1();
+    test2();
+    return 0;
+}
 ```
 
