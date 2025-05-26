@@ -38,6 +38,8 @@ arr1 = {2, 4, 6, 8, 10};
 
 ### Common Methods
 
+For more information, see [cppreference.com](https://en.cppreference.com/w/).
+
 ```cpp
 std::array<int, 5> arr1{1, 2, 3, 4, 5};
 std::array<int, 5> arr2{10, 20, 30, 40, 50};

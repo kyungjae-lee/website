@@ -36,6 +36,7 @@
 * **[Generic Programming & Templates](generic-programming-and-templates)**
 * **[Introduction to STL Containers](introduction-to-stl-containers)**
 * **[Introduction to STL Iterators](introduction-to-stl-iterators)**
-* **[Sequence Container - `std::array` (C++11)](sequence-container-array)** 
+* **[Sequence Container - `std::array` (C++11)](sequence-container-array)**
+* **[Sequence Container - `std::vector`](sequence-container-vector)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
 
