@@ -38,5 +38,6 @@
 * **[Introduction to STL Iterators](introduction-to-stl-iterators)**
 * **[Sequence Container - `std::array` (C++11)](sequence-container-array)**
 * **[Sequence Container - `std::vector`](sequence-container-vector)**
+* **[Sequence Container - `std::deque`](sequence-container-deque)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
 

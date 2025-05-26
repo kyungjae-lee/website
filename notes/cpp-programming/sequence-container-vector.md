@@ -46,22 +46,23 @@ std::vector<int> v2{10, 20, 30, 40, 50};
 
 std::cout << v1.size();		// 5
 std::cout << v1.capacity();	// 5
-std::cout << v1.max_size();	// 5
+std::cout << v1.max_size();	// A very large number
 std::cout << v1.at(0);		// 1 (Supports out-of-bounds check)
 std::cout << v1[1];			// 2 (Does not support out-of-bounds check)
 std::cout << v1.front();	// 1 (Returns reference to the first element)
 std::cout << v1.back();		// 5 (Returns reference to the last element)
 std::cout << v1.empty();	// 0 (false)
-v1.swap(v2);				// Swaps the two vectors
 
 std::sort(v1.begin(), v1.end());
 
 auto it = std::find(v1.begin(), v1.end(), 3);
 v1.insert(it, 10);			// 1, 2, 10, 3, 4, 5
 
-it = std::find(v1.begin(), v.end(), 4);
+it = std::find(v1.begin(), v1.end(), 4);
 v1.insert(it, v2.begin(), v2.end());
 	// 1, 2, 10, 3, 10, 20, 30, 40, 50, 4, 5
+
+v1.swap(v2);				// Swaps the two vectors
 ```
 
 > `capacity()`: Returns the number of elements the vector can hold before needing to allocate more memory. When this capacity is exceeded, the vector expands dynamically.
