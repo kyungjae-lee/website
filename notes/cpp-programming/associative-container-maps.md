@@ -135,9 +135,122 @@ Ensure that your custom classes provide the following three elements to work cor
 #include <map>
 #include <set>
 
+void print(const std::map<std::string, std::set<int>> &m)
+{
+    std::cout << "[ ";
+    for (const auto &m_elem : m)
+    {
+        std::cout << m_elem.first << ": [ ";
+        for (const auto &s_elem : m_elem.second)
+        {
+            std::cout << s_elem << " ";
+        }
+        std::cout << "] ";
+    }
+    std::cout << "]" << std::endl;
+}
 
+template <typename T1, typename T2>
+void print(const std::map<T1, T2> &m)
+{
+    std::cout << "[ ";
+    for (const auto &elem: m)
+    {
+        std::cout << elem.first << ":" << elem.second << " ";
+    }
+    std::cout << "]" << std::endl;
+}
+
+// insert(), std::make_pair(), [], count(), find(), clear()
+void test1(void)
+{
+    std::cout << "\nTEST1" << std::endl;
+
+    std::map<std::string, int> m{
+        {"Kyungjae", 30},
+        {"Sunny", 20},
+        {"Yena", 5}
+        // elements will be ordered by key; std::string in this case
+    };
+    print(m);
+
+    m.insert(std::pair<std::string, int>("Nina",1));
+    print(m);
+
+    // make_pair() will figure out the types based on the passed values
+    m.insert(std::make_pair("Hyera", 50));
+    print(m);
+
+    m["Jaesoo"] = 60;
+    print(m);
+
+    m["Jaesoo"] += 1;
+    print(m);
+
+    m.erase("Jaesoo");
+    print(m);
+
+    std::cout << "Count for Hyera: " << m.count("Hyera") << std::endl;
+    std::cout << "Count for Jaesoo: " << m.count("Jaesoo") << std::endl;
+
+    auto it = m.find("Nina");
+    if (it != m.end())
+    {
+        std::cout << "Found: " << it->first << ":" << it->second << std::endl;
+    }
+
+    m.clear();
+    print(m);
+}
+
+// insert(), find()
+void test2(void)
+{
+    std::cout << "\nTEST2" << std::endl;
+
+    std::map<std::string, std::set<int>> m{
+        {"Kyungjae", {60, 90}},
+        {"Sunny", {80}},
+        {"Yena", {70, 90, 100}}
+        // elements will be ordered by key; std::string in this case
+    };
+    print(m);
+
+    m["Kyungjae"].insert(85);   // insert 85 into Kyungjae's set
+    print(m);
+
+    auto it = m.find("Yena");
+    if (it != m.end())
+    {
+        it->second.insert(1000);    // insert 1000 into Yena's set
+    }
+    print(m);
+}
+
+int main(int argc, char *argv[])
+{
+    test1();
+    test2();
+    return 0;
+}
 ```
 
 ```plain
 
+TEST1
+[ Kyungjae:30 Sunny:20 Yena:5 ]
+[ Kyungjae:30 Nina:1 Sunny:20 Yena:5 ]
+[ Hyera:50 Kyungjae:30 Nina:1 Sunny:20 Yena:5 ]
+[ Hyera:50 Jaesoo:60 Kyungjae:30 Nina:1 Sunny:20 Yena:5 ]
+[ Hyera:50 Jaesoo:61 Kyungjae:30 Nina:1 Sunny:20 Yena:5 ]
+[ Hyera:50 Kyungjae:30 Nina:1 Sunny:20 Yena:5 ]
+Count for Hyera: 1
+Count for Jaesoo: 0
+Found: Nina:1
+[ ]
+
+TEST2
+[ Kyungjae: [ 60 90 ] Sunny: [ 80 ] Yena: [ 70 90 100 ] ]
+[ Kyungjae: [ 60 85 90 ] Sunny: [ 80 ] Yena: [ 70 90 100 ] ]
+[ Kyungjae: [ 60 85 90 ] Sunny: [ 80 ] Yena: [ 70 90 100 1000 ] ]
 ```
