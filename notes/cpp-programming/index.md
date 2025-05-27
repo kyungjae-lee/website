@@ -41,5 +41,6 @@
 * **[Sequence Container - `std::deque`](sequence-container-deque)**
 * **[Sequence Container - `std::list`,  `std::forward_list`](sequence-container-lists)**
 * **[Associative Container - `std::set`, `std::multiset`, `std::unordered_set`, `std::unordered_multiset`](associative-container-sets)**
+* **[Associative Container - `std::map`, `std::multimap`, `std::unordered_map`, `std::unordered_multimap`](associative-container-maps)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
 
