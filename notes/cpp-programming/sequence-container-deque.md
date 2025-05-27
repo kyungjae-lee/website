@@ -85,7 +85,7 @@ d.emplace_back("Sunny", 20);	// Construct the object in-place. Very efficient!
 
 > L4: Remember, all standard container classes store copies of the elements they hold. So in this case, a copy of `p` is made.
 >
-> L6: Creates a temporary (unnamed) person object and adds it to the vector using move semantics.
+> L6: Creates a temporary (unnamed) person object and adds it to the deque using move semantics.
 >
 > L8: Constructs the person object directly in place using the constructor. Very efficient - no moves, no copies. It’s built exactly where it needs to be. Use this!
 
