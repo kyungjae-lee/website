@@ -1,10 +1,10 @@
-[Home](../../) | [Projects](../../projects) | [Notes](../) > <a href="./">C++ Programming</a> > Sequence Container - `std::list` and  `std::forward_list`
+[Home](../../) | [Projects](../../projects) | [Notes](../) > <a href="./">C++ Programming</a> > Sequence Container - `std::list`, `std::forward_list`
 
-# Sequence Container - `std::list` and  `std::forward_list`
+# Sequence Container - `std::list`, `std::forward_list`
 
 
 
-## `std::list` and  `std::forward_list`
+## The STL Lists
 
 * Sequence containers.
 * Non-contiguous in memory.
@@ -17,7 +17,7 @@
 
 
 
-<img src="./img/list.png" alt="list" width="450">
+<img src="D:/repos/website/notes/cpp-programming/img/list.png" alt="list" width="450">
 
 
 
@@ -39,7 +39,7 @@ std::list<int> l1{1, 2, 3, 4, 5};
 std::list<int> l2(10, 100);	// ten 100s - overloaded constructor
 
 // Initialization
-std::deque<std::string> l3{
+std::list<std::string> l3{
     std::string{"Kyungjae"},
     "Sunny",	// C-style string will be converted to a std::string.
     std::string{"Yena"}
@@ -112,7 +112,7 @@ l.emplace_back("Sunny", 20);	// Construct the object in-place. Very efficient!
 
 
 
-<img src="./img/forward_list.png" alt="forward_list" width="450">
+<img src="D:/repos/website/notes/cpp-programming/img/forward_list.png" alt="forward_list" width="450">
 
 
 
@@ -208,7 +208,7 @@ d.emplace_front("Yena", 5);		// Construct the object in-place. Very efficient!
 
 
 
-## Project: Usage of `std::deque`
+## Project: Usage of `std::list`
 
 Ensure that your custom classes provide the following three elements to work correctly with the STL:
 
@@ -413,7 +413,6 @@ int main(int argc, char *argv[])
 ```
 
 ```plain
-
 TEST1
 [ 1 2 3 4 5 ]
 [ Front Back ]

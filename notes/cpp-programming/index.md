@@ -39,6 +39,7 @@
 * **[Sequence Container - `std::array` (C++11)](sequence-container-array)**
 * **[Sequence Container - `std::vector`](sequence-container-vector)**
 * **[Sequence Container - `std::deque`](sequence-container-deque)**
-* **[Sequence Container - `std::list` and  `std::forward_list`](sequence-container-list-and-forward-list)**
+* **[Sequence Container - `std::list`,  `std::forward_list`](sequence-container-lists)**
+* **[Associative Container - `std::set`, `std::multiset`, `std::unordered_set`, `std::unordered_multiset`](associative-container-sets)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
 
