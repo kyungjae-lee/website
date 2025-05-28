@@ -43,5 +43,5 @@
 * **[Associative Container - `std::set`, `std::multiset`, `std::unordered_set`, `std::unordered_multiset`](associative-container-sets)**
 * **[Associative Container - `std::map`, `std::multimap`, `std::unordered_map`, `std::unordered_multimap`](associative-container-maps)**
 * **[Container Adaptor - `std::stack`](container-adaptor-stack)**
+* **[Container Adaptor - `std::queue`](container-adaptor-queue)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
-

@@ -15,6 +15,12 @@
 * All operations occur at one end of the stack (i.e., the **top**).
 * Iterators are **not supported**.
   * This makes sense, as stacks only allow insertions and deletions at one end.
+* Use cases:
+  * Function call stack
+  * Expression evaluation & parsing in compilers, calculators and so on
+  * Backtracking algorithms (e.g., Maze solvers, Sudoku solvers, Depth-First Search (DFS) in graphs)
+  * Syntax checking (e.g., Code parsers, interpreters, linters, balanced parentheses)
+
 
 
 ### Initialization
