@@ -64,8 +64,6 @@
     * Pointer arithmetic not supported (`++`, `--`, etc.)
   * Can have custom deleters to explicitly define the exact behavior you want when the pointer is about to be destroyed.
 
-### Example
-
 * A simple example of smart pointers
 
   ```cpp
