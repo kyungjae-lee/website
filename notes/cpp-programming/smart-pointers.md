@@ -46,23 +46,23 @@
 
 ## What is Smart Pointer? (Ownership & RAII)
 
-* Objects
-* Can only point to heap-allocated memory
-* Automatically call delete when no longer needed
+* Smart pointers are objects. They are implemented as C++ template classes, which can be instantiated.
+* Can only point to heap-allocated memory and automatically call delete when no longer needed.
 * Adhere to RAII principles
-* C++ smart pointers
+* C++ smart pointers:
   * Unique pointers (`unique_ptr`)
   * Shared pointers (`shared_ptr`)
   * Weak pointers (`weak_ptr`)
-  * Auto pointers (`auto_ptr`) - Deprecated. Will not be discussing this one!
+  * Auto pointers (`auto_ptr`) - Deprecated. Will NOT be discussing this one!
 * `#include <memory>`
 * Defined by class templates
-  * Wrapper around a raw pointer
-  * Overloaded operators
+  * Wrapper class that contain and manage a raw pointer. (The actual implementation of the smart pointers is compiler-dependent.)
+  * Once created, they can be used in much the same way as raw pointers.
+  * Overloaded operators:
     * Dereference (`*`)
     * Member selection (`->`)
     * Pointer arithmetic not supported (`++`, `--`, etc.)
-  * Can have custom deleters
+  * Can have custom deleters to explicitly define the exact behavior you want when the pointer is about to be destroyed.
 
 ### Example
 
@@ -75,25 +75,19 @@
       ptr->method();
       cout << (*ptr) << endl;
   }
-  
   // ptr will be destroyed automatically when no longer needed
   ```
+  
+  > Smart pointers help make your code easier to read and write, and maintain with less errors.
 
 ### RAII - Resource Acquisition Is Initialization
 
-* Common idiom or pattern used in software design based on container object lifetime
-* RAII objects are allocated on the stack
-* Resource Acquisition
-  * Open a file
-  * Allocate memory
-  * Acquire a lock
-* Is Initialization
-  * The resource is acquired in a constructor
-* Resource relinquishing
-  * Happens in the destructor
-    * Close the file
-    * Deallocate the memory
-    * Release the lock
+* RAII is a common idiom or design pattern in software design, based on object lifetime.
+* RAII objects are typically allocated on the stack.
+* **Resource Acquisition** refers to actions like opening a file, allocating memory, or acquiring a lock.
+* **Is Initialization** means the resource is acquired in the constructor during object initialization.
+* Resource release happens in the destructor. (e.g., closing a file, deallocating memory, or releasing a lock.)
+* Smart pointers are examples of RAII classes because they manage memory resources following this pattern.
 
 
 
