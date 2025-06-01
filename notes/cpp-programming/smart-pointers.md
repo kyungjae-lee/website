@@ -11,11 +11,14 @@
 * Concept of ownership and RAII (Resource Acquisition is Initialization)
 * C++ smart pointers:
   * `unique_ptr`
-    * Used for exclusive ownership of dynamically allocated memory. When ownership is clear, it's easy to determine who is responsible for deleting the pointer—or rather, C++ takes care of it.
+    
+    Used for exclusive ownership of dynamically allocated memory. When ownership is clear, it's easy to determine who is responsible for deleting the pointer—or rather, C++ takes care of it.
   * `shared_ptr`
-    * Allows multiple owners to share access to the same heap-allocated object. The memory is automatically deallocated when the last `shared_ptr` referencing it is destroyed.
+    
+    Allows multiple owners to share access to the same heap-allocated object. The memory is automatically deallocated when the last `shared_ptr` referencing it is destroyed.
   * `weak_ptr`
-    * Used in conjunction with `shared_ptr` to avoid cyclic references and dangling pointers. It does not contribute to the reference count.
+    
+    Used in conjunction with `shared_ptr` to avoid cyclic references and dangling pointers. It does not contribute to the reference count.
 * Custom deleters - C++ allows specifying a custom function to be called when deleting an object, enabling precise control over how resources are cleaned up.
 * Ultimately, we want to write code that contains no explicit `new` or `delete` statements, allowing C++ to handle all memory management. If C++ can automatically clean up heap memory when a pointer is no longer needed, we can avoid memory leaks and eliminate the need to manually track the lifetime of pointers.
 
@@ -29,13 +32,17 @@
   * Lifetime management
 * With this flexibility, however, comes complexity. We must explicitly allocate and deallocate storage for heap-dynamic variables and manage their lifetimes. Failing to do so can lead to several common issues:
   * Uninitialized (wild) pointers
-    * These pointers may point to arbitrary memory locations. Attempting to store data at such locations can lead to unpredictable behavior or potentially catastrophic results.
+    
+    These pointers may point to arbitrary memory locations. Attempting to store data at such locations can lead to unpredictable behavior or potentially catastrophic results.
   * Memory leaks
-    * Occur when heap-allocated storage is not properly deallocated, leading to a gradual loss of available memory.
+    
+    Occur when heap-allocated storage is not properly deallocated, leading to a gradual loss of available memory.
   * Dangling pointers
-    * These are pointers that refer to memory that has already been deallocated. Using such invalid memory can cause undefined behavior and is often difficult to diagnose and fix.
+    
+    These are pointers that refer to memory that has already been deallocated. Using such invalid memory can cause undefined behavior and is often difficult to diagnose and fix.
   * Lack of exception safety
-    * Even when memory management is done correctly, an exception might be thrown before the cleanup code executes, resulting in leaked memory.
+    
+    Even when memory management is done correctly, an exception might be thrown before the cleanup code executes, resulting in leaked memory.
   
   Most defects in programs written in languages that use raw pointers are related to improper pointer management. Smart pointers can help prevent these errors.
 * Ownership
