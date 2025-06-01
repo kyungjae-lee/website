@@ -6,7 +6,7 @@
 
 ## Solutions in C++
 
-### Solution - `IntToString()`
+### Solution 1
 
 Negative numbers are handled by recording the sign and negating the result.
 
@@ -94,7 +94,7 @@ string IntToString(int x)
 > }
 > ```
 
-### Solution - `StringToInt()`
+### Solution 2
 
 Negative numbers are handled by recording the sign and negating the result.
 
