@@ -7,17 +7,21 @@
 ## Overview
 
 * What is polymorphism?
-* Using base class pointers
-  * Takes class hierarchies to a new level and enables us to think more abstractly and not have to worry about details 
+* Using base class pointers:
+
+  Takes class hierarchies to a new level and enables us to think more abstractly and not have to worry about details.
 * Static vs. dynamic binding of function calls (pros vs. cons)
-* Virtual functions
-  * To achieve polymorphic functions (i.e., functions that are bound at run-time)
+* Virtual functions:
+
+  To achieve polymorphic functions (i.e., functions that are bound at run-time)
 * Virtual destructors
 * The `override` and `final` specifiers
-* Using base class references
-  * To achieve dynamic polymorphism.
-* Pure virtual functions and abstract classes
-  * Why we would want to use them as is and in interfaces.
+* Using base class references:
+
+  To achieve dynamic polymorphism.
+* Pure virtual functions and abstract classes:
+  
+  Why we would want to use them as is and in interfaces.
 * Abstract classes as interfaces
 
 

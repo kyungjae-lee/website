@@ -27,16 +27,17 @@
 
 * Inheritance allows for creating new classes that modify the behavior of their parent classes.
 
-* Provides a method for creating new classes from existing classes
+* Provides a method for creating new classes from existing classes.
 
-* The new class contains the data and behaviors of the existing class
+* The new class contains the data and behaviors of the existing class.
 
-* Allows for reuse of existing classes
+* Allows for reuse of existing classes.
 
-* Allows us to focus on the common attributes among a set of classes
+* Allows us to focus on the common attributes among a set of classes.
 
-* Allows new classes to modify behaviors or existing classes to make it unique without actually modifying the original class
-  * This is important since the existing class has already been tested and it's probably being reused by other applications. So, we really don't want to modify it at all.
+* Allows new classes to modify behaviors or existing classes to make it unique without actually modifying the original class.
+  
+  This is important since the existing class has already been tested and it's probably being reused by other applications. So, we really don't want to modify it at all.
 
 
 ### Examples of Related Classes
@@ -624,13 +625,13 @@ class Trust_Account : public Account {
 
 ### Static Binding of Method Calls
 
-* Binding of which method to use is done at compiler time
-  * By default, C++ does **static binding** of method calls.
-    * Meaning that the compiler determines which methods are called based on what it sees at compile time.
-    * Static binding is very efficient and that's why it's the default in C++.
-  * Derived class objects will use `Derived::deposit`.
-  * But, we can explicitly invoke `Base::deposit` from `Derived::deposit`.
-  * OK, but limited - much more powerful approach is **dynamic binding** (i.e., binding that takes place at run-time).
+* Binding of which method to use is done at compiler time. By default, C++ does **static binding** of method calls.
+  * Meaning that the compiler determines which methods are called based on what it sees at compile time.
+  * Static binding is very efficient and that's why it's the default in C++.
+
+* Derived class objects will use `Derived::deposit`.
+* But, we can explicitly invoke `Base::deposit` from `Derived::deposit`.
+* OK, but limited - much more powerful approach is **dynamic binding** (i.e., binding that takes place at run-time).
 
 ### Example
 
@@ -651,8 +652,9 @@ class Trust_Account : public Account {
       {
           amount += some_interest;
           Account::deposit(amount);	// Invoke base class method
-          							// Must prefix the method call with the 'Account' class so the compiler knows that 
-          							// we're calling the deposit method in the 'Account' class!
+          	// Must prefix the method call with the 'Account' class so 
+          	// the compiler knows that we're calling the deposit method
+          	// in the 'Account' class!
       }
   }
   ```
@@ -663,13 +665,13 @@ class Trust_Account : public Account {
 
   ```cpp
   Base b;
-  b.deposit(1000.0);			// Base::deposit (because 'b' is a 'Base' class object)
+  b.deposit(1000.0);	// Base::deposit (because 'b' is a 'Base' class object)
   
   Derived d;
-  d.deposit(1000.0);			// Derived::deposit (because 'd' is a 'Derived' class object)
+  d.deposit(1000.0);	// Derived::deposit (because 'd' is a 'Derived' class object)
   
   Base *ptr = new Derived();
-  ptr->deposit(1000.0);		// (Valid since 'Derived' is a 'Base') Base::deposit ???
+  ptr->deposit(1000.0);	// (Valid since 'Derived' is a 'Base') Base::deposit ???
   ```
 
   > L7, L8: Due to the type of `ptr`, `ptr->deposit()` is statically bound to `Base::deposit` at compile time. So, the compiler will call the `Base::deposit` method because it sees that pointer is a pointer to a `Base` class. However, in this case, it would make much more sense for the compiler to call the `Derived::deposit` since we have created a `Derived` object. 

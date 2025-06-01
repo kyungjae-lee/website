@@ -46,8 +46,8 @@
   private:
       int num{};
   public:
-      Multiplier(int n) : num{n} 		{}
-      int operator()(int n) const 	{ return num * n; }
+      Multiplier(int n) : num{n} 	{}
+      int operator()(int n) const	{ return num * n; }
   };
   
   std::vector<int> vec{1, 2, 3, 4};
