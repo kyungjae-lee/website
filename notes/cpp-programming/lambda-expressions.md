@@ -28,7 +28,7 @@ This approach often leads to the need for writing many short functions that cont
 
 Additionally, compilers are generally less effective at optimizing functions that are not defined in-line.
 
-### Example
+### Examples
 
 * Using function objects:
 
@@ -125,35 +125,33 @@ The structure of a lambda expression:
 [] () -> return_type specifiers { }; 
 ```
 
->* `[]` - Capture list: Defines the start of the lambda (Defines the context in which the lambda executes)
+>* `[]` - Capture list: Marks the beginning of a lambda expression and defines the context in which it executes. Based on what is included in the capture list, we can specify to the compiler which variables to capture and whether to capture them by value or by reference.
 >* `()` - Parameter list: Comma separated list of parameters
->* `return_type` - Return type can be omitted and the compiler will try to deduce it.
->* `specifiers` - Optional specifiers
->* `{}` - Body of your code
+>* `return_type` - In general, return type can be omitted and the compiler will try to deduce it.
+>* `specifiers` - Optional specifiers (`mutable` and `constexpr`)
+>* `{}` - Body of your lambda expression 
 
-### Example
+### Examples
 
-* A simple lambda expression
+The following are examples of **stateless** lambda expressions, which have empty capture lists.
+
+* A simple lambda expression (No capture list, no parameter list, no return type):
 
   ```cpp
   [] () { std::cout << "Hi"; };
-  ```
-
-  ```cpp
   [] () { std::cout << "Hi"; } ();	// Displays Hi
   ```
 
-* Passing parameters to lambda expressions
+  > L2: This instantiates a function object from the lambda expression and calls it using the overloaded function call operator. While this isn’t the typical way to use lambda expressions, it clearly demonstrates how they work.
+
+* Passing parameters to lambda expressions:
 
   ```cpp
   [] (int x) { std::cout << x; };
-  ```
-
-  ```cpp
   [] (int x, int y) { std::cout << x + y; };
   ```
 
-* Assigning a lambda expression to a variable
+* Assigning a lambda expression to a variable:
 
   ```cpp
   auto l = [] () { std::cout << "Hi"; };
@@ -166,7 +164,11 @@ The structure of a lambda expression:
   l(100);		// Displays 100
   ```
 
-* Returning a value from a lambda expression
+  > L1: Use `auto` keyword to tell the compiler to deduce the type of the lambda expression.
+  >
+  > L2: Now that we have a variable, we can call the function object created from the lambda expression.
+
+* Returning a value from a lambda expression:
 
   ```cpp
   auto l = [] (int x, int y) -> int { return x + y; };
@@ -177,17 +179,25 @@ The structure of a lambda expression:
   std::cout << l(10, 20);		// Displays 30
   ```
 
-  
+  > L3: Since the compiler can very often deduce the type from the return statement itself, it's much more common to see lambda expressions used this way without specifying the return type.
+
+
 
 ## C++ Stateless Lambda Expressions
 
-* Simple stateless lambda expressions
+Stateless lambda expressions are lambdas that do not capture any external variables from their surrounding scope. An empty capture list means that the expression captures no information from its environment and only has access to the data passed through its function parameter list.
+
+### Examples
+
+* Simple stateless lambda expressions (No capture lists):
 
   ```cpp
   [] () { std::cout << "Hi"; } ();		// Displays Hi
   int x{10};
   [] (int x) { std::cout << x; }(100);
   ```
+
+  > L3: This lambda is invoked with the value `100` passed to its `x` parameter. Since it is stateless, it captures no information from its surrounding environment. This means it has no access to the `x` variable defined earlier and only operates on the value explicitly passed to its parameter when it is called.
 
   ```cpp
   const int n{3};
@@ -204,15 +214,18 @@ The structure of a lambda expression:
   std:: cout << sum(nums, 3);		// Displays 60
   ```
 
-* Using values and references as lambda parameters
+  > L4: From the empty capture list, we know that this lambda is stateless, meaning it has no access to the array or its length defined earlier. The only way it can compute the sum of the integers in the array is if both the array and its length are passed as parameters. This is exactly what happens when the lambda is called in L12.
+
+* Using values and references as lambda parameters:
 
   ```cpp
   [] (int x) { std::cout << x; };
   [] (int &x) { std::cout << x; };
   ```
 
-  > * `int x` - Value parameter
-  > * `int &x)` - Reference parameter
+  > L1: `int x` - Value parameter
+  >
+  > L2: `int &x)` - Reference parameter (i.e., alias to the actual parameter; no copy is made)
 
   ```cpp
   int test_score1{88};
@@ -230,7 +243,7 @@ The structure of a lambda expression:
   std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
   ```
 
-* Using pointers as lambda parameters
+* Using pointers as lambda parameters:
 
   ```cpp
   int x;
