@@ -247,7 +247,7 @@ Stateless lambda expressions are lambdas that do not capture any external variab
 
   ```cpp
   int x;
-  auto l = [] (int *x) { std::cout << *x; };
+  auto l = [] (int *x) { std::cout << *x; }; // '*': dereferencing operator
   l(&x);	// '&': Referencing (address-of) operator
   ```
 
@@ -270,7 +270,7 @@ Stateless lambda expressions are lambdas that do not capture any external variab
 * Using arrays and vectors as lambda reference parameters
 
   ```cpp
-  std::vector<int> test_scores{ 93, 88, 75, 68, 65 };
+  std::vector<int> test_scores{93, 88, 75, 68, 65};
   
   auto bonus = [] (std::vector<int> &scores, int bonus_points)
   {
@@ -288,7 +288,9 @@ Stateless lambda expressions are lambdas that do not capture any external variab
   std::cout << text_scores[4] << std::endl;	// Displays 70
   ```
 
-* Using `auto` as lambda parameter type specifiers
+* Using `auto` as lambda parameter type specifiers:
+
+  This allows the lambda expression to accommodate different types of arguments, making it more flexible and enabling it to work like a generic function. (The `auto` keyword is the key!)
 
   ```cpp
   int num1{10};
