@@ -292,6 +292,8 @@ Stateless lambda expressions are lambdas that do not capture any external variab
 
   This allows the lambda expression to accommodate different types of arguments, making it more flexible and enabling it to work like a generic function. (The `auto` keyword is the key!)
 
+  Note: `auto` is not an actual type. It's an instruction telling the compiler to deduce the actual type.
+
   ```cpp
   int num1{10};
   float num2 {20.5};
@@ -316,60 +318,66 @@ Stateless lambda expressions are lambdas that do not capture any external variab
   bonus(test_scores2, 5);		// Valid
   ```
 
-* Using lambda expressions as function parameters
+* Using lambda expressions as function parameters:
 
   ```cpp
   #include <functional>		// For std::function
   
   void foo(std::function<void(int)> l) { l(10); }		// C++14
-  //					   ---- ---
-  //				return-type parameter-type
-  
-  // or
-  
   void foo(void (*)(int))	{ l(10); }					// C++14
-  
-  // or
   
   void foo(auto l) { l(10); }							// C++20
   ```
 
-* Returning lambda expressions from functions
+  > L3: Passing a lambda expression to a function as a **function object** using the standard library's `<functional>` header. The function `foo` takes the function object `l` as a function parameter. `void` type specifier represents the return type of the function object, and the `int` type specifier represents the function object's parameter type. (C++14)
+  >
+  > L4: Passing a lambda expression to a function as a **function pointer**. The function `foo` takes as its parameter a pointer to the function `l`. (C++14)
+  >
+  > L6: In C++20, we can eliminate the need to explicitly declare return and parameter types by using the `auto` keyword, allowing the compiler to deduce both the parameter types and the return type of the lambda expression.
+
+* Returning lambda expressions from functions:
+
+  Similar to how the lambda expressions are passed to functions, they can be returned as either function objects, function pointers or by using the `auto` keyword to instruct the compiler to deduce the return type.
 
   ```cpp
   #include <functional>		// For std::function
   
   std::function<void(int)> foo() { return [] (int x) { std::cout << x; }; }
-  
-  // or
-  
   void (*foo())(int) { return [] (int x) { std::cout << x; }; }
-  
-  // or
   
   auto foo() { return [] (int x) { std::cout << x; }; }
   ```
 
-  > All 3 versions are used the same way.
+  > L3: Returning a lambda expression as a **function object**.
   >
-  > ```cpp
-  > auto l = foo();
-  > l(10);		// Displays 10
-  > ```
+  > L4: Returning a lambda expression as a **function pointer**. This is an old-style C syntax that has persisted for backward compatibility. In modern C++, it's uncommon to use this approach to return a lambda expression from a function. Instead, it's more typical—and more flexible—to return lambdas either as function objects or by using the `auto` keyword.
 
-* Using lambda expressions as function parameters
+  All 3 versions are used the same way:
+
+  ```cpp
+  auto l = foo();
+  l(10);		// Displays 10
+  ```
+
+  Examples of why you might want to return a lambda from a function are best illustrated using **stateful** lambda expressions, which will be discussed in the next section.
+
+* Using lambda expressions as function parameters:
 
   ```cpp
   foo([] (int x) { std::cout << x; });
-  
-  // or
   
   auto l = [] (int x) { std::cout << x; };
   foo(l);
   ```
 
-* Using lambda expressions as predicates
+  > L1: A common way of passing lambda expressions to functions since in most cases they're only ever passed once. 
+  >
+  > L3: If the lambda will be used more than once, it may be beneficial to assign it to a variable so that it can be passed to multiple functions and called independently without having to define the lambda each time.
 
+* Using lambda expressions as predicates:
+
+  A **predicate** in C++ is a function that takes one or more arguments and returns a boolean value. Naturally, a **predicate lambda** is a lambda expression that implements this behavior. This is where the true power of lambdas shines—enabling concise, inline logic for filtering, searching, and decision-making in algorithms.
+  
   ```cpp
   void print_if(std::vector<int> nums, bool (*predicate)(int))
   {
@@ -390,6 +398,10 @@ Stateless lambda expressions are lambdas that do not capture any external variab
       return 0;
   }
   ```
+  
+  > L1: Takes as its parameters an integer vector and a predicate lambda that's passed as a function pointer. In this case, the predicate lambda is used to determine which elements of the integer vector to display.
+  
+  Predicate lambdas are especially important when working with Standard Template Library (STL) functions and algorithms such as `std::sort()` or `std::for_each()`, which often take a predicate as a parameter to customize their behavior.
 
 
 
