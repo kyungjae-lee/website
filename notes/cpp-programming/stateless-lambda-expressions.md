@@ -8,9 +8,7 @@
 
 Stateless lambda expressions are lambdas that do not capture any external variables from their surrounding scope. An empty capture list means that the expression captures no information from its environment and only has access to the data passed through its function parameter list.
 
-### Examples
-
-**Simple stateless lambda expressions (No capture lists):**
+### Simple Stateless Lambda Expressions (No capture lists)
 
 ```cpp
 [] () { std::cout << "Hi"; } ();		// Displays Hi
@@ -37,7 +35,7 @@ std:: cout << sum(nums, 3);		// Displays 60
 
 > L4: From the empty capture list, we know that this lambda is stateless, meaning it has no access to the array or its length defined earlier. The only way it can compute the sum of the integers in the array is if both the array and its length are passed as parameters. This is exactly what happens when the lambda is called in L12.
 
-**Using values and references as lambda parameters:**
+### Using Values and References as Lambda Parameters
 
 ```cpp
 [] (int x) { std::cout << x; };
@@ -64,7 +62,7 @@ std::cout << "test_score1: " << test_score1 << std::endl;	// Displays 93
 std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
 ```
 
-**Using pointers as lambda parameters:**
+### Using Pointers as Lambda Parameters
 
 ```cpp
 int x;
@@ -88,7 +86,7 @@ std::cout << "test_score1: " << test_score1 << std::endl;	// Displays 93
 std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
 ```
 
-**Using arrays and vectors as lambda reference parameters:**
+### Using Arrays and Vectors as Lambda Reference Parameters
 
 ```cpp
 std::vector<int> test_scores{93, 88, 75, 68, 65};
@@ -109,7 +107,7 @@ std::cout << text_scores[3] << std::endl;	// Displays 73
 std::cout << text_scores[4] << std::endl;	// Displays 70
 ```
 
-**Using `auto` as lambda parameter type specifiers:**
+### Using `auto` as Lambda Parameter Type Specifiers
 
 This allows the lambda expression to accommodate different types of arguments, making it more flexible and enabling it to work like a generic function. (The `auto` keyword is the key!)
 
@@ -139,7 +137,7 @@ bonus(test_scores1, 5);		// Valid
 bonus(test_scores2, 5);		// Valid
 ```
 
-**Using lambda expressions as function parameters:**
+### Using Lambda Expressions as Function Parameters
 
 ```cpp
 #include <functional>		// For std::function
@@ -156,7 +154,7 @@ void foo(auto l) { l(10); }							// C++20
 >
 > L6: In C++20, we can eliminate the need to explicitly declare return and parameter types by using the `auto` keyword, allowing the compiler to deduce both the parameter types and the return type of the lambda expression.
 
-**Returning lambda expressions from functions:**
+### Returning Lambda Expressions from Functions
 
 Similar to how the lambda expressions are passed to functions, they can be returned as either function objects, function pointers or by using the `auto` keyword to instruct the compiler to deduce the return type.
 
@@ -182,7 +180,7 @@ l(10);		// Displays 10
 
 Examples of why you might want to return a lambda from a function are best illustrated using **stateful** lambda expressions, which will be discussed in the next section.
 
-**Using lambda expressions as function parameters:**
+### Using Lambda Expressions as Function Parameters
 
 ```cpp
 foo([] (int x) { std::cout << x; });
@@ -195,7 +193,7 @@ foo(l);
 >
 > L3: If the lambda will be used more than once, it may be beneficial to assign it to a variable so that it can be passed to multiple functions and called independently without having to define the lambda each time.
 
-**Using lambda expressions as predicates:**
+### Using Lambda Expressions as Predicates
 
 A predicate in C++ is a function that takes one or more arguments and returns a boolean value. Naturally, a predicate lambda is a lambda expression that implements this behavior. This is where the true power of lambdas shines—enabling concise, inline logic for filtering, searching, and decision-making in algorithms.
 
