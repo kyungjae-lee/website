@@ -10,326 +10,216 @@ Stateless lambda expressions are lambdas that do not capture any external variab
 
 ### Examples
 
-* Simple stateless lambda expressions (No capture lists):
+**Simple stateless lambda expressions (No capture lists):**
 
-  ```cpp
-  [] () { std::cout << "Hi"; } ();		// Displays Hi
-  int x{10};
-  [] (int x) { std::cout << x; }(100);
-  ```
+```cpp
+[] () { std::cout << "Hi"; } ();		// Displays Hi
+int x{10};
+[] (int x) { std::cout << x; }(100);
+```
 
-  > L3: This lambda is invoked with the value `100` passed to its `x` parameter. Since it is stateless, it captures no information from its surrounding environment. This means it has no access to the `x` variable defined earlier and only operates on the value explicitly passed to its parameter when it is called.
+> L3: This lambda is invoked with the value `100` passed to its `x` parameter. Since it is stateless, it captures no information from its surrounding environment. This means it has no access to the `x` variable defined earlier and only operates on the value explicitly passed to its parameter when it is called.
 
-  ```cpp
-  const int n{3};
-  int num[n]{10, 20, 30};
-  
-  auto sum = [] (int nums[], int n)
-  {
-      int sum{0};
-      for (int i = 0; i < n; i++)
-          sum += nums[i];
-      return sum;
-  };
-  
-  std:: cout << sum(nums, 3);		// Displays 60
-  ```
+```cpp
+const int n{3};
+int num[n]{10, 20, 30};
 
-  > L4: From the empty capture list, we know that this lambda is stateless, meaning it has no access to the array or its length defined earlier. The only way it can compute the sum of the integers in the array is if both the array and its length are passed as parameters. This is exactly what happens when the lambda is called in L12.
+auto sum = [] (int nums[], int n)
+{
+    int sum{0};
+    for (int i = 0; i < n; i++)
+        sum += nums[i];
+    return sum;
+};
 
-* Using values and references as lambda parameters:
+std:: cout << sum(nums, 3);		// Displays 60
+```
 
-  ```cpp
-  [] (int x) { std::cout << x; };
-  [] (int &x) { std::cout << x; };
-  ```
+> L4: From the empty capture list, we know that this lambda is stateless, meaning it has no access to the array or its length defined earlier. The only way it can compute the sum of the integers in the array is if both the array and its length are passed as parameters. This is exactly what happens when the lambda is called in L12.
 
-  > L1: `int x` - Value parameter
-  >
-  > L2: `int &x)` - Reference parameter (i.e., alias to the actual parameter; no copy is made)
+**Using values and references as lambda parameters:**
 
-  ```cpp
-  int test_score1{88};
-  int test_score2{75};
-  
-  auto bonus = [] (int &score1, int &score2, int bonus_points)
-  {
-      score1 += bonus_points;
-      score2 += bonus_points;
-  };
-  
-  bonus(test_score1, test_score2, 5);
-  
-  std::cout << "test_score1: " << test_score1 << std::endl;	// Displays 93
-  std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
-  ```
+```cpp
+[] (int x) { std::cout << x; };
+[] (int &x) { std::cout << x; };
+```
 
-* Using pointers as lambda parameters:
+> L1: `int x` - Value parameter
+>
+> L2: `int &x)` - Reference parameter (i.e., alias to the actual parameter; no copy is made)
 
-  ```cpp
-  int x;
-  auto l = [] (int *x) { std::cout << *x; }; // '*': dereferencing operator
-  l(&x);	// '&': Referencing (address-of) operator
-  ```
+```cpp
+int test_score1{88};
+int test_score2{75};
 
-  ```cpp
-  int test_score1{88};
-  int test_score2{75};
-  
-  auto bonus = [] (int *score1, int *score2, int bonus_points)
-  {
-      *score1 += bonus_points;
-      *score2 += bonus_points;
-  };
-  
-  bonus(&test_score1, &test_score2, 5);
-  
-  std::cout << "test_score1: " << test_score1 << std::endl;	// Displays 93
-  std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
-  ```
+auto bonus = [] (int &score1, int &score2, int bonus_points)
+{
+    score1 += bonus_points;
+    score2 += bonus_points;
+};
 
-* Using arrays and vectors as lambda reference parameters
+bonus(test_score1, test_score2, 5);
 
-  ```cpp
-  std::vector<int> test_scores{93, 88, 75, 68, 65};
-  
-  auto bonus = [] (std::vector<int> &scores, int bonus_points)
-  {
-      for (int &score : scores)
-          score += bonus_points;
-  };
-  
-  bonus(test_scores, 5);
-  
-  std::cout << "test_scores: " << std::endl;
-  std::cout << text_scores[0] << std::endl;	// Displays 98
-  std::cout << text_scores[1] << std::endl;	// Displays 93
-  std::cout << text_scores[2] << std::endl;	// Displays 80
-  std::cout << text_scores[3] << std::endl;	// Displays 73
-  std::cout << text_scores[4] << std::endl;	// Displays 70
-  ```
+std::cout << "test_score1: " << test_score1 << std::endl;	// Displays 93
+std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
+```
 
-* Using `auto` as lambda parameter type specifiers:
+**Using pointers as lambda parameters:**
 
-  This allows the lambda expression to accommodate different types of arguments, making it more flexible and enabling it to work like a generic function. (The `auto` keyword is the key!)
+```cpp
+int x;
+auto l = [] (int *x) { std::cout << *x; }; // '*': dereferencing operator
+l(&x);	// '&': Referencing (address-of) operator
+```
 
-  Note: `auto` is not an actual type. It's an instruction telling the compiler to deduce the actual type.
+```cpp
+int test_score1{88};
+int test_score2{75};
 
-  ```cpp
-  int num1{10};
-  float num2 {20.5};
-  
-  auto l = [] (auto x) { std::cout << x; };
-  
-  l(num1);
-  l(num2);
-  ```
+auto bonus = [] (int *score1, int *score2, int bonus_points)
+{
+    *score1 += bonus_points;
+    *score2 += bonus_points;
+};
 
-  ```cpp
-  std::vector<int> test_scores1 {93, 88, 75, 68, 65 };
-  std::vector<float> test_scores2 {88.5, 85.5, 75.5, 68.5, 65.5};
-  
-  auto bonus = [] (auto &scores, int bonus_points)
-  {
-      for (auto &score : scores)
-          score += bonus_points;
-  };
-  
-  bonus(test_scores1, 5);		// Valid
-  bonus(test_scores2, 5);		// Valid
-  ```
+bonus(&test_score1, &test_score2, 5);
 
-* Using lambda expressions as function parameters:
+std::cout << "test_score1: " << test_score1 << std::endl;	// Displays 93
+std::cout << "text_score2: " << test_score2 << std::endl;	// Displays 80
+```
 
-  ```cpp
-  #include <functional>		// For std::function
-  
-  void foo(std::function<void(int)> l) { l(10); }		// C++14
-  void foo(void (*)(int))	{ l(10); }					// C++14
-  
-  void foo(auto l) { l(10); }							// C++20
-  ```
+**Using arrays and vectors as lambda reference parameters:**
 
-  > L3: Passing a lambda expression to a function as a **function object** using the standard library's `<functional>` header. The function `foo` takes the function object `l` as a function parameter. `void` type specifier represents the return type of the function object, and the `int` type specifier represents the function object's parameter type. (C++14)
-  >
-  > L4: Passing a lambda expression to a function as a **function pointer**. The function `foo` takes as its parameter a pointer to the function `l`. (C++14)
-  >
-  > L6: In C++20, we can eliminate the need to explicitly declare return and parameter types by using the `auto` keyword, allowing the compiler to deduce both the parameter types and the return type of the lambda expression.
+```cpp
+std::vector<int> test_scores{93, 88, 75, 68, 65};
 
-* Returning lambda expressions from functions:
+auto bonus = [] (std::vector<int> &scores, int bonus_points)
+{
+    for (int &score : scores)
+        score += bonus_points;
+};
 
-  Similar to how the lambda expressions are passed to functions, they can be returned as either function objects, function pointers or by using the `auto` keyword to instruct the compiler to deduce the return type.
+bonus(test_scores, 5);
 
-  ```cpp
-  #include <functional>		// For std::function
-  
-  std::function<void(int)> foo() { return [] (int x) { std::cout << x; }; }
-  void (*foo())(int) { return [] (int x) { std::cout << x; }; }
-  
-  auto foo() { return [] (int x) { std::cout << x; }; }
-  ```
+std::cout << "test_scores: " << std::endl;
+std::cout << text_scores[0] << std::endl;	// Displays 98
+std::cout << text_scores[1] << std::endl;	// Displays 93
+std::cout << text_scores[2] << std::endl;	// Displays 80
+std::cout << text_scores[3] << std::endl;	// Displays 73
+std::cout << text_scores[4] << std::endl;	// Displays 70
+```
 
-  > L3: Returning a lambda expression as a **function object**.
-  >
-  > L4: Returning a lambda expression as a **function pointer**. This is an old-style C syntax that has persisted for backward compatibility. In modern C++, it's uncommon to use this approach to return a lambda expression from a function. Instead, it's more typical—and more flexible—to return lambdas either as function objects or by using the `auto` keyword.
+**Using `auto` as lambda parameter type specifiers:**
 
-  All 3 versions are used the same way:
+This allows the lambda expression to accommodate different types of arguments, making it more flexible and enabling it to work like a generic function. (The `auto` keyword is the key!)
 
-  ```cpp
-  auto l = foo();
-  l(10);		// Displays 10
-  ```
+Note: `auto` is not an actual type. It's an instruction telling the compiler to deduce the actual type.
 
-  Examples of why you might want to return a lambda from a function are best illustrated using **stateful** lambda expressions, which will be discussed in the next section.
+```cpp
+int num1{10};
+float num2 {20.5};
 
-* Using lambda expressions as function parameters:
+auto l = [] (auto x) { std::cout << x; };
 
-  ```cpp
-  foo([] (int x) { std::cout << x; });
-  
-  auto l = [] (int x) { std::cout << x; };
-  foo(l);
-  ```
+l(num1);
+l(num2);
+```
 
-  > L1: A common way of passing lambda expressions to functions since in most cases they're only ever passed once. 
-  >
-  > L3: If the lambda will be used more than once, it may be beneficial to assign it to a variable so that it can be passed to multiple functions and called independently without having to define the lambda each time.
+```cpp
+std::vector<int> test_scores1 {93, 88, 75, 68, 65 };
+std::vector<float> test_scores2 {88.5, 85.5, 75.5, 68.5, 65.5};
 
-* Using lambda expressions as predicates:
+auto bonus = [] (auto &scores, int bonus_points)
+{
+    for (auto &score : scores)
+        score += bonus_points;
+};
 
-  A **predicate** in C++ is a function that takes one or more arguments and returns a boolean value. Naturally, a **predicate lambda** is a lambda expression that implements this behavior. This is where the true power of lambdas shines—enabling concise, inline logic for filtering, searching, and decision-making in algorithms.
-  
-  ```cpp
-  void print_if(std::vector<int> nums, bool (*predicate)(int))
-  {
-      for (int i : nums)
-      {
-          if (predicate(i))
-              std::cout << i;
-      }
-  }
-  
-  int main()
-  {
-      std::vector<int> nums{1, 2, 3};
-      
-      print_if(nums, [] (auto x) { return x % 2 == 0; });	// Displays evens
-      print_if(nums, [] (auto x) { return x % 2 != 0; });	// Displays odds
-      
-      return 0;
-  }
-  ```
-  
-  > L1: Takes as its parameters an integer vector and a predicate lambda that's passed as a function pointer. In this case, the predicate lambda is used to determine which elements of the integer vector to display.
-  
-  Predicate lambdas are especially important when working with Standard Template Library (STL) functions and algorithms such as `std::sort()` or `std::for_each()`, which often take a predicate as a parameter to customize their behavior.
+bonus(test_scores1, 5);		// Valid
+bonus(test_scores2, 5);		// Valid
+```
 
+**Using lambda expressions as function parameters:**
 
+```cpp
+#include <functional>		// For std::function
 
-## C++ Stateful Lambda Expressions
+void foo(std::function<void(int)> l) { l(10); }		// C++14
+void foo(void (*)(int))	{ l(10); }					// C++14
 
-* The structure of a stateful lambda expression
+void foo(auto l) { l(10); }							// C++20
+```
 
-  ```plain
-  [captured_variables] () -> return_type specifiers { };
-  ```
+> L3: Passing a lambda expression to a function as a **function object** using the standard library's `<functional>` header. The function `foo` takes the function object `l` as a function parameter. `void` type specifier represents the return type of the function object, and the `int` type specifier represents the function object's parameter type. (C++14)
+>
+> L4: Passing a lambda expression to a function as a **function pointer**. The function `foo` takes as its parameter a pointer to the function `l`. (C++14)
+>
+> L6: In C++20, we can eliminate the need to explicitly declare return and parameter types by using the `auto` keyword, allowing the compiler to deduce both the parameter types and the return type of the lambda expression.
 
-  > `captured_variables` - Non-empty capture list: Defines what information/variables should be captured.
+**Returning lambda expressions from functions:**
 
-* Compilation of stateless lambda expressions 1
+Similar to how the lambda expressions are passed to functions, they can be returned as either function objects, function pointers or by using the `auto` keyword to instruct the compiler to deduce the return type.
 
-  Lambda definition
+```cpp
+#include <functional>		// For std::function
 
-  ```cpp
-  auto l = [] (int x) { std::cout << x; };
-  ```
+std::function<void(int)> foo() { return [] (int x) { std::cout << x; }; }
+void (*foo())(int) { return [] (int x) { std::cout << x; }; }
 
-  Compiler-generated closure
+auto foo() { return [] (int x) { std::cout << x; }; }
+```
 
-  ```cpp
-  class CompilerGeneratedName
-  {
-  public:
-      CompilerGeneratedName();
-      
-      void operator() (int x) { std::cout << x; }
-  };
-  ```
+> L3: Returning a lambda expression as a **function object**.
+>
+> L4: Returning a lambda expression as a **function pointer**. This is an old-style C syntax that has persisted for backward compatibility. In modern C++, it's uncommon to use this approach to return a lambda expression from a function. Instead, it's more typical—and more flexible—to return lambdas either as function objects or by using the `auto` keyword.
 
-* Compilation of stateless lambda expressions 2
+All 3 versions are used the same way:
 
-  Lambda definition
+```cpp
+auto l = foo();
+l(10);		// Displays 10
+```
 
-  ```cpp
-  int y {10};
-  auto l = [y] (int x) { std::cout << x + y; };
-  ```
+Examples of why you might want to return a lambda from a function are best illustrated using **stateful** lambda expressions, which will be discussed in the next section.
 
-  Compiler-generated closure
+**Using lambda expressions as function parameters:**
 
-  ```cpp
-  class CompilerGeneratedName
-  {
-  private:
-      int y;
-  public:
-      CompilerGeneratedName(int y) : y{y} { };
-      
-      void operator() (int x) const { std::cout << x + y; }
-  };
-  ```
+```cpp
+foo([] (int x) { std::cout << x; });
 
-* Capture by value
+auto l = [] (int x) { std::cout << x; };
+foo(l);
+```
 
-  ```cpp
-  int x{100};
-  [x] () { std::cout << x; }();		// Displays 100
-  ```
+> L1: A common way of passing lambda expressions to functions since in most cases they're only ever passed once. 
+>
+> L3: If the lambda will be used more than once, it may be beneficial to assign it to a variable so that it can be passed to multiple functions and called independently without having to define the lambda each time.
 
-* Using `mutable` to modify variables captured by value
+**Using lambda expressions as predicates:**
 
-  ```cpp
-  int x{100};
-  
-  [x] () mutable
-  {
-      x += 100;
-      std::cout << x;		// Displays 200
-  } ();
-  
-  std::cout << x;			// Displays 100
-  ```
+A predicate in C++ is a function that takes one or more arguments and returns a boolean value. Naturally, a predicate lambda is a lambda expression that implements this behavior. This is where the true power of lambdas shines—enabling concise, inline logic for filtering, searching, and decision-making in algorithms.
 
-* Capture by reference
+```cpp
+void print_if(std::vector<int> nums, bool (*predicate)(int))
+{
+    for (int i : nums)
+    {
+        if (predicate(i))
+            std::cout << i;
+    }
+}
 
-  ```cpp
-  int x{100};
-  
-  [&x] () { x += 100; }();
-  std::cout << x;			// Displays 200
-  ```
+int main()
+{
+    std::vector<int> nums{1, 2, 3};
+    
+    print_if(nums, [] (auto x) { return x % 2 == 0; });	// Displays evens
+    print_if(nums, [] (auto x) { return x % 2 != 0; });	// Displays odds
+    
+    return 0;
+}
+```
 
-* Capture by value and reference
+> L1: Takes as its parameters an integer vector and a predicate lambda that's passed as a function pointer. In this case, the predicate lambda is used to determine which elements of the integer vector to display.
 
-  ```cpp
-  [x, y]		// Capture both x and y by value
-  [x, &y]		// Capture x by value and y by reference
-  [&x, y]		// Capture x by reference and y by value
-  [&x, &y]	// Capture both x and y by reference
-  ```
-
-* Default captures
-
-  ```cpp
-  [=]			// Default capture by value
-  [&]			// Default capture by reference
-  [this]		// Default capture this object by reference
-  ```
-
-* Using default and explicit captures
-
-  ```cpp
-  [=, &x]		// Default capture by value but capture x by reference
-  [&, y]		// Default capture by reference but capture y by value
-  [this, z]	// Default capture this by but capture z by value
-  ```
+Predicate lambdas are especially important when working with Standard Template Library (STL) functions and algorithms such as `std::sort()` or `std::for_each()`, which often take a predicate as a parameter to customize their behavior.
