@@ -32,8 +32,8 @@
 ### Lambda Expressions
 
 * **[Introduction to Lambda Expressions](introduction-to-lambda-expressions)**
-* **[Stateful Lambda Expressions](stateful-lambda-expressions)**
 * **[Stateless Lambda Expressions](stateless-lambda-expressions)**
+* **[Stateful Lambda Expressions](stateful-lambda-expressions)**
 
 ### Standard Template Library (STL)
 
