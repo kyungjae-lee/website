@@ -75,12 +75,14 @@ A **stateful lambda expression** in C++ is a lambda that **captures variables fr
 
 ### The Ways a Lambda Expression can Capture "Variables"
 
-* Capture by value:
+* Capture by value (default capturing mode):
 
   ```cpp
   int x{100};
   [x] () { std::cout << x; }();		// Displays 100
   ```
+
+  > Remember! A variable being captured by value is actually being captured by `const` value which won't be modifiable within the lambda.
 
 * Using `mutable` to modify variables captured by value:
 
@@ -95,6 +97,8 @@ A **stateful lambda expression** in C++ is a lambda that **captures variables fr
   
   std::cout << x;			// Displays 100
   ```
+
+  > L3: The keyword `mutable` is used to tell the compiler to generate the lambda's operator function as a non-const member function. This way the variable captured by value can be modified within the lambda. Remember! The captured variable is still a copy of the original variable passed to the lambda.
 
 * Capture by reference:
 
@@ -116,16 +120,30 @@ A **stateful lambda expression** in C++ is a lambda that **captures variables fr
 
 * Default captures:
 
+  A default capture allows a lambda to capture "all" variables referenced within its body according to the defined capture mode.
+
   ```cpp
   [=]			// Default capture by value
   [&]			// Default capture by reference
   [this]		// Default capture this object by reference
   ```
 
+  > L3: The keyword `this` indicates that all member variables of the current object, as referenced within the lambda, should be captured by reference.
+
 * Using default and explicit captures:
+
+  This approach allows you to mix default capture modes (`[=]` or `[&]`) with explicitly captured variables, giving you fine-grained control over how each variable is captured. 
 
   ```cpp
   [=, &x]		// Default capture by value but capture x by reference
   [&, y]		// Default capture by reference but capture y by value
   [this, z]	// Default capture this by but capture z by value
   ```
+
+  > The default capture must come first in the capture list. Also, the explicit capture cannot be the same as the default. Otherwise, the lambda won't compile.
+
+
+
+## Note
+
+With so many possible combinations of default and explicit captures, it's difficult to cover them all. However, what we've discussed should equip you for most situations where stateful lambdas are needed.
