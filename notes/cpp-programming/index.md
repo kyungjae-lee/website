@@ -10,9 +10,6 @@
 * **[String Manipulation](string-manipulation)**
 * **[Pointers](pointers)**
 * **[References](references)**
-* **[Introduction to Lambda Expressions](introduction-to-lambda-expressions)**
-* **[Stateful Lambda Expressions](stateful-lambda-expressions)**
-* **[Stateless Lambda Expressions](stateless-lambda-expressions)**
 * **[Enumerations](enumerations)**
 
 ### Object-Oriented Programming (OOP)
@@ -31,6 +28,12 @@
 * **[Smart Pointers](smart-pointers)**
 * **[I/O & Streams](io-and-streams)**
 * **[Object-Oriented Design](object-oriented-design)**
+
+### Lambda Expressions
+
+* **[Introduction to Lambda Expressions](introduction-to-lambda-expressions)**
+* **[Stateful Lambda Expressions](stateful-lambda-expressions)**
+* **[Stateless Lambda Expressions](stateless-lambda-expressions)**
 
 ### Standard Template Library (STL)
 
