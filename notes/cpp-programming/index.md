@@ -49,5 +49,5 @@
 * **[Associative Container - `std::map`, `std::multimap`, `std::unordered_map`, `std::unordered_multimap`](associative-container-maps)**
 * **[Container Adaptor - `std::stack`](container-adaptor-stack)**
 * **[Container Adaptor - `std::queue`](container-adaptor-queue)**
-* **[Container Adaptor - `std::priority_queue`](container-adaptor-priority_queue)**
+* **[Container Adaptor - `std::priority_queue`](container-adaptor-priority-queue)**
 * **[STL Cheat Sheet](stl-cheat-sheet)**
