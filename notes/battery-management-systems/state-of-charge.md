@@ -11,9 +11,11 @@ State of Charge (SoC) represents **how much energy is currently stored in a batt
 A common conceptual definition is:
 
 
+
 $$
 SOC (\%) = \frac{\text{Remaining charge}}{\text{Usable battery capacity}} \times 100
 $$
+
 
 
 However, the key nuance is that usable capacity is not a fixed value. It varies with:
