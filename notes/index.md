@@ -24,6 +24,7 @@
 - **[Real-Time Operating Systems (RTOS)](real-time-operating-systems)**
 - **[Embedded OS Development](embedded-os-development)**
 - **[Embedded Systems Design using UML State Machines](embedded-systems-design-using-uml-state-machines)**
+- **[Battery Management Systems](battery-management-systems)**
 
 ### Linux
 
