@@ -95,12 +95,15 @@ SOC is estimated using the relationship between Open-Circuit Voltage (OCV) and S
 
 ##### Principle
 
-SOC is calculated by integrating current over time.
+SOC is calculated by integrating current over time. (Charge current: +)
+
 
 
 $$
-SOC(t) = SOC(t_0) - \frac{1}{C} \times \int I(t)dt
+SOC(t) = SOC(t_0) + \frac{1}{C} \times \int I(t)dt
 $$
+
+
 
 ##### Advantages
 
