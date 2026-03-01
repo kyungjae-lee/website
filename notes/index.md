@@ -13,7 +13,7 @@
 - **[C Programming](c-programming)**
 - **[C++ Programming](cpp-programming)**
 - **[Computer Networks](computer-networks)**
-- **[Problem Solving](problem-solving)**
+- **[Coding Interview Questions](coding-interview-questions)**
 
 ### Embedded Systems
 
