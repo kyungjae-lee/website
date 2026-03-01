@@ -25,6 +25,7 @@
 - **[Embedded OS Development](embedded-os-development)**
 - **[Embedded Systems Design using UML State Machines](embedded-systems-design-using-uml-state-machines)**
 - **[Battery Management Systems](battery-management-systems)**
+- **[Problem Solving](problem-solving)**
 
 ### Linux
 
