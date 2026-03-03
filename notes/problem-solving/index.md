@@ -4,6 +4,6 @@
 
 
 
-* **[Hard Fault](hard-fault)**
+* **[HardFault](hardfault)**
 * **[Stack Overflow](stack-overflow)**
 
