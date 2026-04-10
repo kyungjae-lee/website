@@ -47,3 +47,4 @@
 ### Else
 
 1. **[Switching Endianness](switching-endianness)**
+1. **[Find Anagrams](find-anagrams)**
